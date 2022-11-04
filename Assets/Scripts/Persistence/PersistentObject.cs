@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Glow.Persistence {
+namespace SameOldStory.Persistence {
     
     public class PersistentObject : MonoBehaviour {
 
