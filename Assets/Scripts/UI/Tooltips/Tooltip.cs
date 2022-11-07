@@ -6,18 +6,12 @@ namespace UI.Tooltips {
     
     public class Tooltip : MonoBehaviour {
 
-        private TooltipNode tooltipNode;
         private TextMeshProUGUI textMeshProUGUI;
         private Animator animator;
         
         private void Awake() {
-            tooltipNode = GetComponentInChildren<TooltipNode>();
             textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
             animator = GetComponent<Animator>();
-        }
-
-        private void Start() {
-           // tooltipNode?.gameObject.SetActive(false);
         }
 
         private void Update() {
@@ -37,10 +31,8 @@ namespace UI.Tooltips {
             if (tooltip != null && textMeshProUGUI != null) {
                 textMeshProUGUI.text = tooltip.Tooltip;
                 animator?.SetBool("Display", true);
-               // tooltipNode.gameObject.SetActive(true);
             } else {
                 animator?.SetBool("Display", false);
-               // tooltipNode.gameObject.SetActive(false);
             }
         }
         
