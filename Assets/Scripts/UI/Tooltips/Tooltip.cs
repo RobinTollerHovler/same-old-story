@@ -8,14 +8,16 @@ namespace UI.Tooltips {
 
         private TooltipNode tooltipNode;
         private TextMeshProUGUI textMeshProUGUI;
-
+        private Animator animator;
+        
         private void Awake() {
             tooltipNode = GetComponentInChildren<TooltipNode>();
             textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
+            animator = GetComponent<Animator>();
         }
 
         private void Start() {
-            tooltipNode?.gameObject.SetActive(false);
+           // tooltipNode?.gameObject.SetActive(false);
         }
 
         private void Update() {
@@ -34,9 +36,11 @@ namespace UI.Tooltips {
             IHaveTooltip tooltip = objectUnderCursor.GetComponentInParent<IHaveTooltip>();
             if (tooltip != null && textMeshProUGUI != null) {
                 textMeshProUGUI.text = tooltip.Tooltip;
-                tooltipNode.gameObject.SetActive(true);
+                animator?.SetBool("Display", true);
+               // tooltipNode.gameObject.SetActive(true);
             } else {
-                tooltipNode.gameObject.SetActive(false);
+                animator?.SetBool("Display", false);
+               // tooltipNode.gameObject.SetActive(false);
             }
         }
         
