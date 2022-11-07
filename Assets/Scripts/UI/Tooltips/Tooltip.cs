@@ -18,6 +18,14 @@ namespace UI.Tooltips {
             tooltipNode?.gameObject.SetActive(false);
         }
 
+        private void Update() {
+            RectTransform rectTransform = GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(
+                Mouse.Position.x - (float)Screen.width / 2,
+                Mouse.Position.y - (float)Screen.height / 2
+            );
+        }
+
         private void OnEnable() => Mouse.objectUnderCursorChanged += UpdateTooltip;
         private void OnDisable() => Mouse.objectUnderCursorChanged -= UpdateTooltip;
 
