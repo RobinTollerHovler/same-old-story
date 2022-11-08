@@ -1,9 +1,9 @@
-using System;
+using SameOldStory.Movies;
 using UnityEngine;
 
-namespace SameOldStory.Movies {
+namespace SameOldStory.Objects.Interactables {
     
-    public class Typewriter : MonoBehaviour {
+    public class Typewriter : InteractableObject {
 
         [SerializeField] private TypewriterPage remainingTypewriterPage;
         [SerializeField] private TypewriterPage completedTypewriterPage;
@@ -26,6 +26,7 @@ namespace SameOldStory.Movies {
 
         private void BeginWritingMovie(Movie movie) {
             writingMovie = movie;
+            Tooltip = $"Writing: \"{movie.Name}\"";
             remainingTypewriterPage.Activate();
             completedTypewriterPage.Activate();
         }

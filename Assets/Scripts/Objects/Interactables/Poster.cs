@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SameOldStory.Movies {
+namespace SameOldStory.Objects.Interactables {
     
     public class Poster : MonoBehaviour {
         

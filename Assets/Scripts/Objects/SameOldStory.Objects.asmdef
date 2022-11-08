@@ -2,7 +2,8 @@
     "name": "SameOldStory.Objects",
     "rootNamespace": "",
     "references": [
-        "GUID:7887233c5d0e847edbce3a72919aed99"
+        "GUID:7887233c5d0e847edbce3a72919aed99",
+        "GUID:288c62e99e059453ebe80dba6fcba581"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
