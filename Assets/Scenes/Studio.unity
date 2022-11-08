@@ -254,6 +254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861948516131183069, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: objectToActivate
+      value: 
+      objectReference: {fileID: 1138215772}
     - target: {fileID: 4440797523213899188, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -302,10 +306,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Studio
       objectReference: {fileID: 0}
-    - target: {fileID: 5866202155356044799, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: objectToActivate
-      value: 
-      objectReference: {fileID: 1138215772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
 --- !u!1001 &5691029991386800399
