@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1138215772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1629910113569089420, guid: 98bbad5ebea60471eba798bec7987a7b, type: 3}
+  m_PrefabInstance: {fileID: 6914266787850528226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1511037477 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 640163256938906396, guid: 8ebff8a7e68ff4553aa96ae1ea342055, type: 3}
@@ -297,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Studio
       objectReference: {fileID: 0}
+    - target: {fileID: 5866202155356044799, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: objectToActivate
+      value: 
+      objectReference: {fileID: 1138215772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
 --- !u!1001 &5691029991386800399
@@ -317,10 +326,6 @@ PrefabInstance:
     - target: {fileID: 2869037630989427634, guid: 2043b36632d524f5eab7d2e7a5acd9da, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5855961146971526128, guid: 2043b36632d524f5eab7d2e7a5acd9da, type: 3}
-      propertyPath: m_text
-      value: Tooltip
       objectReference: {fileID: 0}
     - target: {fileID: 8472601204751752415, guid: 2043b36632d524f5eab7d2e7a5acd9da, type: 3}
       propertyPath: m_AnchorMax.y

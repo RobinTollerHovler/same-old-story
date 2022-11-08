@@ -174,7 +174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Create new script
+  m_text: Tooltip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acfda8ac1ae7844d2a8ef163ce17a086, type: 2}
   m_sharedMaterial: {fileID: -3660364873653752475, guid: acfda8ac1ae7844d2a8ef163ce17a086, type: 2}

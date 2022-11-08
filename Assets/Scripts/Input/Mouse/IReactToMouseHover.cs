@@ -1,6 +1,6 @@
 namespace SameOldStory.Input.Mouse {
 
-    public interface IReactOnMouseHover {
+    public interface IReactToMouseHover {
 
         public void OnMouseHover();
 

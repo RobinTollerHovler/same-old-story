@@ -37,6 +37,15 @@ namespace SameOldStory.Input.Unity
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouseClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""73be2fea-2327-48d2-81ee-1bc543d1e1aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -50,6 +59,17 @@ namespace SameOldStory.Input.Unity
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb593d43-89fa-443e-9963-15fb50d8550e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -59,6 +79,7 @@ namespace SameOldStory.Input.Unity
             // Studio
             m_Studio = asset.FindActionMap("Studio", throwIfNotFound: true);
             m_Studio_MousePosition = m_Studio.FindAction("MousePosition", throwIfNotFound: true);
+            m_Studio_MouseClick = m_Studio.FindAction("MouseClick", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -119,11 +140,13 @@ namespace SameOldStory.Input.Unity
         private readonly InputActionMap m_Studio;
         private IStudioActions m_StudioActionsCallbackInterface;
         private readonly InputAction m_Studio_MousePosition;
+        private readonly InputAction m_Studio_MouseClick;
         public struct StudioActions
         {
             private @UnityInputSystem m_Wrapper;
             public StudioActions(@UnityInputSystem wrapper) { m_Wrapper = wrapper; }
             public InputAction @MousePosition => m_Wrapper.m_Studio_MousePosition;
+            public InputAction @MouseClick => m_Wrapper.m_Studio_MouseClick;
             public InputActionMap Get() { return m_Wrapper.m_Studio; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -136,6 +159,9 @@ namespace SameOldStory.Input.Unity
                     @MousePosition.started -= m_Wrapper.m_StudioActionsCallbackInterface.OnMousePosition;
                     @MousePosition.performed -= m_Wrapper.m_StudioActionsCallbackInterface.OnMousePosition;
                     @MousePosition.canceled -= m_Wrapper.m_StudioActionsCallbackInterface.OnMousePosition;
+                    @MouseClick.started -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
+                    @MouseClick.performed -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
+                    @MouseClick.canceled -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
                 }
                 m_Wrapper.m_StudioActionsCallbackInterface = instance;
                 if (instance != null)
@@ -143,6 +169,9 @@ namespace SameOldStory.Input.Unity
                     @MousePosition.started += instance.OnMousePosition;
                     @MousePosition.performed += instance.OnMousePosition;
                     @MousePosition.canceled += instance.OnMousePosition;
+                    @MouseClick.started += instance.OnMouseClick;
+                    @MouseClick.performed += instance.OnMouseClick;
+                    @MouseClick.canceled += instance.OnMouseClick;
                 }
             }
         }
@@ -150,6 +179,7 @@ namespace SameOldStory.Input.Unity
         public interface IStudioActions
         {
             void OnMousePosition(InputAction.CallbackContext context);
+            void OnMouseClick(InputAction.CallbackContext context);
         }
     }
 }
