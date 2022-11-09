@@ -1,6 +1,8 @@
+using System;
 using SameOldStory.Input.Mouse;
 using SameOldStory.Objects.Interactables;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SameOldStory.Movies.Posters {
     
@@ -17,7 +19,15 @@ namespace SameOldStory.Movies.Posters {
             node.localEulerAngles = new Vector3(0, 0, Random.Range(-rotationFactor, rotationFactor));
         }
 
-        private void OnEnable() => Movies.Poster.onPlacePoster += SetPlacement;
+        private void OnEnable() {
+            Movies.Poster.onPlacePoster += SetPlacement;
+            Movies.Poster.onBeginPlacePoster += DeactivateCollider;
+        }
+
+        private void OnDisable() {
+            Movies.Poster.onPlacePoster -= SetPlacement;
+            Movies.Poster.onBeginPlacePoster -= DeactivateCollider;
+        }
 
         private void Update() {
             if (!placed) Place();
@@ -35,11 +45,13 @@ namespace SameOldStory.Movies.Posters {
         }
         
         private void SetPlacement() {
-            Movies.Poster.onPlacePoster -= SetPlacement;
-            colliderObject.gameObject.SetActive(true);
+            ActivateCollider();
             placed = true;
         }
-        
+
+        private void DeactivateCollider() => colliderObject?.gameObject.SetActive(false);
+        private void ActivateCollider() => colliderObject?.gameObject.SetActive(true);
+
     }
     
 }
