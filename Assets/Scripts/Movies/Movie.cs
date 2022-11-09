@@ -6,10 +6,10 @@ namespace SameOldStory.Movies {
     public class Movie {
 
         public static event Action<Movie> onMovieBeginWriting;
-        public static Movie CurrentlyWritingMovie { get; private set; }
         
-        public string Name { get; private set; }
+        public string Name { get; }
         public float CompletedFactor => Mathf.Clamp(completedWork / requiredWork, 0, 1);
+        public bool Completed => (int)CompletedFactor == 1;
 
         private float requiredWork;
         private float completedWork;
@@ -17,7 +17,6 @@ namespace SameOldStory.Movies {
         public Movie(string name) {
             Name = name;
             requiredWork = 5;
-            CurrentlyWritingMovie = this;
             onMovieBeginWriting?.Invoke(this);
         }
 

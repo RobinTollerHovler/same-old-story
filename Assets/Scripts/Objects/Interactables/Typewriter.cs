@@ -30,8 +30,13 @@ namespace SameOldStory.Objects.Interactables {
             remainingTypewriterPage.Activate();
             completedTypewriterPage.Activate();
         }
+        
+        private void CompleteWritingMovie() => Tooltip = $"Completed: \"{writingMovie.Name}\"";
 
-        private void WriteMovie() => writingMovie.WorkOn(Time.deltaTime);
+        private void WriteMovie() {
+            writingMovie.WorkOn(Time.deltaTime);
+            if (writingMovie.Completed) CompleteWritingMovie();
+        }
 
         private void SetPageLocations() {
             completedTypewriterPage?.SetAtFactor(1 - writingMovie.CompletedFactor);
