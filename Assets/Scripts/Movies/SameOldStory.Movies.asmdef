@@ -1,4 +1,16 @@
 {
-	"name": "SameOldStory.Movies",
-	"references":[ "GUID:7887233c5d0e847edbce3a72919aed99" ]
+    "name": "SameOldStory.Movies",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7887233c5d0e847edbce3a72919aed99"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

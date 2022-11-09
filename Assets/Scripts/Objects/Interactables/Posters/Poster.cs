@@ -1,4 +1,6 @@
 using SameOldStory.Input.Mouse;
+using SameOldStory.Movies;
+using TMPro;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.Posters {
@@ -9,6 +11,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
         [SerializeField] private GameObject colliderObject;
         [SerializeField] private SpriteRenderer backgroundSpriteRenderer;
         [SerializeField] private Canvas textCanvas;
+        [SerializeField] private TextMeshProUGUI movieTitleText;
         
         private bool placed;
         private float rotationFactor = 4f;
@@ -16,6 +19,10 @@ namespace SameOldStory.Objects.Interactables.Posters {
         public void Sort(int baseLayer) {
             if(backgroundSpriteRenderer != null) backgroundSpriteRenderer.sortingOrder = baseLayer + 1;
             if(textCanvas != null) textCanvas.sortingOrder = baseLayer + 2;
+        }
+
+        public void AssignMovie(Movie movie) {
+            movieTitleText.text = movie.Name;
         }
         
         private void Start() {

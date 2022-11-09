@@ -50,6 +50,7 @@ MonoBehaviour:
   colliderObject: {fileID: 4245380367574538618}
   backgroundSpriteRenderer: {fileID: 5812073490120673668}
   textCanvas: {fileID: 4042207946738864496}
+  movieTitleText: {fileID: 7903848191402480617}
 --- !u!1 &3419769684031033397
 GameObject:
   m_ObjectHideFlags: 0
