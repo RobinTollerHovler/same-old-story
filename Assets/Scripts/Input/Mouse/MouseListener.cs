@@ -17,6 +17,7 @@ namespace SameOldStory.Input.Mouse {
             Ray ray = Camera.main.ScreenPointToRay(studioInput.MousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("MouseEvents"))) {
                 Mouse.ObjectUnderCursor = hit.transform.gameObject;
+                Mouse.ObjectUnderCursorHitPoint = hit.point;
             }
             Mouse.Position = studioInput.MousePosition;
         }

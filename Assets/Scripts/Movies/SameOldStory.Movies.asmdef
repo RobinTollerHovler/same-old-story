@@ -1,3 +1,4 @@
 {
-	"name": "SameOldStory.Movies"
+	"name": "SameOldStory.Movies",
+	"references":[ "GUID:7887233c5d0e847edbce3a72919aed99" ]
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 namespace SameOldStory.Input.Mouse {
     
     public static class Mouse {
-        
         private static GameObject objectUnderCursor;
 
         public static GameObject ObjectUnderCursor {
@@ -15,6 +14,8 @@ namespace SameOldStory.Input.Mouse {
                 objectUnderCursorChanged?.Invoke();
             }
         }
+
+        public static Vector3 ObjectUnderCursorHitPoint { get; set; }
 
         public static Vector2 Position { get; set; }
 

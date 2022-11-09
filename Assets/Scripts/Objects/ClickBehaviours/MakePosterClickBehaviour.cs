@@ -1,5 +1,4 @@
 using SameOldStory.Movies;
-using SameOldStory.Movies.Posters;
 
 namespace SameOldStory.Objects {
     
@@ -12,7 +11,7 @@ namespace SameOldStory.Objects {
         }
         
         public override void Click() {
-            Poster.Generate(posterForMovie);
+            Movies.Poster.Generate(posterForMovie);
         }
         
     }

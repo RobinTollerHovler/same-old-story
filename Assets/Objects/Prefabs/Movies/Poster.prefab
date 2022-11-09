@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 303963759200869910}
-  - component: {fileID: 2389850957290967701}
-  - component: {fileID: 5111566923509894717}
+  - component: {fileID: 7359536537429057538}
   m_Layer: 0
   m_Name: Poster
   m_TagString: Untagged
@@ -34,20 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2389850957290967701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271531767492607475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b52c6558134b9d9cbcc1b0a757325e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltip: The thing that came from somewhere
---- !u!114 &5111566923509894717
+--- !u!114 &7359536537429057538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7a8e8516604a1d810bbe73194ebee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tooltip: Poster
   node: {fileID: 8281245453980389960}
+  colliderObject: {fileID: 4245380367574538618}
 --- !u!1 &3419769684031033397
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8232714515497347889
 Transform:
   m_ObjectHideFlags: 0
