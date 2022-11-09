@@ -27,13 +27,24 @@ namespace SameOldStory.Objects.Interactables {
 
         private void BeginWritingMovie(Movie movie) {
             writingMovie = movie;
-            Tooltip = $"Writing: \"{movie.Name}\"";
+            Tooltip = $"Writing: \"{movie.Name}\" (Click to discard)";
             StopAllCoroutines();
             remainingTypewriterPage.Activate();
             completedTypewriterPage.Activate();
             SetPageLocations();
             StartCoroutine(nameof(WorkOnMovie));
             StartCoroutine(nameof(UpdatePagePositions));
+            clickBehaviour = new DiscardMovieClickBehaviour(writingMovie);
+            writingMovie.onDiscardMovie += DiscardMovie;
+        }
+
+        private void DiscardMovie() {
+            writingMovie = null;
+            StopAllCoroutines();
+            remainingTypewriterPage?.Deactivate();
+            completedTypewriterPage?.Deactivate();
+            Tooltip = $"Write script";
+            clickBehaviour = new ActivateGameObjectClickBehaviour(movieMakerWindow);
         }
         
         private void CompleteWritingMovie() {
