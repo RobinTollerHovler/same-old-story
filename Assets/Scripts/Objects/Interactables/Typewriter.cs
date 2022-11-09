@@ -36,9 +36,12 @@ namespace SameOldStory.Objects.Interactables {
             StartCoroutine(nameof(UpdatePagePositions));
             clickBehaviour = new DiscardMovieClickBehaviour(writingMovie);
             writingMovie.onDiscardMovie += DiscardMovie;
+            writingMovie.onReleaseMovie += DiscardMovie;
         }
 
         private void DiscardMovie() {
+            writingMovie.onDiscardMovie -= DiscardMovie;
+            writingMovie.onReleaseMovie -= DiscardMovie;
             writingMovie = null;
             StopAllCoroutines();
             remainingTypewriterPage?.Deactivate();
@@ -49,7 +52,7 @@ namespace SameOldStory.Objects.Interactables {
         
         private void CompleteWritingMovie() {
             Tooltip = $"Completed: \"{writingMovie.Name}\" (Click to start production)";
-            clickBehaviour = new MakePosterClickBehaviour(writingMovie);
+            clickBehaviour = new ReleaseMovieClickBehaviour(writingMovie);
         }
 
         private void SetPageLocations() {

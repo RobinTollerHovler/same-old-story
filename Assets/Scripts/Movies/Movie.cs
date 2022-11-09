@@ -8,6 +8,7 @@ namespace SameOldStory.Movies {
         public static event Action<Movie> onMovieBeginWriting;
         
         public event Action onDiscardMovie;
+        public event Action onReleaseMovie;
         
         public string Name { get; }
         public float CompletedFactor => Mathf.Clamp(completedWork / requiredWork, 0, 1);
@@ -24,10 +25,11 @@ namespace SameOldStory.Movies {
 
         public void WorkOn(float amount) => completedWork += amount;
 
-        public void Discard() {
-            onDiscardMovie?.Invoke();
+        public void Discard() => onDiscardMovie?.Invoke();
+        public void Release() {
+            Poster.Generate(this);
+            onReleaseMovie?.Invoke();
         }
-
     }
     
 }
