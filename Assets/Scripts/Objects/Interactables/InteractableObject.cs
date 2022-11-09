@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables {
     
-    public class InteractableObject : MonoBehaviour, IHaveTooltip {
+    public class InteractableObject : MonoBehaviour, IHaveTooltip, IReactToMouseClick {
 
         [SerializeField] private string tooltip;
 
@@ -11,6 +11,8 @@ namespace SameOldStory.Objects.Interactables {
             get => tooltip;
             protected set => tooltip = value;
         }
+
+        public virtual void MouseClick() {}
 
     }
     

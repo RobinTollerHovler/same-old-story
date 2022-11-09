@@ -8,12 +8,18 @@ namespace SameOldStory.Objects.Interactables {
 
         [SerializeField] private TypewriterPage remainingTypewriterPage;
         [SerializeField] private TypewriterPage completedTypewriterPage;
+        [SerializeField] private GameObject movieMakerWindow;
 
         private Movie writingMovie;
+        
+        private ClickBehaviour clickBehaviour;
+
+        public override void MouseClick() => clickBehaviour?.Click();
         
         private void Awake() {
             remainingTypewriterPage?.Deactivate();
             completedTypewriterPage?.Deactivate();
+            clickBehaviour = new ActivateGameObjectClickBehaviour(movieMakerWindow);
         }
 
         private void OnEnable() => Movie.onMovieBeginWriting += BeginWritingMovie;
@@ -30,7 +36,9 @@ namespace SameOldStory.Objects.Interactables {
             StartCoroutine(nameof(UpdatePagePositions));
         }
         
-        private void CompleteWritingMovie() => Tooltip = $"Completed: \"{writingMovie.Name}\"";
+        private void CompleteWritingMovie() {
+            Tooltip = $"Completed: \"{writingMovie.Name}\"";
+        }
 
         private void SetPageLocations() {
             completedTypewriterPage?.SetAtFactor(1 - writingMovie.CompletedFactor);

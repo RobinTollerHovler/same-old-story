@@ -254,6 +254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 527316301596909089, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: movieMakerWindow
+      value: 
+      objectReference: {fileID: 1138215772}
     - target: {fileID: 861948516131183069, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: objectToActivate
       value: 
