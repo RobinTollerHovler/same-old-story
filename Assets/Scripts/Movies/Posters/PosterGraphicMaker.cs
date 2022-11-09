@@ -10,7 +10,6 @@ namespace SameOldStory.Movies.Posters {
         private void OnDisable() => Poster.onGeneratePosterForMovie -= MakePoster;
 
         private void MakePoster(Movie movie) {
-            Debug.Log("ASD");
             Instantiate(poster);
         }
         
