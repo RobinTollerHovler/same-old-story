@@ -1,18 +1,22 @@
-using System;
 using SameOldStory.Input.Mouse;
-using SameOldStory.Objects.Interactables;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-namespace SameOldStory.Movies.Posters {
+namespace SameOldStory.Objects.Interactables.Posters {
     
     public class Poster : InteractableObject {
 
         [SerializeField] private Transform node;
         [SerializeField] private GameObject colliderObject;
+        [SerializeField] private SpriteRenderer backgroundSpriteRenderer;
+        [SerializeField] private Canvas textCanvas;
         
         private bool placed;
         private float rotationFactor = 4f;
+
+        public void Sort(int baseLayer) {
+            if(backgroundSpriteRenderer != null) backgroundSpriteRenderer.sortingOrder = baseLayer + 1;
+            if(textCanvas != null) textCanvas.sortingOrder = baseLayer + 2;
+        }
         
         private void Start() {
             if (node == null) return;
@@ -39,7 +43,7 @@ namespace SameOldStory.Movies.Posters {
                 transform.position = new Vector3(
                     Mouse.ObjectUnderCursorHitPoint.x,
                     Mouse.ObjectUnderCursorHitPoint.y,
-                    Mouse.ObjectUnderCursorHitPoint.z - 0.1f
+                    Mouse.ObjectUnderCursorHitPoint.z
                 );
             }
         }

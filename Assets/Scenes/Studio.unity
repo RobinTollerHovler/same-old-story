@@ -254,34 +254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 344789304669087443, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 344789304669087443, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.87
-      objectReference: {fileID: 0}
     - target: {fileID: 527316301596909089, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: movieMakerWindow
       value: 
       objectReference: {fileID: 1138215772}
-    - target: {fileID: 548013824040895017, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 861948516131183069, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: objectToActivate
-      value: 
-      objectReference: {fileID: 1138215772}
-    - target: {fileID: 1526766520166864380, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3075808682580621242, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4440797523213899188, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -329,14 +305,6 @@ PrefabInstance:
     - target: {fileID: 4440797523213899189, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: m_Name
       value: Studio
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952414287649490708, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044077950154510100, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}

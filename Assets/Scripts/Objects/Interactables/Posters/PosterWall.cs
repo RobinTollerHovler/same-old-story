@@ -1,32 +1,35 @@
 using SameOldStory.Movies;
 using UnityEngine;
 
-namespace SameOldStory.Objects.Interactables {
+namespace SameOldStory.Objects.Interactables.Posters {
     
     public class PosterWall : InteractableObject {
 
         [SerializeField] private GameObject frameObject;
         [SerializeField] private GameObject poster;
 
-        public override void MouseClick() => Poster.Place();
+        private int NumberOfPosters => GetComponentsInChildren<Poster>().Length;
+        
+        public override void MouseClick() => Movies.Poster.Place();
 
         private void OnEnable() {
-            Poster.onGeneratePosterForMovie += MakePoster;
-            Poster.onBeginPlacePoster += ActivateWallColliderObject;
-            Poster.onPlacePoster += DeactivateWallColliderObject;
+            Movies.Poster.onGeneratePosterForMovie += MakePoster;
+            Movies.Poster.onBeginPlacePoster += ActivateWallColliderObject;
+            Movies.Poster.onPlacePoster += DeactivateWallColliderObject;
         }
 
         private void OnDisable() {
-            Poster.onGeneratePosterForMovie -= MakePoster;
-            Poster.onBeginPlacePoster -= ActivateWallColliderObject;
-            Poster.onPlacePoster -= DeactivateWallColliderObject;
+            Movies.Poster.onGeneratePosterForMovie -= MakePoster;
+            Movies.Poster.onBeginPlacePoster -= ActivateWallColliderObject;
+            Movies.Poster.onPlacePoster -= DeactivateWallColliderObject;
         }
 
         private void ActivateWallColliderObject() => frameObject?.SetActive(true);
         private void DeactivateWallColliderObject() => frameObject?.SetActive(false);
         
         private void MakePoster(Movie movie) {
-            Instantiate(poster);
+            GameObject newPoster = Instantiate(poster, Vector3.zero, Quaternion.identity, transform);
+            newPoster.GetComponent<Poster>()?.Sort(NumberOfPosters * 5);
         }
 
     }

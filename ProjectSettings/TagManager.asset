@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Posters
+    uniqueID: 673124287
+    locked: 0
+  - name: Foreground
+    uniqueID: 2747840513
+    locked: 0
