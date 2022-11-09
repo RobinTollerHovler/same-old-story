@@ -11,7 +11,7 @@ namespace SameOldStory.Objects {
         }
         
         public override void Click() {
-            Movies.Poster.Generate(posterForMovie);
+            Poster.Generate(posterForMovie);
         }
         
     }
