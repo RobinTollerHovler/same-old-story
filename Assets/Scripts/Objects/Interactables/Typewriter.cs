@@ -48,7 +48,8 @@ namespace SameOldStory.Objects.Interactables {
         }
         
         private void CompleteWritingMovie() {
-            Tooltip = $"Completed: \"{writingMovie.Name}\"";
+            Tooltip = $"Completed: \"{writingMovie.Name}\" (Click to start production)";
+            clickBehaviour = new MakePosterClickBehaviour(writingMovie);
         }
 
         private void SetPageLocations() {
