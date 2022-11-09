@@ -50,7 +50,7 @@ namespace SameOldStory.Objects.Interactables {
                 while (writingMovie == null) yield return null;
                 while (!writingMovie.Completed) {
                     SetPageLocations();
-                    yield return new WaitForSeconds(1);
+                    yield return new WaitForSeconds(Random.Range(.1f, .2f));
                 }
                 SetPageLocations();
                 yield return null;
