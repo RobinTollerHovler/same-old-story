@@ -14,7 +14,8 @@ namespace SameOldStory.Objects.Interactables.Scripts {
         private void OnDisable() => Movie.onMovieBeginWriting -= AddScriptToShelf;
         
         private void AddScriptToShelf(Movie movie) {
-            Instantiate(scriptTemplate, origin);
+            GameObject newScript = Instantiate(scriptTemplate, origin);
+            if(newScript.TryGetComponent(out Script s)) s.AssignMovie(movie);
             ReorderScripts();
         }
 
