@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Script
+  node: {fileID: 1208134162122384081}
 --- !u!1 &6134073609435113907
 GameObject:
   m_ObjectHideFlags: 0
