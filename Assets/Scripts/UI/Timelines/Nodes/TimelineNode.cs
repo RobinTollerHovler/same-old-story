@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SameOldStory.UI.Timeline.Nodes {
+namespace SameOldStory.UI.Timelines.Nodes {
     
     public abstract class TimelineNode : MonoBehaviour {
         

@@ -1,8 +1,8 @@
 using SameOldStory.Movies;
-using SameOldStory.UI.Timeline.Nodes;
+using SameOldStory.UI.Timelines.Nodes;
 using UnityEngine;
 
-namespace SameOldStory.UI.Timeline {
+namespace SameOldStory.UI.Timelines {
     
     public class TimelineMovie : MonoBehaviour {
 

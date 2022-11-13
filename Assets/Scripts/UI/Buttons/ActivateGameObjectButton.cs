@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI.Buttons {
+namespace SameOldStory.UI.Buttons {
     
     public class ActivateGameObjectButton : MonoBehaviour {
         

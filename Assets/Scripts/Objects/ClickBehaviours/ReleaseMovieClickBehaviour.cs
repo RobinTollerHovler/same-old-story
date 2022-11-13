@@ -1,6 +1,6 @@
 using SameOldStory.Movies;
 
-namespace SameOldStory.Objects {
+namespace SameOldStory.Objects.ClickBehaviours {
     
     public class ReleaseMovieClickBehaviour : ClickBehaviour {
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using SameOldStory.Movies;
+using SameOldStory.Objects.ClickBehaviours;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables {

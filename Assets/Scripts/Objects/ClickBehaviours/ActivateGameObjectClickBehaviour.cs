@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SameOldStory.Objects {
+namespace SameOldStory.Objects.ClickBehaviours {
     
     public class ActivateGameObjectClickBehaviour : ClickBehaviour {
 

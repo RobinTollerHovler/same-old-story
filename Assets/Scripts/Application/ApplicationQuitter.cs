@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Application {
+namespace SameOldStory.Application {
     
     public class ApplicationQuitter : MonoBehaviour{
 

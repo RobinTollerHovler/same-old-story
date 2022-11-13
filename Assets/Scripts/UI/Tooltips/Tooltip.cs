@@ -2,7 +2,7 @@ using SameOldStory.Input.Mouse;
 using TMPro;
 using UnityEngine;
 
-namespace UI.Tooltips {
+namespace SameOldStory.UI.Tooltips {
     
     public class Tooltip : MonoBehaviour {
 
