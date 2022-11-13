@@ -1,13 +1,14 @@
-using System;
 using SameOldStory.Movies;
+using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace SameOldStory.Objects.Interactables.Scripts {
     
     public class Script : InteractableObject {
 
         [SerializeField] private Transform node;
+        
+        private TextMeshProUGUI textMeshProUGUI;
         
         private Movie movie;
 
