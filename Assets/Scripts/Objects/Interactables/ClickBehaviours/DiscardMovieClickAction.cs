@@ -2,11 +2,11 @@ using SameOldStory.Movies;
 
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     
-    public class DiscardMovieClickBehaviour : ClickBehaviour {
+    public class DiscardMovieClickAction : ClickAction {
 
         private readonly Movie discardMovie;
         
-        public DiscardMovieClickBehaviour(Movie discardMovie) {
+        public DiscardMovieClickAction(Movie discardMovie) {
             this.discardMovie = discardMovie;
         }
         

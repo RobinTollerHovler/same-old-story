@@ -1,6 +1,6 @@
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     
-    public class NoClickBehaviour : ClickBehaviour {
+    public class NoClickAction : ClickAction {
 
         public override void Click() { }
 

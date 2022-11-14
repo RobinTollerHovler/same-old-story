@@ -11,7 +11,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
 
         private int NumberOfPosters => GetComponentsInChildren<Poster>().Length;
 
-        private void Awake() => clickBehaviour = new PlacePosterClickBehaviour();
+        private void Awake() => ClickAction = new PlacePosterClickAction();
         
         private void OnEnable() {
             Movies.Poster.onGeneratePosterForMovie += MakePoster;

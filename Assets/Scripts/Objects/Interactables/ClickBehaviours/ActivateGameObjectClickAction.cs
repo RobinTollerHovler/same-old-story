@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     
-    public class ActivateGameObjectClickBehaviour : ClickBehaviour {
+    public class ActivateGameObjectClickAction : ClickAction {
 
         private readonly GameObject activateObject;
         
-        public ActivateGameObjectClickBehaviour(GameObject activateObject) {
+        public ActivateGameObjectClickAction(GameObject activateObject) {
             this.activateObject = activateObject;
         }
 

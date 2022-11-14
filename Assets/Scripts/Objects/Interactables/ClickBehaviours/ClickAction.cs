@@ -1,6 +1,6 @@
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
 
-    public abstract class ClickBehaviour {
+    public abstract class ClickAction {
         
         public abstract void Click();
         

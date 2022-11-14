@@ -2,11 +2,11 @@ using SameOldStory.Movies;
 
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     
-    public class ReleaseMovieClickBehaviour : ClickBehaviour {
+    public class ReleaseMovieClickAction : ClickAction {
 
         private readonly Movie movie;
 
-        public ReleaseMovieClickBehaviour(Movie movie) {
+        public ReleaseMovieClickAction(Movie movie) {
             this.movie = movie;
         }
         

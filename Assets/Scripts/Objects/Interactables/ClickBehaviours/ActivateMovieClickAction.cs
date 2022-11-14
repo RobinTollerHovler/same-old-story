@@ -1,9 +1,9 @@
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     
-    public class PlacePosterClickBehaviour : ClickBehaviour {
+    public class ActivateMovieClickAction : ClickAction {
         
         public override void Click() {
-            Movies.Poster.Place();
+            
         }
         
     }
