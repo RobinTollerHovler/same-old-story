@@ -306,6 +306,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Studio
       objectReference: {fileID: 0}
+    - target: {fileID: 4819573172256006822, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365392187564963974, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
 --- !u!1001 &4626187209342348294
