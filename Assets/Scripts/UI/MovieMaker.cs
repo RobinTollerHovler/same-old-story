@@ -13,8 +13,12 @@ namespace SameOldStory.UI {
         public void SubmitMovieName() {
             constructingMovie = new Movie(movieNameInputField?.text);
             constructingMovie.Activate();
+            ClearInputField();
         }
 
+        private void ClearInputField() {
+            if (movieNameInputField != null) movieNameInputField.text = "";
+        }
     }
     
 }
