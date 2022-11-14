@@ -1,67 +1,17 @@
-using SameOldStory.Input.Mouse;
 using SameOldStory.Movies;
-using TMPro;
-using UnityEngine;
+using SameOldStory.Objects.Interactables.Posters.Components;
 
 namespace SameOldStory.Objects.Interactables.Posters {
     
     public class Poster : InteractableObject {
 
-        [SerializeField] private Transform node;
-        [SerializeField] private GameObject colliderObject;
-        [SerializeField] private SpriteRenderer backgroundSpriteRenderer;
-        [SerializeField] private Canvas textCanvas;
-        [SerializeField] private TextMeshProUGUI movieTitleText;
-        
-        private bool placed;
-        private float rotationFactor = 4f;
-
-        public void Sort(int baseLayer) {
-            if(backgroundSpriteRenderer != null) backgroundSpriteRenderer.sortingOrder = baseLayer + 1;
-            if(textCanvas != null) textCanvas.sortingOrder = baseLayer + 2;
-        }
+        private PosterMovieTitleText posterMovieTitleText;
 
         public void AssignMovie(Movie movie) {
-            movieTitleText.text = movie.Name;
-        }
-        
-        private void Start() {
-            if (node == null) return;
-            node.localEulerAngles = new Vector3(0, 0, Random.Range(-rotationFactor, rotationFactor));
+            posterMovieTitleText?.Set(movie.Name);
         }
 
-        private void OnEnable() {
-            Movies.Poster.onPlacePoster += SetPlacement;
-            Movies.Poster.onBeginPlacePoster += DeactivateCollider;
-        }
-
-        private void OnDisable() {
-            Movies.Poster.onPlacePoster -= SetPlacement;
-            Movies.Poster.onBeginPlacePoster -= DeactivateCollider;
-        }
-
-        private void Update() {
-            if (!placed) Place();
-        }
-
-        private void Place() {
-            GameObject obj = Mouse.ObjectUnderCursor;
-            if (obj.GetComponentInParent<PosterWall>()) {
-                transform.position = new Vector3(
-                    Mouse.ObjectUnderCursorHitPoint.x,
-                    Mouse.ObjectUnderCursorHitPoint.y,
-                    Mouse.ObjectUnderCursorHitPoint.z
-                );
-            }
-        }
-        
-        private void SetPlacement() {
-            ActivateCollider();
-            placed = true;
-        }
-
-        private void DeactivateCollider() => colliderObject?.gameObject.SetActive(false);
-        private void ActivateCollider() => colliderObject?.gameObject.SetActive(true);
+        private void Awake() => posterMovieTitleText = GetComponentInChildren<PosterMovieTitleText>();
 
     }
     

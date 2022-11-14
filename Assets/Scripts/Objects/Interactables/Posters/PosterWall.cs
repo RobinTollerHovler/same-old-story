@@ -30,9 +30,9 @@ namespace SameOldStory.Objects.Interactables.Posters {
         
         private void MakePoster(Movie movie) {
             GameObject newPoster = Instantiate(poster, Vector3.zero, Quaternion.identity, transform);
-            Poster p = newPoster.GetComponent<Poster>();
-            p.Sort(NumberOfPosters * 5);
-            p.AssignMovie(movie);
+            HangablePoster hp = newPoster.GetComponent<HangablePoster>();
+            hp.Sort(NumberOfPosters);
+            hp.AssignMovie(movie);
         }
 
     }
