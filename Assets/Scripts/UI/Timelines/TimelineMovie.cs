@@ -17,6 +17,7 @@ namespace SameOldStory.UI.Timelines {
 
         public void AttachMovie(Movie movie) {
             this.movie = movie;
+            movie.onDiscarding += RemoveTimelineMovie;
         }
 
         public void AssignCastingLineNode(CastingTimelineNode castingTimelineNode) {
@@ -35,6 +36,9 @@ namespace SameOldStory.UI.Timelines {
             rectTransform.anchoredPosition = new Vector2(movieCompletedFactor * castingTimelineNode.ScreenLocation(), rectTransform.anchoredPosition.y);
         }
         
+        private void RemoveTimelineMovie() {
+            DestroyImmediate(gameObject);
+        }
     }
     
 }

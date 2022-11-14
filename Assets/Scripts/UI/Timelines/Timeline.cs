@@ -34,9 +34,10 @@ namespace SameOldStory.UI.Timelines {
                 tm.AttachMovie(movie);
                 tm.AssignCastingLineNode(castingTimelineNode);
             }
+            movie.onDiscarded += OrganiseMovies;
             OrganiseMovies();
         }
-
+        
         private void OrganiseMovies() {
             int n = 0;
             float height = 30;
