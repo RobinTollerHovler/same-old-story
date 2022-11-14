@@ -16,7 +16,8 @@ namespace SameOldStory.Objects.Interactables.Posters {
             GetComponentInChildren<Canvas>().sortingOrder = count * 5 + 1;
         }
 
-        private void Awake() {
+        protected override void Awake() {
+            base.Awake();
             posterColliderObject = GetComponentInChildren<PosterColliderObject>();
             sortingGroup = GetComponent<SortingGroup>();
         }

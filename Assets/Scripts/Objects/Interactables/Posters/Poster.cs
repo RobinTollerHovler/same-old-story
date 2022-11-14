@@ -1,5 +1,6 @@
 using SameOldStory.Movies;
 using SameOldStory.Objects.Interactables.Posters.Components;
+using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.Posters {
     
@@ -10,11 +11,13 @@ namespace SameOldStory.Objects.Interactables.Posters {
         protected PosterNode PosterNode { get; private set; }
         
         public void AssignMovie(Movie movie) {
+            Debug.Log("Assigning");
             if (movie == null) return;
             posterMovieTitleText?.Set(movie.Name);
         }
 
-        private void Awake() {
+        protected virtual void Awake() {
+            Debug.Log("Awaking");
             posterMovieTitleText = GetComponentInChildren<PosterMovieTitleText>();
             PosterNode = GetComponentInChildren<PosterNode>();
         }
