@@ -7,8 +7,8 @@ namespace SameOldStory.Objects.Components {
         
         private TextMeshProUGUI textMeshProUGUI;
         
-        private void Awake() => GetComponent<TextMeshProUGUI>();
-
+        private void Awake() => textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+        
         public void Set(string text) {
             if (textMeshProUGUI != null) textMeshProUGUI.text = text;
         }

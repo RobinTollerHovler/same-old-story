@@ -21,7 +21,7 @@ namespace SameOldStory.Movies {
 
         public Movie(string name) {
             Name = name;
-            requiredWork = 30;
+            requiredWork = 5;
             onMovieBeginWriting?.Invoke(this);
         }
 
