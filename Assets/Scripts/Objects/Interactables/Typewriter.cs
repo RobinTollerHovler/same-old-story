@@ -1,6 +1,6 @@
 using System.Collections;
 using SameOldStory.Movies;
-using SameOldStory.Objects.ClickBehaviours;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables {
@@ -12,8 +12,6 @@ namespace SameOldStory.Objects.Interactables {
         [SerializeField] private GameObject movieMakerWindow;
 
         private Movie writingMovie;
-        
-        private ClickBehaviour clickBehaviour;
 
         public override void MouseClick() => clickBehaviour?.Click();
         

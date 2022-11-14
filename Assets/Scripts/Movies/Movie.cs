@@ -6,6 +6,7 @@ namespace SameOldStory.Movies {
     public class Movie {
 
         public static event Action<Movie> onMovieBeginWriting;
+        public static event Action<Movie> onActiveMovieChanged;
         
         public event Action onDiscardMovie;
         public event Action onReleaseMovie;
@@ -19,9 +20,11 @@ namespace SameOldStory.Movies {
 
         public Movie(string name) {
             Name = name;
-            requiredWork = 5;
+            requiredWork = 30;
             onMovieBeginWriting?.Invoke(this);
         }
+
+        public void Activate() => onActiveMovieChanged?.Invoke(this);
 
         public void WorkOn(float amount) => completedWork += amount;
 
@@ -30,6 +33,7 @@ namespace SameOldStory.Movies {
             Poster.Generate(this);
             onReleaseMovie?.Invoke();
         }
+        
     }
     
 }

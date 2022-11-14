@@ -1,10 +1,13 @@
 using SameOldStory.Input.Mouse;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables {
     
     public class InteractableObject : MonoBehaviour, IHaveTooltip, IReactToMouseClick {
 
+        protected ClickBehaviour clickBehaviour;
+        
         [SerializeField] private string tooltip;
 
         public string Tooltip {
@@ -12,7 +15,7 @@ namespace SameOldStory.Objects.Interactables {
             protected set => tooltip = value;
         }
 
-        public virtual void MouseClick() {}
+        public virtual void MouseClick() => clickBehaviour.Click();
 
     }
     
