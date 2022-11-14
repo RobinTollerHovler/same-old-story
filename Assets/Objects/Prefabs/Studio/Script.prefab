@@ -94,8 +94,9 @@ GameObject:
   - component: {fileID: 6468818879814286133}
   - component: {fileID: 6150494451375805514}
   - component: {fileID: 1158844546806544861}
+  - component: {fileID: 3568364840119298946}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: MovieTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,6 +219,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3568364840119298946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627509743051452460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15787b0e763c42c48576c73fe08562d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1624884717766506842
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Script
-  node: {fileID: 1208134162122384081}
 --- !u!210 &4171324980238207455
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -570,6 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1208134162122384081}
+  - component: {fileID: 5941427693434804764}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -595,6 +608,18 @@ Transform:
   m_Father: {fileID: 6868921533033015605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5941427693434804764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002281524004299264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6691ff9245b4baf882f5218187be796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7310673014852091706
 GameObject:
   m_ObjectHideFlags: 0
