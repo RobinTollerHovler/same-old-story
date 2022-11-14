@@ -7,10 +7,11 @@ namespace SameOldStory.Movies {
 
         public static event Action<Movie> onMovieBeginWriting;
         public static event Action<Movie> onActiveMovieChanged;
-        
-        public event Action onDiscardMovie;
-        public event Action onReleaseMovie;
-        
+
+        public event Action onDiscarding;
+        public event Action onDiscarded;
+        public event Action onRelease;
+
         public string Name { get; }
         public float CompletedFactor => Mathf.Clamp(completedWork / requiredWork, 0, 1);
         public bool Completed => (int)CompletedFactor == 1;
@@ -28,10 +29,14 @@ namespace SameOldStory.Movies {
 
         public void WorkOn(float amount) => completedWork += amount;
 
-        public void Discard() => onDiscardMovie?.Invoke();
+        public void Discard() {
+            onDiscarding?.Invoke();
+            onDiscarded?.Invoke();
+        }
+
         public void Release() {
             Poster.Generate(this);
-            onReleaseMovie?.Invoke();
+            onRelease?.Invoke();
         }
         
     }

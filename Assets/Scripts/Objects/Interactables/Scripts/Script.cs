@@ -16,6 +16,7 @@ namespace SameOldStory.Objects.Interactables.Scripts {
             this.movie = movie;
             Tooltip = movie.Name;
             textMeshProUGUI.text = movie.Name;
+            movie.onDiscarding += RemoveScript;
         }
         
         public void SetXPosition(float position) {
@@ -27,6 +28,9 @@ namespace SameOldStory.Objects.Interactables.Scripts {
         private void OnEnable() {
             node.localScale = new Vector3(1, 1 + Random.Range(-.2f,.09f), 1);
         }
+
+        private void RemoveScript() => Destroy(gameObject);
+
     }
     
 }

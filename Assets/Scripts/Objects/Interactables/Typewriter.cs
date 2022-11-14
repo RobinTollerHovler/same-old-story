@@ -32,13 +32,13 @@ namespace SameOldStory.Objects.Interactables {
             StartCoroutine(nameof(WorkOnMovie));
             StartCoroutine(nameof(UpdatePagePositions));
             ClickAction = new DiscardMovieClickAction(writingMovie);
-            writingMovie.onDiscardMovie += DiscardMovie;
-            writingMovie.onReleaseMovie += DiscardMovie;
+            writingMovie.onDiscarding += DiscardMovie;
+            writingMovie.onRelease += DiscardMovie;
         }
 
         private void DiscardMovie() {
-            writingMovie.onDiscardMovie -= DiscardMovie;
-            writingMovie.onReleaseMovie -= DiscardMovie;
+            writingMovie.onDiscarding -= DiscardMovie;
+            writingMovie.onRelease -= DiscardMovie;
             writingMovie = null;
             StopAllCoroutines();
             remainingTypewriterPage?.Deactivate();
