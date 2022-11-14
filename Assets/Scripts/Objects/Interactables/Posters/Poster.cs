@@ -7,12 +7,18 @@ namespace SameOldStory.Objects.Interactables.Posters {
 
         private PosterMovieTitleText posterMovieTitleText;
 
+        protected PosterNode PosterNode { get; private set; }
+        
         public void AssignMovie(Movie movie) {
+            if (movie == null) return; 
             posterMovieTitleText?.Set(movie.Name);
         }
 
-        private void Awake() => posterMovieTitleText = GetComponentInChildren<PosterMovieTitleText>();
-
+        private void Awake() {
+            posterMovieTitleText = GetComponentInChildren<PosterMovieTitleText>();
+            PosterNode = GetComponentInChildren<PosterNode>();
+        }
+        
     }
     
 }

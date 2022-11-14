@@ -32,11 +32,13 @@ namespace SameOldStory.Movies {
         public void Discard() {
             onDiscarding?.Invoke();
             onDiscarded?.Invoke();
+            onActiveMovieChanged?.Invoke(null);
         }
 
         public void Release() {
             Poster.Generate(this);
             onRelease?.Invoke();
+            onActiveMovieChanged?.Invoke(null);
         }
         
     }
