@@ -12,8 +12,6 @@ namespace SameOldStory.Objects.Interactables {
         [SerializeField] private GameObject movieMakerWindow;
 
         private Movie writingMovie;
-
-        public override void MouseClick() => clickBehaviour?.Click();
         
         private void Awake() {
             remainingTypewriterPage?.Deactivate();

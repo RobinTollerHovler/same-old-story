@@ -1,4 +1,5 @@
 using SameOldStory.Movies;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.Posters {
@@ -9,9 +10,9 @@ namespace SameOldStory.Objects.Interactables.Posters {
         [SerializeField] private GameObject poster;
 
         private int NumberOfPosters => GetComponentsInChildren<Poster>().Length;
-        
-        public override void MouseClick() => Movies.Poster.Place();
 
+        private void Awake() => clickBehaviour = new PlacePosterClickBehaviour();
+        
         private void OnEnable() {
             Movies.Poster.onGeneratePosterForMovie += MakePoster;
             Movies.Poster.onBeginPlacePoster += ActivateWallColliderObject;
