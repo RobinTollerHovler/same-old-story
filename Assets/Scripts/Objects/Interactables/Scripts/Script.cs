@@ -1,4 +1,5 @@
 using SameOldStory.Movies;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 using SameOldStory.Objects.Interactables.Scripts.Components;
 using UnityEngine;
 
@@ -7,13 +8,12 @@ namespace SameOldStory.Objects.Interactables.Scripts {
     public class Script : InteractableObject {
 
         private ScriptMovieTitleText scriptMovieTitleText;
-        private Movie movie;
 
         public void AssignMovie(Movie movie) {
-            this.movie = movie;
             Tooltip = movie.Name;
             scriptMovieTitleText?.Set(movie.Name);
             movie.onDiscarding += RemoveScript;
+            ClickAction = new ActivateMovieClickAction(movie);
         }
         
         public void SetXPosition(float position) {

@@ -6,7 +6,7 @@ namespace SameOldStory.Objects.Interactables {
     
     public class InteractableObject : MonoBehaviour, IHaveTooltip, IReactToMouseClick {
 
-        protected ClickAction ClickAction = new NoClickAction();
+        protected ClickAction ClickAction { get; set; } = new NoClickAction();
         
         [SerializeField] private string tooltip;
 

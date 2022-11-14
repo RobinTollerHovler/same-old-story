@@ -16,6 +16,7 @@ namespace SameOldStory.Objects.Interactables {
         private void Awake() {
             remainingTypewriterPage?.Deactivate();
             completedTypewriterPage?.Deactivate();
+            Tooltip = $"Write script";
             ClickAction = new ActivateGameObjectClickAction(movieMakerWindow);
         }
 
@@ -24,14 +25,12 @@ namespace SameOldStory.Objects.Interactables {
 
         private void BeginWritingMovie(Movie movie) {
             writingMovie = movie;
-            Tooltip = $"Writing: \"{movie.Name}\" (Click to discard)";
             StopAllCoroutines();
             remainingTypewriterPage.Activate();
             completedTypewriterPage.Activate();
             SetPageLocations();
             StartCoroutine(nameof(WorkOnMovie));
             StartCoroutine(nameof(UpdatePagePositions));
-            ClickAction = new DiscardMovieClickAction(writingMovie);
             writingMovie.onDiscarding += DiscardMovie;
             writingMovie.onRelease += DiscardMovie;
         }
@@ -43,13 +42,6 @@ namespace SameOldStory.Objects.Interactables {
             StopAllCoroutines();
             remainingTypewriterPage?.Deactivate();
             completedTypewriterPage?.Deactivate();
-            Tooltip = $"Write script";
-            ClickAction = new ActivateGameObjectClickAction(movieMakerWindow);
-        }
-        
-        private void CompleteWritingMovie() {
-            Tooltip = $"Completed: \"{writingMovie.Name}\" (Click to start production)";
-            ClickAction = new ReleaseMovieClickAction(writingMovie);
         }
 
         private void SetPageLocations() {
@@ -62,7 +54,6 @@ namespace SameOldStory.Objects.Interactables {
                 writingMovie.WorkOn(Time.deltaTime);
                 yield return null;
             }
-            CompleteWritingMovie();
         }
 
         private IEnumerator UpdatePagePositions() {
