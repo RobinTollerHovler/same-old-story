@@ -3,7 +3,7 @@ using SameOldStory.Objects.Interactables.Posters.Components;
 
 namespace SameOldStory.Objects.Interactables.Posters {
     
-    public class Poster : InteractableObject {
+    public abstract class Poster : InteractableObject {
 
         private PosterMovieTitleText posterMovieTitleText;
 
