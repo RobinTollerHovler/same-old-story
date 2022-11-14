@@ -177,4 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltip: Place poster
   frameObject: {fileID: 7593459700585161677}
-  poster: {fileID: 271531767492607475, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+  hangablePosterTemplate: {fileID: 4317650024157886858, guid: eb8116cb64e3f4575951fa1412a6a26f, type: 3}

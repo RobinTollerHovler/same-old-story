@@ -7,9 +7,9 @@ namespace SameOldStory.Objects.Interactables.Posters {
     public class PosterWall : InteractableObject {
 
         [SerializeField] private GameObject frameObject;
-        [SerializeField] private GameObject poster;
+        [SerializeField] private GameObject hangablePosterTemplate;
 
-        private int NumberOfPosters => GetComponentsInChildren<Poster>().Length;
+        private int NumberOfPosters => GetComponentsInChildren<HangablePoster>().Length;
 
         private void Awake() => ClickAction = new PlacePosterClickAction();
         
@@ -29,7 +29,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void DeactivateWallColliderObject() => frameObject?.SetActive(false);
         
         private void MakePoster(Movie movie) {
-            GameObject newPoster = Instantiate(poster, Vector3.zero, Quaternion.identity, transform);
+            GameObject newPoster = Instantiate(hangablePosterTemplate, Vector3.zero, Quaternion.identity, transform);
             HangablePoster hp = newPoster.GetComponent<HangablePoster>();
             hp.Sort(NumberOfPosters);
             hp.AssignMovie(movie);

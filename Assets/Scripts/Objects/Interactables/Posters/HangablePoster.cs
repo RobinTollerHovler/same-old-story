@@ -11,9 +11,15 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private SortingGroup sortingGroup;
         private bool placed;
 
-        public void Sort(int baseLayer) => sortingGroup.sortingOrder = baseLayer;
+        public void Sort(int count) {
+            sortingGroup.sortingOrder = count * 5;
+            GetComponentInChildren<Canvas>().sortingOrder = count * 5 + 1;
+        }
 
-        private void Awake() => posterColliderObject = GetComponentInChildren<PosterColliderObject>();
+        private void Awake() {
+            posterColliderObject = GetComponentInChildren<PosterColliderObject>();
+            sortingGroup = GetComponent<SortingGroup>();
+        }
 
         private void OnEnable() {
             Movies.Poster.onPlacePoster += SetPlacement;
