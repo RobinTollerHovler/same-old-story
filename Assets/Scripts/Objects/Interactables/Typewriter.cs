@@ -11,7 +11,7 @@ namespace SameOldStory.Objects.Interactables {
         [SerializeField] private TypewriterPage completedTypewriterPage;
         [SerializeField] private GameObject movieMakerWindow;
 
-        private Movie writingMovie;
+        private Movie movie;
         
         private void Awake() {
             remainingTypewriterPage?.Deactivate();
@@ -20,46 +20,43 @@ namespace SameOldStory.Objects.Interactables {
             ClickAction = new ActivateGameObjectClickAction(movieMakerWindow);
         }
 
-        private void OnEnable() => Movie.onMovieBeginWriting += BeginWritingMovie;
-        private void OnDisable() => Movie.onMovieBeginWriting -= BeginWritingMovie;
-
-        private void BeginWritingMovie(Movie movie) {
-            writingMovie = movie;
-            StopAllCoroutines();
-            remainingTypewriterPage.Activate();
-            completedTypewriterPage.Activate();
-            SetPageLocations();
-            StartCoroutine(nameof(WorkOnMovie));
-            StartCoroutine(nameof(UpdatePagePositions));
-            writingMovie.onDiscarding += DiscardMovie;
-            writingMovie.onRelease += DiscardMovie;
+        private void OnEnable() {
+            Movie.onActiveMovieChanged += WorkOnMovie;
         }
 
-        private void DiscardMovie() {
-            writingMovie.onDiscarding -= DiscardMovie;
-            writingMovie.onRelease -= DiscardMovie;
-            writingMovie = null;
+        private void OnDisable() {
+            Movie.onActiveMovieChanged -= WorkOnMovie;
+        }
+
+        private void WorkOnMovie(Movie workOnMovie) {
             StopAllCoroutines();
-            remainingTypewriterPage?.Deactivate();
-            completedTypewriterPage?.Deactivate();
+            movie = workOnMovie;
+            if (movie != null) {
+                remainingTypewriterPage.Activate();
+                completedTypewriterPage.Activate();
+                StartCoroutine(nameof(WriteScript));
+                StartCoroutine(nameof(UpdatePagePositions));
+            } else {
+                remainingTypewriterPage.Deactivate();
+                completedTypewriterPage.Deactivate();
+            }
         }
 
         private void SetPageLocations() {
-            completedTypewriterPage?.SetAtFactor(1 - writingMovie.CompletedFactor);
-            remainingTypewriterPage?.SetAtFactor(writingMovie.CompletedFactor);
+            completedTypewriterPage?.SetAtFactor(1 - movie.CompletedFactor);
+            remainingTypewriterPage?.SetAtFactor(movie.CompletedFactor);
         }
         
-        private IEnumerator WorkOnMovie() {
-            while (writingMovie is { Completed: false }) {
-                writingMovie.WorkOn(Time.deltaTime);
+        private IEnumerator WriteScript() {
+            while (movie is { Completed: false }) {
+                movie.WorkOn(Time.deltaTime);
                 yield return null;
             }
         }
 
         private IEnumerator UpdatePagePositions() {
             while (true) {
-                while (writingMovie == null) yield return null;
-                while (!writingMovie.Completed) {
+                while (!movie.Completed) {
                     SetPageLocations();
                     yield return new WaitForSeconds(Random.Range(.1f, .2f));
                 }
