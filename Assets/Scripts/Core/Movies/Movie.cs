@@ -21,11 +21,12 @@ namespace SameOldStory.Core.Movies {
         private float requiredWork;
         private float completedWork;
         private Genre genre;
+        private float minimumWork = 2;
 
         public Movie(string name, Genre genre) {
             Name = name;
             this.genre = genre;
-            requiredWork = 5;
+            requiredWork = minimumWork + genre.LeastMonthsOfWorkRequired;
             onMovieBeginWriting?.Invoke(this);
         }
 

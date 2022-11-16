@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09ac7f65ba854638828f8b6dd5461459, type: 3}
-  m_Name: Action
+  m_Name: Documentary
   m_EditorClassIdentifier: 
-  genreName: Action
+  genreName: Documentary
   attractiveness: 0
-  leastMonthsOfWorkRequired: 12
+  leastMonthsOfWorkRequired: 2
   startAvailable: 1
