@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 using SameOldStory.Objects.Interactables.Posters.Components;
 
 namespace SameOldStory.Objects.Interactables.Posters {

@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
@@ -14,15 +14,15 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void Awake() => ClickAction = new PlacePosterClickAction();
         
         private void OnEnable() {
-            Movies.Poster.onGeneratePosterForMovie += MakePoster;
-            Movies.Poster.onBeginPlacePoster += ActivateWallColliderObject;
-            Movies.Poster.onPlacePoster += DeactivateWallColliderObject;
+            Core.Movies.Poster.onGeneratePosterForMovie += MakePoster;
+            Core.Movies.Poster.onBeginPlacePoster += ActivateWallColliderObject;
+            Core.Movies.Poster.onPlacePoster += DeactivateWallColliderObject;
         }
 
         private void OnDisable() {
-            Movies.Poster.onGeneratePosterForMovie -= MakePoster;
-            Movies.Poster.onBeginPlacePoster -= ActivateWallColliderObject;
-            Movies.Poster.onPlacePoster -= DeactivateWallColliderObject;
+            Core.Movies.Poster.onGeneratePosterForMovie -= MakePoster;
+            Core.Movies.Poster.onBeginPlacePoster -= ActivateWallColliderObject;
+            Core.Movies.Poster.onPlacePoster -= DeactivateWallColliderObject;
         }
 
         private void ActivateWallColliderObject() => frameObject?.SetActive(true);

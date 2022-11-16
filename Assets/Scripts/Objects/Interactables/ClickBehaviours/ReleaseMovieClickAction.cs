@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 
 namespace SameOldStory.Objects.Interactables.ClickBehaviours {
     

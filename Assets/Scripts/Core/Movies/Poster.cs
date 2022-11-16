@@ -1,6 +1,6 @@
 using System;
 
-namespace SameOldStory.Movies {
+namespace SameOldStory.Core.Movies {
     
     public static class Poster {
 

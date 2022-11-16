@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 using SameOldStory.UI.Timelines.Nodes;
 using UnityEngine;
 

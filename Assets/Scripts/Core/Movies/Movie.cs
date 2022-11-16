@@ -1,7 +1,8 @@
 using System;
+using SameOldStory.Core.Genres;
 using UnityEngine;
 
-namespace SameOldStory.Movies {
+namespace SameOldStory.Core.Movies {
     
     public class Movie {
 
@@ -19,9 +20,11 @@ namespace SameOldStory.Movies {
 
         private float requiredWork;
         private float completedWork;
+        private Genre genre;
 
-        public Movie(string name) {
+        public Movie(string name, Genre genre) {
             Name = name;
+            this.genre = genre;
             requiredWork = 5;
             onMovieBeginWriting?.Invoke(this);
         }

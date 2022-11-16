@@ -23,13 +23,13 @@ namespace SameOldStory.Objects.Interactables.Posters {
         }
 
         private void OnEnable() {
-            Movies.Poster.onPlacePoster += SetPlacement;
-            Movies.Poster.onBeginPlacePoster += DeactivateCollider;
+            Core.Movies.Poster.onPlacePoster += SetPlacement;
+            Core.Movies.Poster.onBeginPlacePoster += DeactivateCollider;
         }
 
         private void OnDisable() {
-            Movies.Poster.onPlacePoster -= SetPlacement;
-            Movies.Poster.onBeginPlacePoster -= DeactivateCollider;
+            Core.Movies.Poster.onPlacePoster -= SetPlacement;
+            Core.Movies.Poster.onBeginPlacePoster -= DeactivateCollider;
         }
 
         private void Update() {

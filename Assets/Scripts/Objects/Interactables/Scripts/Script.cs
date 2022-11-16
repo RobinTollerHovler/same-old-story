@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
 using SameOldStory.Objects.Interactables.Scripts.Components;
 using SameOldStory.Objects.Interactables.Scripts.Components.FillMasks;

@@ -1,4 +1,4 @@
-using SameOldStory.Movies;
+using SameOldStory.Core.Movies;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.Scripts.Components.FillMasks {
