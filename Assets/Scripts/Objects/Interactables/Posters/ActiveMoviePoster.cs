@@ -1,5 +1,5 @@
-
 using SameOldStory.Core.Movies;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 
 namespace SameOldStory.Objects.Interactables.Posters {
     
@@ -13,6 +13,12 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void SwapToMovie(Movie movie) {
             AssignMovie(movie);
             TogglePoster(movie != null);
+            if (movie == null) {
+                ClickAction = new NoClickAction();
+            } else {
+                Tooltip = $"Release: {movie.Name}";
+                ClickAction = new ReleaseMovieClickAction(movie);
+            }
         }
 
         private void TogglePoster(bool value) {
