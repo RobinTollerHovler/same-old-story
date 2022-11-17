@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Wallets;
@@ -8,8 +9,18 @@ using Font = SameOldStory.Core.Data.Font;
 namespace SameOldStory.Core.Studios {
     
     public class Studio {
-    
-        public static Studio Current { get; private set; }
+
+        private static Studio current;
+        
+        public static event Action onStudioChanged;
+
+        public static Studio Current {
+            get => current;
+            private set {
+                current = value;
+                onStudioChanged?.Invoke();
+            }
+        }
 
         private Genre[] genres;
         private Tone[] colors;
