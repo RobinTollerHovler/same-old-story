@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace UI.ColorPalettes {
         
         private void Start() {
             
-            Tone[] tones = Studio.Current.AvailableColors;
+            IEnumerable<Tone> tones = Studio.Current.AvailableColors;
             int currentColumn = 0;
             int currentRow = 0;
             foreach (Tone tone in tones) {

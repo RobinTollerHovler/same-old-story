@@ -4,10 +4,10 @@ using SameOldStory.UI.Components;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class MovieGenreDropdown : DropdownComponent {
-
+    public class PosterFontDropdown : DropdownComponent {
+        
         private void OnEnable() {
-            SetOptions(Studio.Current.AvailableGenres.Select(g => g.Name).ToArray());            
+            SetOptions(Studio.Current.AvailableFonts.Select(f => f.Name).ToArray());  
         }
 
     }
