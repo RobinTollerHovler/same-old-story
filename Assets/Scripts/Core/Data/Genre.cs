@@ -1,19 +1,18 @@
 using UnityEngine;
 
-namespace SameOldStory.Core.Genres {
+namespace SameOldStory.Core.Data {
     
-    [CreateAssetMenu(fileName = "New Genre", menuName = "Genre")]
-    public class Genre : ScriptableObject {
+    [CreateAssetMenu(fileName = "New Genre", menuName = "Data/Genre")]
+    public class Genre : UnlockableStudioData {
         
+        [Header("Genre options")]
         [SerializeField] private string genreName;
         [SerializeField] private float attractiveness;
         [SerializeField] private int leastMonthsOfWorkRequired;
-        [SerializeField] private bool startAvailable;
-
+        
         public string Name => genreName;
         public float Attractiveness => attractiveness;
         public int LeastMonthsOfWorkRequired => leastMonthsOfWorkRequired;
-        public bool StartAvailable => startAvailable;
 
     }
     

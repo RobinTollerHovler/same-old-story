@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3795897912594224226, guid: e34a96c8e6b1c44bbb5058dc65f8270f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000011444092
+      objectReference: {fileID: 0}
     - target: {fileID: 5200628267548966802, guid: e34a96c8e6b1c44bbb5058dc65f8270f, type: 3}
       propertyPath: m_Name
       value: Dropdown_Genre

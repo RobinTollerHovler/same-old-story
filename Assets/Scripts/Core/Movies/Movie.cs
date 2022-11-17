@@ -1,5 +1,5 @@
 using System;
-using SameOldStory.Core.Genres;
+using SameOldStory.Core.Data;
 using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
