@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Wallets;
 using SameOldStory.Core.Data;
 using UnityEngine;
 using Font = SameOldStory.Core.Data.Font;
@@ -17,12 +18,14 @@ namespace SameOldStory.Core.Studios {
         public IEnumerable<Genre> AvailableGenres => genres.Where(g => g.StartAvailable).ToArray();
         public IEnumerable<Tone> AvailableColors => colors;
         public IEnumerable<Font> AvailableFonts => fonts;
+        public Wallet Wallet { get; private set; }
 
         public static void InitializeNewStudio() {
             Current = new Studio {
                 genres = Resources.LoadAll("Genres", typeof(Genre)).Cast<Genre>().ToArray(),
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
-                fonts = Resources.LoadAll("Fonts", typeof(Font)).Cast<Font>().ToArray()
+                fonts = Resources.LoadAll("Fonts", typeof(Font)).Cast<Font>().ToArray(),
+                Wallet = new Wallet(100)
             };
         }
 
