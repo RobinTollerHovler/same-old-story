@@ -12,7 +12,7 @@ namespace SameOldStory.Objects.Interactables.Scripts.Components.FillMasks {
 
         public void AssignToMovie(Movie movie) {
             this.movie = movie;
-            movie.onProgressMade += UpdateFillMask;
+            movie.onUpdated += UpdateFillMask;
         }
         
         private void Awake() {
@@ -24,7 +24,7 @@ namespace SameOldStory.Objects.Interactables.Scripts.Components.FillMasks {
         private void UpdateFillMask() {
             float originPoint = scriptFillMaskBottomNode.LocalY;
             float endPoint = scriptFillMaskTopNode.LocalY;
-            float targetY = originPoint + (endPoint - originPoint) * movie.CompletedFactor;
+            float targetY = originPoint + (endPoint - originPoint) * movie.WriteProgress;
             scriptMaskNode?.SetLocalPosition(new Vector3(0,targetY,0));
         }
         

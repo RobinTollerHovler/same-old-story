@@ -10,8 +10,8 @@ namespace SameOldStory.Objects.Interactables.Scripts {
         [SerializeField] private float offset;
 
         private Script[] ScriptsOnShelf => GetComponentsInChildren<Script>(); 
-        private void OnEnable() => Movie.onMovieBeginWriting += AddScriptToShelf;
-        private void OnDisable() => Movie.onMovieBeginWriting -= AddScriptToShelf;
+        private void OnEnable() => Movie.onNewMovie += AddScriptToShelf;
+        private void OnDisable() => Movie.onNewMovie -= AddScriptToShelf;
         
         private void AddScriptToShelf(Movie movie) {
             movie.onDiscarded += ReorderScripts;

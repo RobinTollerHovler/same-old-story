@@ -10,7 +10,6 @@ namespace SameOldStory.UI.Timelines {
         [SerializeField] private GameObject timelineMovieTemplate;
         [SerializeField] private Transform movieNode;
 
-        private CastingTimelineNode castingTimelineNode;
         private ProductionTimelineNode productionTimelineNode;
         private LiveTimelineNode liveTimelineNode;
         private EndTimelineNode endTimelineNode;
@@ -21,18 +20,18 @@ namespace SameOldStory.UI.Timelines {
         
         private void Awake() {
             rectTransform = GetComponent<RectTransform>();
-            castingTimelineNode = GetComponentInChildren<CastingTimelineNode>();
+            productionTimelineNode = GetComponentInChildren<ProductionTimelineNode>();
         }
 
-        private void OnEnable() => Movie.onMovieBeginWriting += AddMovieToTimeline;
-        private void OnDisable() => Movie.onMovieBeginWriting -= AddMovieToTimeline;
+        private void OnEnable() => Movie.onNewMovie += AddMovieToTimeline;
+        private void OnDisable() => Movie.onNewMovie -= AddMovieToTimeline;
 
         private void AddMovieToTimeline(Movie movie) {
             if (movieNode == null || timelineMovieTemplate == null) return;
             GameObject timelineMovie = Instantiate(timelineMovieTemplate, movieNode);
             if (timelineMovie.TryGetComponent(out TimelineMovie tm)) {
                 tm.AttachMovie(movie);
-                tm.AssignCastingLineNode(castingTimelineNode);
+                tm.AssignProductionTimelineNode(productionTimelineNode);
             }
             movie.onDiscarded += OrganiseMovies;
             OrganiseMovies();

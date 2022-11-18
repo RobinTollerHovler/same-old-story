@@ -9,7 +9,7 @@ namespace SameOldStory.UI.Timelines {
         private Movie movie;
         private RectTransform rectTransform;
 
-        private CastingTimelineNode castingTimelineNode;
+        private ProductionTimelineNode productionTimelineNode;
 
         public void SetVertical(float position) {
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -position);
@@ -20,8 +20,8 @@ namespace SameOldStory.UI.Timelines {
             movie.onDiscarding += RemoveTimelineMovie;
         }
 
-        public void AssignCastingLineNode(CastingTimelineNode castingTimelineNode) {
-            this.castingTimelineNode = castingTimelineNode;
+        public void AssignProductionTimelineNode(ProductionTimelineNode productionTimelineNode) {
+            this.productionTimelineNode = productionTimelineNode;
         }
 
         private void Awake() => rectTransform = GetComponent<RectTransform>();
@@ -32,8 +32,8 @@ namespace SameOldStory.UI.Timelines {
         }
 
         private void ProgressAlongTimeline() {
-            float movieCompletedFactor = movie.CompletedFactor;
-            rectTransform.anchoredPosition = new Vector2(movieCompletedFactor * castingTimelineNode.ScreenLocation(), rectTransform.anchoredPosition.y);
+            float movieCompletedFactor = movie.WriteProgress;
+            rectTransform.anchoredPosition = new Vector2(movieCompletedFactor * productionTimelineNode.ScreenLocation(), rectTransform.anchoredPosition.y);
         }
         
         private void RemoveTimelineMovie() {

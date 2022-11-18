@@ -43,25 +43,21 @@ namespace SameOldStory.Objects.Interactables {
         }
 
         private void SetPageLocations() {
-            completedTypewriterPage?.SetAtFactor(1 - movie.CompletedFactor);
-            remainingTypewriterPage?.SetAtFactor(movie.CompletedFactor);
+            completedTypewriterPage?.SetAtFactor(1 - movie.WriteProgress);
+            remainingTypewriterPage?.SetAtFactor(movie.WriteProgress);
         }
         
         private IEnumerator WriteScript() {
-            while (movie is { Completed: false }) {
-                movie.WorkOn(Time.deltaTime);
+            while (true) {
+                movie.Write(Time.deltaTime);
                 yield return null;
             }
         }
 
         private IEnumerator UpdatePagePositions() {
             while (true) {
-                while (!movie.Completed) {
-                    SetPageLocations();
-                    yield return new WaitForSeconds(Random.Range(.1f, .2f));
-                }
                 SetPageLocations();
-                yield return null;
+                yield return new WaitForSeconds(Random.Range(.1f, .2f));
             }
         }
 

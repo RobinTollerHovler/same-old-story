@@ -1,42 +1,37 @@
 using System;
 using SameOldStory.Core.Data;
-using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
     public class Movie {
+        
+        private MovieStage currentStage;
+        private readonly float timeToWrite;
+        private readonly float timeToProduce;
+        private readonly float timeToShow;
+        private float investedTime;
 
-        public static event Action<Movie> onMovieBeginWriting;
+        public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
-
+        
         public event Action onDiscarding;
         public event Action onDiscarded;
-        public event Action onRelease;
-        public event Action onProgressMade;
-
-        public string Name { get; }
-        public float CompletedFactor => Mathf.Clamp(completedWork / requiredWork, 0, 1);
-        public bool Completed => (int)CompletedFactor == 1;
-
-        private float requiredWork;
-        private float completedWork;
-        private Genre genre;
-        private float minimumWork = 2;
-
+        public event Action onUpdated;
+        
         public Movie(string name, Genre genre) {
             Name = name;
-            this.genre = genre;
-            requiredWork = minimumWork + genre.LeastMonthsOfWorkRequired;
-            onMovieBeginWriting?.Invoke(this);
+            Genre = genre;
+            timeToWrite = 2 + genre.LeastMonthsOfWorkRequired;
+            currentStage = MovieStage.Writing;
+            onNewMovie?.Invoke(this);
         }
+        
+        public string Name { get; }
+        public Genre Genre { get; }
 
         public void Activate() => onActiveMovieChanged?.Invoke(this);
-
-        public void WorkOn(float amount) {
-            completedWork += amount;
-            onProgressMade?.Invoke();
-        }
-
+        public float WriteProgress => investedTime / timeToWrite;
+        
         public void Discard() {
             onDiscarding?.Invoke();
             onDiscarded?.Invoke();
@@ -45,10 +40,15 @@ namespace SameOldStory.Core.Movies {
 
         public void Release() {
             Poster.Generate(this);
-            onRelease?.Invoke();
             onActiveMovieChanged?.Invoke(null);
         }
-        
+
+        public void Write(float amount) {
+            if (currentStage != MovieStage.Writing) return;
+            investedTime += amount;
+            onUpdated?.Invoke();
+            if (investedTime >= timeToWrite) currentStage = MovieStage.ProductionReady;
+        }
     }
     
 }
