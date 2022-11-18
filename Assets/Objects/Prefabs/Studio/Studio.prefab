@@ -536,6 +536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4440797523714259977}
     m_Modifications:
+    - target: {fileID: 656154035427654022, guid: e00cd4ddc869d4ecca50adcb81980a4c, type: 3}
+      propertyPath: m_Name
+      value: ActiveMoviePoster
+      objectReference: {fileID: 0}
     - target: {fileID: 2132022187466712306, guid: e00cd4ddc869d4ecca50adcb81980a4c, type: 3}
       propertyPath: m_RootOrder
       value: 1
