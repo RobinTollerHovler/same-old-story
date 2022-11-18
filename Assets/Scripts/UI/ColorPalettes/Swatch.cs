@@ -1,5 +1,4 @@
 using SameOldStory.Core.Data;
-using UnityEngine;
 using UnityEngine.UI;
 using Button = SameOldStory.UI.Buttons.Button;
 
@@ -20,7 +19,6 @@ namespace UI.ColorPalettes {
 
         protected override void Click() {
             base.Click();
-            Debug.Log($"Clicked tone: {Tone.Value}");    
         }
         
     }
