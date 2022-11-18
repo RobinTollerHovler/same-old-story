@@ -1,5 +1,6 @@
 using SameOldStory.Core.Movies;
 using SameOldStory.UI.Timelines.Nodes;
+using TMPro;
 using UnityEngine;
 
 namespace SameOldStory.UI.Timelines {
@@ -18,6 +19,8 @@ namespace SameOldStory.UI.Timelines {
         public void AttachMovie(Movie movie) {
             this.movie = movie;
             movie.onDiscarding += RemoveTimelineMovie;
+            TextMeshProUGUI textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
+            if (textMeshProUGUI != null) textMeshProUGUI.text = movie.Name;
         }
 
         public void AssignProductionTimelineNode(ProductionTimelineNode productionTimelineNode) {
