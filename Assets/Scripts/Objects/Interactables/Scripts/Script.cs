@@ -8,15 +8,18 @@ namespace SameOldStory.Objects.Interactables.Scripts {
     
     public class Script : InteractableObject {
 
+        private Movie movie;
         private ScriptMovieTitleText scriptMovieTitleText;
         private ScriptFillMask scriptFillMask;
 
-        public void AssignMovie(Movie movie) {
+        public void AssignMovie(Movie assignMovie) {
+            movie = assignMovie;
             Tooltip = movie.Name;
             scriptMovieTitleText?.Set(movie.Name);
             movie.onDiscarding += RemoveScript;
+            movie.onProducing += RemoveScript;
             ClickAction = new ActivateMovieClickAction(movie);
-            scriptFillMask?.AssignToMovie(movie);
+            //scriptFillMask?.AssignToMovie(movie);
         }
         
         public void SetXPosition(float position) {
@@ -28,8 +31,11 @@ namespace SameOldStory.Objects.Interactables.Scripts {
             scriptFillMask = GetComponentInChildren<ScriptFillMask>();
         }
 
-        private void RemoveScript() => Destroy(gameObject);
-
+        private void RemoveScript() {
+            movie.onDiscarding -= RemoveScript;
+            movie.onProducing -= RemoveScript;
+            Destroy(gameObject);
+        }
     }
     
 }

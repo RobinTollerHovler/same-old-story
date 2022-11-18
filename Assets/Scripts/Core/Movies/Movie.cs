@@ -1,9 +1,7 @@
 using System;
-using Core.Wallets;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using SameOldStory.Core.Time;
-using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
@@ -22,6 +20,7 @@ namespace SameOldStory.Core.Movies {
 
         public event Action onDiscarding;
         public event Action onDiscarded;
+        public event Action onProducing;
         public event Action onUpdated;
         
         public Movie(string name, Genre genre) {
@@ -72,6 +71,7 @@ namespace SameOldStory.Core.Movies {
         public void StartProduction() {
             Poster.Generate(this);
             Stage = MovieStage.Producing;
+            onProducing?.Invoke();
             onActiveMovieChanged?.Invoke(null);
         }
 
