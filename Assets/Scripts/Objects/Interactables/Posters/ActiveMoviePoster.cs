@@ -29,7 +29,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void UpdatePoster() {
             switch (movie.Stage) {
                 case MovieStage.Writing:
-                    Tooltip = $"Writing: {movie.Name} ({(int)(movie.WriteProgress * 100)}%)";
+                    Tooltip = $"Writing: {movie.Name}";
                     break;
                 case MovieStage.ProductionReady:
                     Tooltip = $"Start production: {movie.Name}";

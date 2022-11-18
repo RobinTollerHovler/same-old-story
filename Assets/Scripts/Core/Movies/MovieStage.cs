@@ -4,8 +4,8 @@ namespace SameOldStory.Core.Movies {
         Writing,
         ProductionReady,
         Producing,
-        ReleaseReady,
-        Released
+        Released,
+        Canceled
     }
     
 }

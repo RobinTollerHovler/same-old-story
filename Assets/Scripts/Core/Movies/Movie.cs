@@ -1,5 +1,9 @@
 using System;
+using Core.Wallets;
 using SameOldStory.Core.Data;
+using SameOldStory.Core.Studios;
+using SameOldStory.Core.Time;
+using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
@@ -9,9 +13,10 @@ namespace SameOldStory.Core.Movies {
         private MovieStage stage;
         private readonly float timeToWrite;
         private readonly float timeToProduce;
-        private readonly float timeToShow;
-        private float investedTime;
-
+        private readonly float timeLive;
+        private float timeInvested;
+        private float productionCost = 10;
+        
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
 
@@ -23,8 +28,15 @@ namespace SameOldStory.Core.Movies {
             Name = name;
             Genre = genre;
             timeToWrite = 2 + genre.LeastMonthsOfWorkRequired;
+            timeToProduce = timeToWrite + 2 + genre.LeastMonthsOfWorkRequired;
+            timeLive = timeToWrite + timeToProduce + 60;
             Stage = MovieStage.Writing;
             onNewMovie?.Invoke(this);
+            Cycle.onTick += Tick;
+        }
+        
+        ~Movie() {
+            Cycle.onTick -= Tick;
         }
 
         public static Movie Active {
@@ -42,12 +54,14 @@ namespace SameOldStory.Core.Movies {
                 onUpdated?.Invoke();
             }
         }
+        
         public string Name { get; }
         public Genre Genre { get; }
 
         public void Activate() => Active = this;
 
-        public float WriteProgress => investedTime / timeToWrite;
+        public float WriteProgress => timeInvested / timeToWrite;
+        public float ProductionProgress => (timeInvested - timeToWrite) / timeToProduce;
         
         public void Discard() {
             onDiscarding?.Invoke();
@@ -57,15 +71,35 @@ namespace SameOldStory.Core.Movies {
 
         public void StartProduction() {
             Poster.Generate(this);
+            Stage = MovieStage.Producing;
             onActiveMovieChanged?.Invoke(null);
         }
 
         public void Write(float amount) {
             if (Stage != MovieStage.Writing) return;
-            investedTime += amount;
+            timeInvested += amount;
             onUpdated?.Invoke();
-            if (investedTime >= timeToWrite) Stage = MovieStage.ProductionReady;
+            if (timeInvested >= timeToWrite) Stage = MovieStage.ProductionReady;
         }
+
+        private void Tick(float deltaTime) {
+            switch (Stage) {
+                case MovieStage.Producing:
+                    if (timeInvested >= timeToProduce) Stage = MovieStage.Released;
+                    if (Studio.Current.Wallet.CanAfford(productionCost * deltaTime)) {
+                        Studio.Current.Wallet.Pay(productionCost * deltaTime);
+                        timeInvested += deltaTime;
+                    }
+                    onUpdated?.Invoke();
+                    break;
+                case MovieStage.Released:
+                    if (timeInvested >= timeLive) Stage = MovieStage.Canceled;
+                    Studio.Current.Wallet.Earn(10 * deltaTime);
+                    onUpdated?.Invoke();
+                    break;
+            }
+        }
+        
     }
     
 }

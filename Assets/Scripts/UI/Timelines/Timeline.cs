@@ -21,6 +21,7 @@ namespace SameOldStory.UI.Timelines {
         private void Awake() {
             rectTransform = GetComponent<RectTransform>();
             productionTimelineNode = GetComponentInChildren<ProductionTimelineNode>();
+            liveTimelineNode = GetComponentInChildren<LiveTimelineNode>();
         }
 
         private void OnEnable() => Movie.onNewMovie += AddMovieToTimeline;
@@ -32,6 +33,7 @@ namespace SameOldStory.UI.Timelines {
             if (timelineMovie.TryGetComponent(out TimelineMovie tm)) {
                 tm.AttachMovie(movie);
                 tm.AssignProductionTimelineNode(productionTimelineNode);
+                tm.AssignLiveTimelineNode(liveTimelineNode);
             }
             movie.onDiscarded += OrganiseMovies;
             OrganiseMovies();

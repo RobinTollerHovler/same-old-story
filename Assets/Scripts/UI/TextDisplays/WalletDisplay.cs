@@ -1,5 +1,4 @@
 using SameOldStory.Core.Studios;
-using UnityEngine;
 
 namespace SameOldStory.UI.TextDisplays {
     
@@ -24,7 +23,7 @@ namespace SameOldStory.UI.TextDisplays {
 
         private void UpdateDisplay() {
             if (Studio.Current == null) return;
-            SetText($"${Studio.Current.Wallet.Balance}");
+            SetText($"${(int)Studio.Current.Wallet.Balance}");
         }
         
     }

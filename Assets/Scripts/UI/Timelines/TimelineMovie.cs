@@ -11,6 +11,7 @@ namespace SameOldStory.UI.Timelines {
         private RectTransform rectTransform;
 
         private ProductionTimelineNode productionTimelineNode;
+        private LiveTimelineNode liveTimelineNode;
 
         public void SetVertical(float position) {
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -position);
@@ -26,6 +27,10 @@ namespace SameOldStory.UI.Timelines {
         public void AssignProductionTimelineNode(ProductionTimelineNode productionTimelineNode) {
             this.productionTimelineNode = productionTimelineNode;
         }
+        
+        public void AssignLiveTimelineNode(LiveTimelineNode liveTimelineNode) {
+            this.liveTimelineNode = liveTimelineNode;
+        }
 
         private void Awake() => rectTransform = GetComponent<RectTransform>();
 
@@ -35,8 +40,17 @@ namespace SameOldStory.UI.Timelines {
         }
 
         private void ProgressAlongTimeline() {
-            float movieCompletedFactor = movie.WriteProgress;
-            rectTransform.anchoredPosition = new Vector2(movieCompletedFactor * productionTimelineNode.ScreenLocation(), rectTransform.anchoredPosition.y);
+            float x = 0;
+            switch (movie.Stage) {
+                default: return;
+                case MovieStage.Writing:
+                    x = movie.WriteProgress * productionTimelineNode.ScreenLocation();
+                    break;
+                case MovieStage.Producing:
+                    x = productionTimelineNode.ScreenLocation() + movie.ProductionProgress * liveTimelineNode.ScreenLocation();
+                    break;
+            }
+            rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
         }
         
         private void RemoveTimelineMovie() {

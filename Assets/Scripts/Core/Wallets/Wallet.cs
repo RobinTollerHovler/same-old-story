@@ -4,11 +4,11 @@ namespace Core.Wallets {
     
     public class Wallet {
 
-        private int balance;
+        private float balance;
 
         public event Action onBalanceChanged;
 
-        public int Balance {
+        public float Balance {
             get => balance;
             private set {
                 balance = value;
@@ -19,7 +19,11 @@ namespace Core.Wallets {
         public Wallet(int initialBalance) {
             Balance = initialBalance;
         }
-        
+
+        public bool CanAfford(float amount) => Balance >= amount;
+        public void Pay(float amount) => Balance -= amount;
+        public void Earn(float amount) => Balance += amount;
+
     }
     
 }
