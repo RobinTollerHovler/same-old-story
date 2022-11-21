@@ -46,6 +46,15 @@ namespace SameOldStory.Input.Unity
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RandomPerson"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb9c6bf0-b2fe-4818-904f-ed2ed8d37875"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,6 +79,17 @@ namespace SameOldStory.Input.Unity
                     ""action"": ""MouseClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60036a00-c4a9-4e49-bf7c-7f60edcd6c63"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RandomPerson"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -80,6 +100,7 @@ namespace SameOldStory.Input.Unity
             m_Studio = asset.FindActionMap("Studio", throwIfNotFound: true);
             m_Studio_MousePosition = m_Studio.FindAction("MousePosition", throwIfNotFound: true);
             m_Studio_MouseClick = m_Studio.FindAction("MouseClick", throwIfNotFound: true);
+            m_Studio_RandomPerson = m_Studio.FindAction("RandomPerson", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -141,12 +162,14 @@ namespace SameOldStory.Input.Unity
         private IStudioActions m_StudioActionsCallbackInterface;
         private readonly InputAction m_Studio_MousePosition;
         private readonly InputAction m_Studio_MouseClick;
+        private readonly InputAction m_Studio_RandomPerson;
         public struct StudioActions
         {
             private @UnityInputSystem m_Wrapper;
             public StudioActions(@UnityInputSystem wrapper) { m_Wrapper = wrapper; }
             public InputAction @MousePosition => m_Wrapper.m_Studio_MousePosition;
             public InputAction @MouseClick => m_Wrapper.m_Studio_MouseClick;
+            public InputAction @RandomPerson => m_Wrapper.m_Studio_RandomPerson;
             public InputActionMap Get() { return m_Wrapper.m_Studio; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -162,6 +185,9 @@ namespace SameOldStory.Input.Unity
                     @MouseClick.started -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
                     @MouseClick.performed -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
                     @MouseClick.canceled -= m_Wrapper.m_StudioActionsCallbackInterface.OnMouseClick;
+                    @RandomPerson.started -= m_Wrapper.m_StudioActionsCallbackInterface.OnRandomPerson;
+                    @RandomPerson.performed -= m_Wrapper.m_StudioActionsCallbackInterface.OnRandomPerson;
+                    @RandomPerson.canceled -= m_Wrapper.m_StudioActionsCallbackInterface.OnRandomPerson;
                 }
                 m_Wrapper.m_StudioActionsCallbackInterface = instance;
                 if (instance != null)
@@ -172,6 +198,9 @@ namespace SameOldStory.Input.Unity
                     @MouseClick.started += instance.OnMouseClick;
                     @MouseClick.performed += instance.OnMouseClick;
                     @MouseClick.canceled += instance.OnMouseClick;
+                    @RandomPerson.started += instance.OnRandomPerson;
+                    @RandomPerson.performed += instance.OnRandomPerson;
+                    @RandomPerson.canceled += instance.OnRandomPerson;
                 }
             }
         }
@@ -180,6 +209,7 @@ namespace SameOldStory.Input.Unity
         {
             void OnMousePosition(InputAction.CallbackContext context);
             void OnMouseClick(InputAction.CallbackContext context);
+            void OnRandomPerson(InputAction.CallbackContext context);
         }
     }
 }
