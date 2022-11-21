@@ -676,6 +676,34 @@ PrefabInstance:
       propertyPath: posterWindow
       value: 
       objectReference: {fileID: 2390922652989439416}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1711138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000000019383757
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9677996
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25172192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109815322839498431, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4440797523213899188, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
       propertyPath: m_RootOrder
       value: 3
