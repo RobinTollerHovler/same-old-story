@@ -55,6 +55,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4042207946738864496, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042207946738864496, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -155380437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264778873056878605, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264778873056878605, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264778873056878605, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -155380437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812073490120673668, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812073490120673668, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -155380437
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7359536537429057538, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
@@ -76,3 +104,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Poster
+  posterWindow: {fileID: 0}

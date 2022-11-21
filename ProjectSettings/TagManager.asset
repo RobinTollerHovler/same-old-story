@@ -44,6 +44,15 @@ TagManager:
   - name: Posters
     uniqueID: 673124287
     locked: 0
+  - name: Manus
+    uniqueID: 1189933915
+    locked: 0
+  - name: Desk
+    uniqueID: 4139586859
+    locked: 0
+  - name: Typewriter
+    uniqueID: 3283312615
+    locked: 0
   - name: Foreground
     uniqueID: 2747840513
     locked: 0
