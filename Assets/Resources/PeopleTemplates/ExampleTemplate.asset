@@ -12,10 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: ExampleTemplate
   m_EditorClassIdentifier: SameOldStory.Core:SameOldStory.Core.Data.People:PeopleTemplate
-  hairStyles: []
-  faces: []
-  eyes: []
-  noses: []
-  mouths: []
-  hairColors: []
-  skinTones: []
+  hairStyles:
+  - {fileID: -1817170993, guid: ef8608716471547c98091405233e9da5, type: 3}
+  - {fileID: 1192488642, guid: ef8608716471547c98091405233e9da5, type: 3}
+  faces:
+  - {fileID: 134437485, guid: 0870b83e8585a40e4a3b59f065ec3f64, type: 3}
+  - {fileID: -775408396, guid: 0870b83e8585a40e4a3b59f065ec3f64, type: 3}
+  eyes:
+  - {fileID: -1663526286, guid: 1b9929fc42b5e48ffbe16ad1195bfa0c, type: 3}
+  - {fileID: -1506014722, guid: 1b9929fc42b5e48ffbe16ad1195bfa0c, type: 3}
+  noses:
+  - {fileID: -1351430495, guid: ef2ee2a7e8f7745f998178d122439dde, type: 3}
+  - {fileID: -1150411304, guid: ef2ee2a7e8f7745f998178d122439dde, type: 3}
+  mouths:
+  - {fileID: 278394965, guid: c3196ed7ffecf4409aeed4be87c89037, type: 3}
+  - {fileID: 2094035060, guid: c3196ed7ffecf4409aeed4be87c89037, type: 3}
+  - {fileID: 1259707916, guid: c3196ed7ffecf4409aeed4be87c89037, type: 3}
+  hairColors:
+  - {r: 1, g: 0.9093014, b: 0, a: 1}
+  skinTones:
+  - {r: 1, g: 0.99845356, b: 0.9764151, a: 1}
+  - {r: 0.23584908, g: 0.13183449, b: 0, a: 1}
