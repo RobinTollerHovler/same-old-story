@@ -1,0 +1,16 @@
+{
+    "name": "SameOldStory.Characters",
+    "rootNamespace": "",
+    "references": [
+        "GUID:42f95bae1d8e842e08f6b2812f82d232"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
