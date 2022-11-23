@@ -120,7 +120,6 @@ namespace SameOldStory.Core.Movies {
             foreach (Buff b in Studio.Current.BuffManager.BuffsWithKey(Genre.Name)) {
                 s += b.Value;
             }
-            Debug.Log(s);
             return s;
         }
         
