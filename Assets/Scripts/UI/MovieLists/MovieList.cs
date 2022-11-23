@@ -1,3 +1,4 @@
+using SameOldStory.Core;
 using SameOldStory.Core.Movies;
 using SameOldStory.UI.Transforms;
 using UnityEngine;
@@ -25,6 +26,9 @@ namespace UI.MovieLists {
             if (movieListItem.TryGetComponent(out RectTransformShifter rectTransformShifter)) {
                 rectTransformShifter.SetAt(0, -70 * n);
             }
+
+            if (movieListItem.TryGetComponent(out IRepresentMovie representMovie)) representMovie.Movie = movie;
+
         }
         
     }
