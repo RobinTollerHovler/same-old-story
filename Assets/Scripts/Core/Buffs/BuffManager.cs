@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using SameOldStory.Core.Time;
 
 namespace SameOldStory.Core.Buffs {
@@ -18,6 +19,10 @@ namespace SameOldStory.Core.Buffs {
 
         public void ApplyBuff(Buff buff) {
             activeBuffs.Add(buff);
+        }
+
+        public HashSet<Buff> BuffsWithKey(string key) {
+            return activeBuffs.Where(b => b.Key == key).ToHashSet();
         }
 
         private void TickBuffs(float amount) {

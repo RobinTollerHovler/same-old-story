@@ -4,6 +4,7 @@ using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using SameOldStory.Core.Time;
+using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
@@ -107,10 +108,20 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
+            score = CalculateScore();
             Rating = new Rating(score);
             Stage = MovieStage.Released;
             onReleased?.Invoke();
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
+        }
+
+        private int CalculateScore() {
+            int s = 2;
+            foreach (Buff b in Studio.Current.BuffManager.BuffsWithKey(Genre.Name)) {
+                s += b.Value;
+            }
+            Debug.Log(s);
+            return s;
         }
         
     }

@@ -26,19 +26,19 @@ namespace SameOldStory.Core.Studios {
         private Genre[] genres;
         private Tone[] colors;
         private Font[] fonts;
-        private BuffManager buffManager;
 
         public IEnumerable<Genre> AvailableGenres => genres.Where(g => g.StartAvailable).ToArray();
         public IEnumerable<Tone> AvailableColors => colors;
         public IEnumerable<Font> AvailableFonts => fonts;
         public Wallet Wallet { get; private set; }
+        public BuffManager BuffManager { get; private set; }
 
         public static void InitializeNewStudio() {
             Current = new Studio {
                 genres = Resources.LoadAll("Genres", typeof(Genre)).Cast<Genre>().ToArray(),
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
                 fonts = Resources.LoadAll("Fonts", typeof(Font)).Cast<Font>().ToArray(),
-                buffManager = new BuffManager(),
+                BuffManager = new BuffManager(),
                 Wallet = new Wallet(100)
             };
         }
@@ -47,7 +47,7 @@ namespace SameOldStory.Core.Studios {
             return genres.FirstOrDefault(g => g.name == genreName);
         }
 
-        public void ApplyBuff(Buff buff) => buffManager.ApplyBuff(buff);
+        public void ApplyBuff(Buff buff) => BuffManager.ApplyBuff(buff);
 
     }
     
