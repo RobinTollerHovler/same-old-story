@@ -1,4 +1,5 @@
 using System;
+using Core.Movies;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
@@ -8,6 +9,7 @@ namespace SameOldStory.Core.Movies {
     
     public class Movie {
 
+        private int score = 10;
         private static Movie active;
         private MovieStage stage;
         private readonly float timeToWrite;
@@ -15,7 +17,7 @@ namespace SameOldStory.Core.Movies {
         private readonly float timeLive;
         private float timeInvested;
         private float productionCost = 10;
-        
+
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
 
@@ -23,6 +25,7 @@ namespace SameOldStory.Core.Movies {
         public event Action onDiscarded;
         public event Action onProducing;
         public event Action onUpdated;
+        public event Action onReleased;
         
         public Movie(string name, Genre genre) {
             Name = name;
@@ -39,6 +42,8 @@ namespace SameOldStory.Core.Movies {
             Cycle.onTick -= Tick;
         }
 
+        public Rating Rating { get; private set; }
+        
         public static Movie Active {
             get => active;
             private set {
@@ -102,7 +107,9 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
+            Rating = new Rating(score);
             Stage = MovieStage.Released;
+            onReleased?.Invoke();
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
         }
         
