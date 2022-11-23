@@ -1,5 +1,6 @@
 using System;
 using SameOldStory.Core.Movies;
+using SameOldStory.UI.Transforms;
 using UnityEngine;
 
 namespace UI.MovieLists {
@@ -7,6 +8,9 @@ namespace UI.MovieLists {
     public class MovieList : MonoBehaviour {
 
         [SerializeField] private GameObject movieItemTemplate;
+        
+
+        public MovieListItem[] MovieListItems => GetComponentsInChildren<MovieListItem>();
 
         private void OnEnable() {
             Movie.onNewMovie += AddMovieToList;
@@ -17,7 +21,13 @@ namespace UI.MovieLists {
         }
 
         private void AddMovieToList(Movie movie) {
-            Instantiate(movieItemTemplate, transform);
+            int n = MovieListItems.Length;
+            Debug.Log(n + " Numbers");
+            GameObject movieListItem = Instantiate(movieItemTemplate, transform);
+            if (movieListItem.TryGetComponent(out RectTransformShifter rectTransformShifter)) {
+                Debug.Log("setting: " + 40 * n);
+                rectTransformShifter.SetAt(0, 40 * n);
+            }
         }
         
     }
