@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SameOldStory.UI.Transforms {
@@ -8,6 +7,7 @@ namespace SameOldStory.UI.Transforms {
     public class RectTransformShifter : MonoBehaviour {
 
         private RectTransform rectTransform;
+        private float shiftSpeed = 4;
 
         private void Awake() => rectTransform = GetComponent<RectTransform>();
 
@@ -19,14 +19,14 @@ namespace SameOldStory.UI.Transforms {
         }
 
         private IEnumerator Shift(float x, float y) {
-            Debug.Log("Before");
-            Debug.Log(Vector2.Distance(rectTransform.anchoredPosition, new Vector2(x, y)));
             while (Vector2.Distance(rectTransform.anchoredPosition, new Vector2(x, y)) > 0.1f) {
-                Debug.Log("Enter");
-                Vector2.Lerp(rectTransform.anchoredPosition, new Vector2(x, y), Time.deltaTime);
-                Debug.Log("Ledt");
+                rectTransform.anchoredPosition = Vector2.Lerp(
+                    rectTransform.anchoredPosition, new Vector2(x, y), 
+                    shiftSpeed * Time.deltaTime
+                );
                 yield return null;
             }
+            rectTransform.anchoredPosition = new Vector2(x, y);
         }
 
     }
