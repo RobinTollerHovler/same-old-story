@@ -432,7 +432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6048148472153758601, guid: dc6ce10ea0ddd41719dad4c3a09e39dc, type: 3}
       propertyPath: m_Name
-      value: MenuShelf
+      value: TopShelf
       objectReference: {fileID: 0}
     - target: {fileID: 8357867870321864777, guid: dc6ce10ea0ddd41719dad4c3a09e39dc, type: 3}
       propertyPath: m_RootOrder
