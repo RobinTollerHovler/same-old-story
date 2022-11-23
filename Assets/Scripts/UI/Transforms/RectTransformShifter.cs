@@ -12,7 +12,6 @@ namespace SameOldStory.UI.Transforms {
         private void Awake() => rectTransform = GetComponent<RectTransform>();
 
         public void SetAt(float x, float y) {
-            Debug.Log(rectTransform);
             if (rectTransform == null) return;
             StopAllCoroutines();
             StartCoroutine(Shift(x,y));
