@@ -1,4 +1,5 @@
 using System;
+using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using SameOldStory.Core.Time;
@@ -53,7 +54,7 @@ namespace SameOldStory.Core.Movies {
                 onUpdated?.Invoke();
             }
         }
-        
+
         public string Name { get; }
         public Genre Genre { get; }
 
@@ -85,7 +86,7 @@ namespace SameOldStory.Core.Movies {
         private void Tick(float deltaTime) {
             switch (Stage) {
                 case MovieStage.Producing:
-                    if (timeInvested >= timeToProduce) Stage = MovieStage.Released;
+                    if (timeInvested >= timeToProduce) Release();
                     if (Studio.Current.Wallet.CanAfford(productionCost * deltaTime)) {
                         Studio.Current.Wallet.Pay(productionCost * deltaTime);
                         timeInvested += deltaTime;
@@ -98,6 +99,11 @@ namespace SameOldStory.Core.Movies {
                     onUpdated?.Invoke();
                     break;
             }
+        }
+
+        private void Release() {
+            Stage = MovieStage.Released;
+            Studio.Current.ApplyBuff(new GenreDebuff(Genre));
         }
         
     }
