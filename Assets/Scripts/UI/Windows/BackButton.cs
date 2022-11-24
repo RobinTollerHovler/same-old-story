@@ -21,7 +21,7 @@ namespace SameOldStory.UI.Windows {
 
         private void SetButtonContextBehaviour() {
             ContentSet contentSet = window.ActiveContentSet;
-            if (contentSet.Previous != null) {
+            if (contentSet?.Previous != null) {
                 SetText("Back");
                 gameObject.SetActive(true);
             } else {

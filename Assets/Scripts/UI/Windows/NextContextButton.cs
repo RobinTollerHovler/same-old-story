@@ -21,7 +21,7 @@ namespace SameOldStory.UI.Windows {
         
         private void SetButtonContextBehaviour() {
             ContentSet contentSet = window.ActiveContentSet;
-            if (contentSet.Next != null) {
+            if (contentSet?.Next != null) {
                 SetText("Next");
                 contextClickAction = NextContentSet;
             } else {
