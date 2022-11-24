@@ -1,10 +1,12 @@
+using SameOldStory.Core;
 using SameOldStory.Core.Movies;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class RatingWindow : Window {
+    public class RatingWindow : Window, IRepresentMovie {
 
         private void OpenWindowForMovie(Movie movie) {
+            Movie = movie;
             Open();
         }
         
@@ -13,6 +15,8 @@ namespace SameOldStory.UI.Windows.Specifics {
         
         public override void Submit() => Close();
 
+        public Movie Movie { get; set; }
+        
     }
     
 }
