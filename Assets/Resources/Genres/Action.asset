@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   genreName: Action
+  subjectiveTitle: an action movie
   attractiveness: 0
   leastMonthsOfWorkRequired: 1

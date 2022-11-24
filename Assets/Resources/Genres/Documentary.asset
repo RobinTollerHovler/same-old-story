@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ac7f65ba854638828f8b6dd5461459, type: 3}
   m_Name: Documentary
   m_EditorClassIdentifier: 
+  startAvailable: 1
   genreName: Documentary
+  subjectiveTitle: a documentary
   attractiveness: 0
   leastMonthsOfWorkRequired: 2
-  startAvailable: 1
