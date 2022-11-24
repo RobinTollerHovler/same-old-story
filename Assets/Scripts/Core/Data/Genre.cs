@@ -7,12 +7,12 @@ namespace SameOldStory.Core.Data {
         
         [Header("Genre options")]
         [SerializeField] private string genreName;
-        [SerializeField] private string subjectiveName;
+        [SerializeField] private string subjectiveTitle;
         [SerializeField] private float attractiveness;
         [SerializeField] private int leastMonthsOfWorkRequired;
         
         public string Name => genreName;
-        public string SubjectiveName => subjectiveName;
+        public string SubjectiveTitle => subjectiveTitle;
         public float Attractiveness => attractiveness;
         public int LeastMonthsOfWorkRequired => leastMonthsOfWorkRequired;
 
