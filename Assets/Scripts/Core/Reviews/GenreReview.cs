@@ -5,7 +5,7 @@ namespace SameOldStory.Core.Reviews {
     public class GenreReview : Review {
 
         public GenreReview(Movie movie) : base(movie) {
-            review = $"This was an {movie.Genre.Name}";
+            review = $"This was {movie.Genre.SubjectiveName}";
         }
 
     }
