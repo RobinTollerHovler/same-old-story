@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   genreName: Action
-  subjectiveTitle: an action movie
+  indefiniteArticle: an
+  noun: action movie
+  plural: action movies
   attractiveness: 0
   leastMonthsOfWorkRequired: 1
