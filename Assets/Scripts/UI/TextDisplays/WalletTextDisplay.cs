@@ -2,10 +2,8 @@ using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.TextDisplays {
     
-    public class WalletDisplay : TextDisplay {
+    public class WalletTextDisplay : TextDisplay {
         
-        protected override void SetUp() {}
-
         private void OnEnable() {
             Studio.onStudioChanged += TrackStudioWallet;
             TrackStudioWallet();

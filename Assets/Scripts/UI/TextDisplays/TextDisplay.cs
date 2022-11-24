@@ -7,7 +7,7 @@ namespace SameOldStory.UI.TextDisplays {
 
         private TextMeshProUGUI textMeshProUGUI;
 
-        protected abstract void SetUp();
+        protected virtual void SetUp() {}
 
         protected void SetText(string text) {
             if (textMeshProUGUI != null) textMeshProUGUI.text = text;
