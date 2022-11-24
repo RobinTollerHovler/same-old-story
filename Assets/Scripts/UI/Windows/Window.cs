@@ -1,32 +1,22 @@
-using System;
+using System.Linq;
 using UnityEngine;
 
 namespace SameOldStory.UI.Windows {
     
     public abstract class Window : MonoBehaviour {
 
-        [SerializeField] private ContentSet initialContentSet;
-        private ContentSet activeContentSet;
-        
-        public event Action onActiveContentSetChanged;
-
-        public ContentSet ActiveContentSet {
-            get => activeContentSet;
-            set {
-                activeContentSet = value;
-                onActiveContentSetChanged?.Invoke();
-            }
-        }
+        private WindowActivationNode windowActivationNode;
 
         public abstract void Submit();
-        
-        public void Close() => gameObject.SetActive(false);
-        
-        private void OnEnable() {
-            ActiveContentSet = initialContentSet;
+
+        private void Awake() {
+            windowActivationNode = GetComponentsInChildren<WindowActivationNode>(true).FirstOrDefault();
+            SetUp();
         }
 
-        private void Start() => ActiveContentSet = initialContentSet;
+        public void Close() => windowActivationNode?.Deactivate();
+        protected virtual void SetUp() {}
+        protected void Open() => windowActivationNode?.Activate();
 
     }
     

@@ -1,3 +1,4 @@
+using System.Linq;
 using SameOldStory.Core.Movies;
 using SameOldStory.Core.Studios;
 
@@ -8,11 +9,6 @@ namespace SameOldStory.UI.Windows.Specifics {
         private MovieNameInputField movieNameInputField;
         private MovieGenreDropdown movieGenreDropdown;
         
-        private void Awake() {
-            movieNameInputField = GetComponentInChildren<MovieNameInputField>();
-            movieGenreDropdown = GetComponentInChildren<MovieGenreDropdown>();
-        }
-
         public override void Submit() {
             Movie newMovie = new Movie(
                 movieNameInputField?.Text,
@@ -22,6 +18,14 @@ namespace SameOldStory.UI.Windows.Specifics {
             movieNameInputField?.Clear();
             Close();
         }
+        
+        protected override void SetUp() {
+            movieNameInputField = GetComponentsInChildren<MovieNameInputField>(true).FirstOrDefault();
+            movieGenreDropdown = GetComponentsInChildren<MovieGenreDropdown>(true).FirstOrDefault();
+        }
+
+        private void OnEnable() => Movie.onRequestCreateNewMovie += Open;
+        private void OnDisable() => Movie.onRequestCreateNewMovie -= Open;
         
     }
     

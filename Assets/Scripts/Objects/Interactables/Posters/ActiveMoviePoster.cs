@@ -6,8 +6,6 @@ using UnityEngine;
 namespace SameOldStory.Objects.Interactables.Posters {
     
     public class ActiveMoviePoster : Poster {
-
-        [SerializeField] private GameObject posterWindow;
         
         private void Start() => SwapToMovie(null);
 
@@ -33,7 +31,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
                     break;
                 case MovieStage.ProductionReady:
                     Tooltip = $"Start production: {movie.Name}";
-                    ClickAction = new ActivateGameObjectClickAction(posterWindow);
+                    ClickAction = new RequestCreatePosterForActiveMovieClickAction();
                     break;
             }
         }

@@ -3,6 +3,7 @@ using System.Linq;
 using Core.Movies;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
+using SameOldStory.Core.Reviews;
 using SameOldStory.Core.Studios;
 using SameOldStory.Core.Time;
 using UnityEngine;
@@ -22,6 +23,8 @@ namespace SameOldStory.Core.Movies {
 
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
+        public static event Action onRequestCreateNewMovie;
+        public static event Action<Movie> onRequestCreateMoviePoster;
 
         public event Action onDiscarding;
         public event Action onDiscarded;
@@ -65,7 +68,11 @@ namespace SameOldStory.Core.Movies {
 
         public string Name { get; }
         public Genre Genre { get; }
+        public GenreReview GenreReview { get; private set; }
 
+        public static void Create() => onRequestCreateNewMovie?.Invoke();
+        public static void CreatePoster() => onRequestCreateMoviePoster?.Invoke(Active);
+        
         public void Activate() => Active = this;
 
         public float WriteProgress => timeInvested / timeToWrite;
@@ -113,6 +120,7 @@ namespace SameOldStory.Core.Movies {
         private void Release() {
             score = CalculateScore();
             Rating = new Rating(score);
+            GenreReview = new GenreReview(this);
             Stage = MovieStage.Released;
             onReleased?.Invoke();
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));

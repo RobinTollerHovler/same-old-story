@@ -952,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5590741378171837878, guid: 1af204077c42949858d12d766f3ea96a, type: 3}
       propertyPath: m_Name
-      value: ContentSet_Ratings
+      value: WindowContent_Ratings
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af204077c42949858d12d766f3ea96a, type: 3}

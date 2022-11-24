@@ -9,7 +9,6 @@ namespace SameOldStory.Objects.Interactables {
 
         [SerializeField] private TypewriterPage remainingTypewriterPage;
         [SerializeField] private TypewriterPage completedTypewriterPage;
-        [SerializeField] private GameObject movieMakerWindow;
 
         private Movie movie;
         
@@ -17,7 +16,7 @@ namespace SameOldStory.Objects.Interactables {
             remainingTypewriterPage?.Deactivate();
             completedTypewriterPage?.Deactivate();
             Tooltip = $"Write script";
-            ClickAction = new ActivateGameObjectClickAction(movieMakerWindow);
+            ClickAction = new RequestCreateNewMovieClickAction();
         }
 
         private void OnEnable() {

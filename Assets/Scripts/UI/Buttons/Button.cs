@@ -11,8 +11,10 @@ namespace SameOldStory.UI.Buttons {
             UnityEngine.UI.Button button = GetComponentInChildren<UnityEngine.UI.Button>();
             button.onClick.AddListener(Click);
             textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
+            SetUp();
         }
 
+        protected virtual void SetUp() {}
         protected virtual void Click() {}
 
         protected void SetText(string text) => textMeshProUGUI.text = text;
