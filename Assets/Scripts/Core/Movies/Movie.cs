@@ -1,9 +1,11 @@
 using System;
+using System.Linq;
 using Core.Movies;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using SameOldStory.Core.Time;
+using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
@@ -26,13 +28,14 @@ namespace SameOldStory.Core.Movies {
         public event Action onProducing;
         public event Action onUpdated;
         public event Action onReleased;
+        public event Action onCanceled;
         
         public Movie(string name, Genre genre) {
             Name = name;
             Genre = genre;
             timeToWrite = 2 + genre.LeastMonthsOfWorkRequired;
             timeToProduce = timeToWrite + 2 + genre.LeastMonthsOfWorkRequired;
-            timeLive = timeToWrite + timeToProduce + 60;
+            timeLive = timeToWrite + timeToProduce + 10;
             Stage = MovieStage.Writing;
             onNewMovie?.Invoke(this);
             Cycle.onTick += Tick;
@@ -99,8 +102,9 @@ namespace SameOldStory.Core.Movies {
                     onUpdated?.Invoke();
                     break;
                 case MovieStage.Released:
-                    if (timeInvested >= timeLive) Stage = MovieStage.Canceled;
+                    if (timeInvested >= timeLive) Cancel();
                     Studio.Current.Wallet.Earn(10 * deltaTime);
+                    timeInvested += deltaTime;
                     onUpdated?.Invoke();
                     break;
             }
@@ -114,12 +118,13 @@ namespace SameOldStory.Core.Movies {
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
         }
 
+        private void Cancel() {
+            Stage = MovieStage.Canceled;
+            onCanceled?.Invoke();
+        }
+
         private int CalculateScore() {
-            int s = 2;
-            foreach (Buff b in Studio.Current.BuffManager.BuffsWithKey(Genre.Name)) {
-                s += b.Value;
-            }
-            return s;
+            return 2 + Studio.Current.BuffManager.BuffsWithKey(Genre.Name).Sum(b => b.Value);
         }
         
     }
