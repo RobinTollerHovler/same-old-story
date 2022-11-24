@@ -25,14 +25,15 @@ namespace SameOldStory.Core.Movies {
         public static event Action<Movie> onActiveMovieChanged;
         public static event Action onRequestCreateNewMovie;
         public static event Action<Movie> onRequestCreateMoviePoster;
-
+        public static event Action<Movie> onMovieReviewsCollected;
+        
         public event Action onDiscarding;
         public event Action onDiscarded;
         public event Action onProducing;
         public event Action onUpdated;
         public event Action onReleased;
         public event Action onCanceled;
-        
+
         public Movie(string name, Genre genre) {
             Name = name;
             Genre = genre;
@@ -123,6 +124,7 @@ namespace SameOldStory.Core.Movies {
             GenreReview = new GenreReview(this);
             Stage = MovieStage.Released;
             onReleased?.Invoke();
+            onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
         }
 
