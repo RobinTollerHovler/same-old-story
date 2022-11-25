@@ -12,7 +12,6 @@ namespace SameOldStory.Core.Movies {
     
     public class Movie {
 
-        private int score = 10;
         private static Movie active;
         private MovieStage stage;
         private readonly float timeToWrite;
@@ -119,9 +118,8 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
-            score = CalculateScore();
-            Rating = new Rating(score);
             GenreReview = new GenreReview(this);
+            Rating = new Rating(GenreReview);
             Stage = MovieStage.Released;
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
@@ -133,10 +131,6 @@ namespace SameOldStory.Core.Movies {
             onCanceled?.Invoke();
         }
 
-        private int CalculateScore() {
-            return 2 + Studio.Current.BuffManager.BuffsWithKey(Genre.Name).Sum(b => b.Value);
-        }
-        
     }
     
 }
