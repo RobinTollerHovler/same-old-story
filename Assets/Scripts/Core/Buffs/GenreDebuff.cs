@@ -6,8 +6,8 @@ namespace SameOldStory.Core.Buffs {
 
         public GenreDebuff(Genre genre) : base() {
             Key = genre.Name;
-            Value = -2;
-            Cooldown = 40;
+            Value = -3;
+            Cooldown = 120;
         }
         
     }
