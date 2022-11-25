@@ -1,5 +1,6 @@
 using SameOldStory.Core;
 using SameOldStory.Core.Movies;
+using SameOldStory.UI.Components.Sliders;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
@@ -7,6 +8,8 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         private void OpenWindowForMovie(Movie movie) {
             Movie = movie;
+            MovieRating movieRating = GetComponentInChildren<MovieRating>();
+            if(movieRating != null) movieRating.TriggerManualUpdate();
             Open();
         }
         
