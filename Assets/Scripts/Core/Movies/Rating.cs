@@ -1,3 +1,6 @@
+using System.Linq;
+using SameOldStory.Core.Reviews;
+using UnityEngine;
 
 namespace Core.Movies {
     
@@ -5,13 +8,16 @@ namespace Core.Movies {
 
         private readonly float score;
 
-        public Rating(float score) {
-            this.score = score;
+        public Rating(params Review[] reviews) {
+            int numberOfReviews = reviews.Length;
+            float collectedScore = reviews.Sum(r => r.Score);
+            score = collectedScore / numberOfReviews;
         }
 
         public int Stars() {
-            return (int)(score / 2);
+            return Mathf.RoundToInt(score / 2);
         }
+        
     }
     
 }
