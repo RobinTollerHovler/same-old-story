@@ -1,3 +1,4 @@
+using Core.People;
 using UnityEngine;
 
 namespace SameOldStory.Core.Data.People {
@@ -5,6 +6,9 @@ namespace SameOldStory.Core.Data.People {
     [CreateAssetMenu(fileName = "New People Template", menuName = "Data/PeopleTemplate")]
     public class PeopleTemplate : ScriptableObject {
 
+        [Header("Gender")]
+        [SerializeField] private Gender gender;
+        
         [Header("Sprites")]
         [SerializeField] private Sprite[] hairStyles;
         [SerializeField] private Sprite[] faces;
@@ -15,7 +19,8 @@ namespace SameOldStory.Core.Data.People {
         [Header("Colors")]
         [SerializeField] private Color[] hairColors;
         [SerializeField] private Color[] skinTones;
-        
+
+        public Gender Gender => gender;
         public Sprite[] HairStyles => hairStyles;
         public Sprite[] Faces => faces;
         public Sprite[] Eyes => eyes;
@@ -24,13 +29,14 @@ namespace SameOldStory.Core.Data.People {
         public Color[] HairColors => hairColors;
         public Color[] SkinTones => skinTones;
 
-        public Sprite RandomHairStyle => hairStyles[Random.Range(0, hairStyles.Length)];
-        public Sprite RandomFace => faces[Random.Range(0, faces.Length)];
-        public Sprite RandomEyes => eyes[Random.Range(0, eyes.Length)];
-        public Sprite RandomNose => noses[Random.Range(0, noses.Length)];
-        public Sprite RandomMouth => mouths[Random.Range(0, mouths.Length)];
-        public Color RandomHairColor => hairColors[Random.Range(0, hairColors.Length)];
-        public Color RandomSkinTone => skinTones[Random.Range(0, skinTones.Length)];
+        public Sprite RandomHairStyle => hairStyles.Length == 0 ? null : hairStyles[Random.Range(0, hairStyles.Length)];
+        public Sprite RandomFace => faces.Length == 0 ? null : faces[Random.Range(0, faces.Length)];
+        public Sprite RandomEyes => eyes.Length == 0 ? null : eyes[Random.Range(0, eyes.Length)];
+        public Sprite RandomNose => noses.Length == 0 ? null : noses[Random.Range(0, noses.Length)];
+        public Sprite RandomMouth => mouths.Length == 0 ? null : mouths[Random.Range(0, mouths.Length)];
+        public Color RandomHairColor => hairColors.Length == 0 ? Color.blue : hairColors[Random.Range(0, hairColors.Length)];
+        public Color RandomSkinTone => skinTones.Length == 0 ? Color.blue : skinTones[Random.Range(0, skinTones.Length)];
+        
         
 
     }
