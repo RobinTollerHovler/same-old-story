@@ -56,3 +56,6 @@ TagManager:
   - name: Foreground
     uniqueID: 2747840513
     locked: 0
+  - name: Polaroid
+    uniqueID: 2002049207
+    locked: 0
