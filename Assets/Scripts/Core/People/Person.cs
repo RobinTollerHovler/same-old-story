@@ -20,8 +20,10 @@ namespace Core.People {
                 Gender.Male => RandomMaleName(),
                 Gender.Female => RandomFemaleName()
             };
+            Face = new Face(Gender);
         }
         
+        public Face Face { get; }
         public string Name { get; }
         public Gender Gender { get; }
         
