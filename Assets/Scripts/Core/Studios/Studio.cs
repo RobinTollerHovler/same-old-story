@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.People;
 using Core.Wallets;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Buffs;
@@ -32,6 +33,7 @@ namespace SameOldStory.Core.Studios {
         public IEnumerable<Font> AvailableFonts => fonts;
         public Wallet Wallet { get; private set; }
         public BuffManager BuffManager { get; private set; }
+        public Roster Roster { get; private set; }
 
         public static void InitializeNewStudio() {
             Current = new Studio {
@@ -39,7 +41,8 @@ namespace SameOldStory.Core.Studios {
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
                 fonts = Resources.LoadAll("Fonts", typeof(Font)).Cast<Font>().ToArray(),
                 BuffManager = new BuffManager(),
-                Wallet = new Wallet(100)
+                Wallet = new Wallet(100),
+                Roster = new Roster(3)
             };
         }
 
