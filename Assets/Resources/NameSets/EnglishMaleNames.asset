@@ -10,8 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: befe58cd9d8e48a68667a311fca57e4c, type: 3}
-  m_Name: TemporaryMaleNames
+  m_Name: EnglishMaleNames
   m_EditorClassIdentifier: 
   firstNames:
-  - John
-  linkedSurnameSet: {fileID: 11400000, guid: aa6b99a2ff05e4193a21ff0c26fd0df0, type: 2}
+  - Aaron
+  - Bart
+  - Chad
+  - David
+  - Engelbert
+  - Fredrick
+  - George
+  - Harry
+  - Ismael
+  - Jeremy
+  - Karl
+  - Leonardo
+  - Martin
+  - N
+  - Oscar
+  - Phil
+  - Quentin
+  - Robin
+  - Stew
+  - Tom
+  - Hugh
+  - Victor
+  - William
+  - Yosef
+  - Zachary
+  linkedSurnameSet: {fileID: 11400000, guid: 83c4fc005f668644f903e5392ebab0ef, type: 2}

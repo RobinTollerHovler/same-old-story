@@ -10,7 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1265817bd04b49c89802166c1cdff5cc, type: 3}
-  m_Name: TemporarySurnames
+  m_Name: EnglishSurnames
   m_EditorClassIdentifier: 
   surnames:
-  - Doe
+  - Aaronson
+  - Baudelaire
+  - Cleese
+  - Darcy
+  - Elvgren
+  - Fry
+  - Gyllenhaal
+  - Humperdinck
+  - Isaacs
+  - Johnson
+  - Kenobi
+  - Lawless
+  - Marianovic
+  - Newson
+  - Oppenheimer
+  - Pascalidou
+  - Quinn
+  - Rackham
+  - Stewart
+  - Thatcher
+  - Urban
+  - Valejo
+  - Yusuf
+  - Zuckerman
