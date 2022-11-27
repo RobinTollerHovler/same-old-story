@@ -10,10 +10,18 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
 
         void Start() {
             Studio.Current.Roster.onAddedPersonToRoster += AddPolaroid;
+            InitializePolaroidsForCurrentStudio();
         }
 
         private void AddPolaroid(Person p) {
-            
+            Debug.Log(p.Name);
+        }
+
+        private void InitializePolaroidsForCurrentStudio() {
+            Roster roster = Studio.Current.Roster;
+            foreach (Person p in roster.People) {
+                AddPolaroid(p);
+            }
         }
         
     }

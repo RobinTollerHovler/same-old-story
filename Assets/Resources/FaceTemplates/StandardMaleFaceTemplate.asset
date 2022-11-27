@@ -12,10 +12,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f3cafa33b84b1cb6a32413e3cacf99, type: 3}
   m_Name: StandardMaleFaceTemplate
   m_EditorClassIdentifier: 
-  hairStyles: []
-  faces: []
-  eyes: []
-  noses: []
-  mouths: []
-  hairColors: []
-  skinTones: []
+  hairStyles:
+  - {fileID: 1095866488, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: -151263990, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: 1942071278, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: 639997539, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: 1426260828, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: -1865465430, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: -1707918927, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: -707407366, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: -385418463, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  - {fileID: 739659928, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  faces:
+  - {fileID: -1493300605, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: -1393655832, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: -808096332, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 166038849, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 414298624, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 814670112, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 1891371755, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 536630808, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: -1580070072, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  - {fileID: 930993187, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
+  eyes:
+  - {fileID: -1550387233, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 1849840379, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: -2022996153, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 60647442, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 1470021944, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: -1886092403, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 643987770, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 863417021, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: 104152385, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  - {fileID: -1887337751, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  noses:
+  - {fileID: 1116950346, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: -497764714, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: -743001368, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: -868293033, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: 1562338241, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: 1437993691, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: 2095928064, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: -1300398160, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: 1864380097, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  - {fileID: 1137839527, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  mouths:
+  - {fileID: 1497248791, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: -1053829953, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: 717237071, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: -836428066, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: 1928644444, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: 473470977, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: -1251660581, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: 2040759868, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: -1157196125, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  - {fileID: 429416527, guid: b7f0d86c172334443b5ef5eb4db5b241, type: 3}
+  hairColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  skinTones:
+  - {r: 1, g: 0.9584316, b: 0.7783019, a: 1}

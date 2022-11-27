@@ -15,6 +15,8 @@ namespace Core.People {
             }
         }
 
+        public HashSet<Person> People => persons;
+        
         public void AddPersonToRoster() {
             Person p = new Person();
             persons.Add(p);
