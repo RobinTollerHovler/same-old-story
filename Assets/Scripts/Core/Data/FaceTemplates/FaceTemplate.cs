@@ -15,6 +15,7 @@ namespace SameOldStory.Core.Data.People {
         [Header("Colors")]
         [SerializeField] private Color[] hairColors;
         [SerializeField] private Color[] skinTones;
+        [SerializeField] private Color[] lipColors;
 
         public Sprite[] HairStyles => hairStyles;
         public Sprite[] Faces => faces;
