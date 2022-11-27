@@ -9,13 +9,13 @@ namespace Core.People {
         private static MaleFaceTemplate[] cachedMaleFaceTemplates;
         private static FemaleFaceTemplate[] cachedFemaleFaceTemplates;
 
-        private Sprite HairStyle { get; }
-        private Sprite FaceType { get; }
-        private Sprite Eyes { get; }
-        private Sprite Nose { get; }
-        private Sprite Mouth { get; }
-        private Color HairColor { get; }
-        private Color SkinTone { get; }
+        public Sprite HairStyle { get; }
+        public Sprite FaceType { get; }
+        public Sprite Eyes { get; }
+        public Sprite Nose { get; }
+        public Sprite Mouth { get; }
+        public Color HairColor { get; }
+        public Color SkinTone { get; }
 
         public Face(Gender gender) {
             if (!FaceTemplatesLoaded) LoadFaceTemplates();

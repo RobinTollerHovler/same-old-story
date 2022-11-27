@@ -424,71 +424,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3011906315679700246, guid: 771d0b261b4da4bd2bcd8183ae101c07, type: 3}
   m_PrefabInstance: {fileID: 1738398121198674636}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2852942636287906176
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4380091364325313979}
-    m_Modifications:
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791888099670733531, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139016828833326264, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139016828833326264, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850223074743967947, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
-      propertyPath: m_Name
-      value: Polaroid
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 74e600ad5c65f4452930045f038be2b6, type: 3}
 --- !u!1001 &2976703859477216723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,14 +851,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4440797523714259977}
     m_Modifications:
-    - target: {fileID: 2184997197093135693, guid: 2c57e147bdb4846fcbdc3f0884ca20b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.886
-      objectReference: {fileID: 0}
-    - target: {fileID: 2184997197093135693, guid: 2c57e147bdb4846fcbdc3f0884ca20b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.924
-      objectReference: {fileID: 0}
     - target: {fileID: 3512721914009933580, guid: 2c57e147bdb4846fcbdc3f0884ca20b5, type: 3}
       propertyPath: m_Name
       value: CorcBoard
@@ -977,11 +904,6 @@ PrefabInstance:
 --- !u!4 &2998226663855742180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4842970473681505400, guid: 2c57e147bdb4846fcbdc3f0884ca20b5, type: 3}
-  m_PrefabInstance: {fileID: 7687214377350729884}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4380091364325313979 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6226030071624883495, guid: 2c57e147bdb4846fcbdc3f0884ca20b5, type: 3}
   m_PrefabInstance: {fileID: 7687214377350729884}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8958021751361386033

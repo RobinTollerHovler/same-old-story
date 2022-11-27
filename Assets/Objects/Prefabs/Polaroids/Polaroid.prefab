@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 2002049207
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1300398160, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
+  m_Sprite: {fileID: 1116950346, guid: 6279caaec12b31c4597b5149d3a943e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 2002049207
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 643987770, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
+  m_Sprite: {fileID: -1550387233, guid: c3eedebaba6dc384ca8c6982baddb717, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -359,8 +359,8 @@ SpriteRenderer:
   m_SortingLayerID: 2002049207
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 639997539, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
-  m_Color: {r: 1, g: 0.71453553, b: 0.6367924, a: 1}
+  m_Sprite: {fileID: 1095866488, guid: d4e2912824e6d76479ba9f12f02db84e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -473,6 +473,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Dude
+  face: {fileID: 3283565338209575118}
+  eyes: {fileID: 5885533981432667243}
+  nose: {fileID: 6606292551210733534}
+  mouth: {fileID: 6558055098680829222}
+  hair: {fileID: 6987484366942724866}
 --- !u!1 &6211700705938023368
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +552,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1493300605, guid: 75ad7c393425c8841a5d9e32f3833dbf, type: 3}
-  m_Color: {r: 0.9433962, g: 0.8882218, b: 0.6630473, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
