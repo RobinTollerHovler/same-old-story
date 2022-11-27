@@ -6,8 +6,8 @@ namespace Core.People {
     
     public class Face {
 
-        private static PeopleTemplate[] cachedMaleFaceTemplates;
-        private static PeopleTemplate[] cachedFemaleFaceTemplates;
+        private static MaleFaceTemplate[] cachedMaleFaceTemplates;
+        private static FemaleFaceTemplate[] cachedFemaleFaceTemplates;
 
         private Sprite HairStyle { get; }
         private Sprite FaceType { get; }
@@ -19,33 +19,22 @@ namespace Core.People {
 
         public Face(Gender gender) {
             if (!FaceTemplatesLoaded) LoadFaceTemplates();
-            switch (gender) {
-                case Gender.Male:
-                    PeopleTemplate maleTemplate = cachedMaleFaceTemplates[Random.Range(0, cachedMaleFaceTemplates.Length)];
-                    HairStyle = maleTemplate.RandomHairStyle;
-                    FaceType = maleTemplate.RandomFace;
-                    Eyes = maleTemplate.RandomEyes;
-                    Nose = maleTemplate.RandomNose;
-                    Mouth = maleTemplate.RandomMouth;
-                    HairColor = maleTemplate.RandomHairColor;
-                    SkinTone = maleTemplate.RandomSkinTone;
-                    break;
-                case Gender.Female:
-                    PeopleTemplate femaleTemplate = cachedFemaleFaceTemplates[Random.Range(0, cachedFemaleFaceTemplates.Length)];
-                    HairStyle = femaleTemplate.RandomHairStyle;
-                    FaceType = femaleTemplate.RandomFace;
-                    Eyes = femaleTemplate.RandomEyes;
-                    Nose = femaleTemplate.RandomNose;
-                    Mouth = femaleTemplate.RandomMouth;
-                    HairColor = femaleTemplate.RandomHairColor;
-                    SkinTone = femaleTemplate.RandomSkinTone;
-                    break;
-            }
+            FaceTemplate faceTemplate = gender switch {
+                Gender.Male => cachedMaleFaceTemplates[Random.Range(0, cachedMaleFaceTemplates.Length)],
+                Gender.Female => cachedFemaleFaceTemplates[Random.Range(0, cachedFemaleFaceTemplates.Length)]
+            };
+            HairStyle = faceTemplate.RandomHairStyle;
+            FaceType = faceTemplate.RandomFace;
+            Eyes = faceTemplate.RandomEyes;
+            Nose = faceTemplate.RandomNose;
+            Mouth = faceTemplate.RandomMouth;
+            HairColor = faceTemplate.RandomHairColor;
+            SkinTone = faceTemplate.RandomSkinTone;
         }
         
         private static void LoadFaceTemplates() {
-            cachedMaleFaceTemplates ??= Resources.LoadAll("PeopleTemplates", typeof(PeopleTemplate)).Cast<PeopleTemplate>().Where(p => p.Gender == Gender.Male).ToArray();
-            cachedFemaleFaceTemplates ??= Resources.LoadAll("PeopleTemplates", typeof(PeopleTemplate)).Cast<PeopleTemplate>().Where(p => p.Gender == Gender.Female).ToArray();
+            cachedMaleFaceTemplates ??= Resources.LoadAll("FaceTemplates", typeof(MaleFaceTemplate)).Cast<MaleFaceTemplate>().ToArray();
+            cachedFemaleFaceTemplates ??= Resources.LoadAll("FaceTemplates", typeof(FemaleFaceTemplate)).Cast<FemaleFaceTemplate>().ToArray();
         }
         
         private static bool FaceTemplatesLoaded => cachedMaleFaceTemplates != null || cachedFemaleFaceTemplates != null;

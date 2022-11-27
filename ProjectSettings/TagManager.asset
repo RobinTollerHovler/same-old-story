@@ -44,6 +44,9 @@ TagManager:
   - name: Posters
     uniqueID: 673124287
     locked: 0
+  - name: Window
+    uniqueID: 770515275
+    locked: 0
   - name: Manus
     uniqueID: 1189933915
     locked: 0

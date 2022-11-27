@@ -3,12 +3,8 @@ using UnityEngine;
 
 namespace SameOldStory.Core.Data.People {
     
-    [CreateAssetMenu(fileName = "New People Template", menuName = "Data/PeopleTemplate")]
-    public class PeopleTemplate : ScriptableObject {
+    public abstract class FaceTemplate : ScriptableObject {
 
-        [Header("Gender")]
-        [SerializeField] private Gender gender;
-        
         [Header("Sprites")]
         [SerializeField] private Sprite[] hairStyles;
         [SerializeField] private Sprite[] faces;
@@ -20,7 +16,6 @@ namespace SameOldStory.Core.Data.People {
         [SerializeField] private Color[] hairColors;
         [SerializeField] private Color[] skinTones;
 
-        public Gender Gender => gender;
         public Sprite[] HairStyles => hairStyles;
         public Sprite[] Faces => faces;
         public Sprite[] Eyes => eyes;
