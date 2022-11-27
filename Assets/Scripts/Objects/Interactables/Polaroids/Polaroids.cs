@@ -14,7 +14,6 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         }
 
         private void AddPolaroid(Person p) {
-            Debug.Log(p.Name);
         }
 
         private void InitializePolaroidsForCurrentStudio() {
