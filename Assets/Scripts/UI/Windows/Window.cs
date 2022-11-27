@@ -8,6 +8,7 @@ namespace SameOldStory.UI.Windows {
         private WindowActivationNode windowActivationNode;
 
         public abstract void Submit();
+        public virtual void OnOpen() {}
 
         private void Awake() {
             windowActivationNode = GetComponentsInChildren<WindowActivationNode>(true).FirstOrDefault();
@@ -16,8 +17,12 @@ namespace SameOldStory.UI.Windows {
 
         public void Close() => windowActivationNode?.Deactivate();
         protected virtual void SetUp() {}
-        protected void Open() => windowActivationNode?.Activate();
-
+        
+        protected void Open() {
+            windowActivationNode?.Activate();
+            OnOpen();
+        }
+        
     }
     
 }
