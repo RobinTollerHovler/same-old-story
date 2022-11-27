@@ -8,7 +8,9 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         private MovieNameInputField movieNameInputField;
         private MovieGenreDropdown movieGenreDropdown;
-        
+
+        private RoleButton[] roleButtons;
+
         public override void Submit() {
             Movie newMovie = new Movie(
                 movieNameInputField?.Text,
@@ -24,6 +26,12 @@ namespace SameOldStory.UI.Windows.Specifics {
             movieGenreDropdown = GetComponentsInChildren<MovieGenreDropdown>(true).FirstOrDefault();
         }
 
+        protected override void OnOpen() {
+            roleButtons = GetComponentsInChildren<RoleButton>();
+            foreach(RoleButton roleButton in roleButtons) roleButton.Hide();
+            if(roleButtons.Length > 0) roleButtons[0].Show();
+        }
+        
         private void OnEnable() => Movie.onRequestCreateNewMovie += Open;
         private void OnDisable() => Movie.onRequestCreateNewMovie -= Open;
         
