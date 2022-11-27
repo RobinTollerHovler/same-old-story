@@ -1,5 +1,6 @@
 using Core.People;
 using SameOldStory.Core.Studios;
+using SameOldStory.Input.Mouse;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.PeopleFrames {
