@@ -16,7 +16,7 @@ namespace SameOldStory.Objects.Interactables {
             remainingTypewriterPage?.Deactivate();
             completedTypewriterPage?.Deactivate();
             Tooltip = $"Write script";
-            ClickAction = new RequestCreateNewMovieClickAction();
+            ClickAction = new RequestCreateNewScriptClickAction();
         }
 
         private void OnEnable() {

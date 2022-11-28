@@ -1,4 +1,5 @@
 using System.Linq;
+using Core.Movies;
 using SameOldStory.Core.Movies;
 using SameOldStory.Core.Studios;
 
@@ -32,8 +33,8 @@ namespace SameOldStory.UI.Windows.Specifics {
             if(roleThumbnails.Length > 0) roleThumbnails[0].Show();
         }
         
-        private void OnEnable() => Movie.onRequestCreateNewMovie += Open;
-        private void OnDisable() => Movie.onRequestCreateNewMovie -= Open;
+        private void OnEnable() => Script.onRequestCreateNewScript += Open;
+        private void OnDisable() => Script.onRequestCreateNewScript -= Open;
         
     }
     

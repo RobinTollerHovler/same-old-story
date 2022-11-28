@@ -25,7 +25,6 @@ namespace SameOldStory.Core.Movies {
 
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
-        public static event Action onRequestCreateNewMovie;
         public static event Action<Movie> onRequestCreateMoviePoster;
         public static event Action<Movie> onMovieReviewsCollected;
         
@@ -73,7 +72,6 @@ namespace SameOldStory.Core.Movies {
         public Genre Genre { get; }
         public GenreReview GenreReview { get; private set; }
 
-        public static void Create() => onRequestCreateNewMovie?.Invoke();
         public static void CreatePoster() => onRequestCreateMoviePoster?.Invoke(Active);
         
         public void Activate() => Active = this;
