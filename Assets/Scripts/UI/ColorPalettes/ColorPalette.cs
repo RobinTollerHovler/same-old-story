@@ -21,7 +21,7 @@ namespace UI.ColorPalettes {
             int currentColumn = 0;
             int currentRow = 0;
             foreach (Tone tone in tones) {
-                if (currentColumn > columns) {
+                if (currentColumn < columns) {
                     currentColumn = 0;
                     currentRow++;
                 }

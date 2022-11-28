@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColorPalette_PosterText
       objectReference: {fileID: 0}
+    - target: {fileID: 257420601976496278, guid: 9c42679169bc04134bdbf249af373dfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4938967360212362455, guid: 9c42679169bc04134bdbf249af373dfe, type: 3}
       propertyPath: m_Pivot.x
       value: 0
