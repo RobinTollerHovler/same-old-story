@@ -9,7 +9,7 @@ namespace SameOldStory.UI.TextDisplays {
 
         protected virtual void SetUp() {}
 
-        protected void SetText(string text) {
+        public void SetText(string text) {
             if (textMeshProUGUI != null) textMeshProUGUI.text = text;
         }
         

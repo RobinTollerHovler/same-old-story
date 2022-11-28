@@ -46,7 +46,7 @@ namespace SameOldStory.UI.Windows.Specifics {
             foreach(RoleThumbnail roleThumbnail in roleThumbnails) roleThumbnail.Hide();
             Role[] roles = Script.CurrentlyCreating.Roles.ToArray();
             for (int i = 0; i < roles.Length; i++) {
-                if(roleThumbnails.Length > i) roleThumbnails[i].Show();
+                if(roleThumbnails.Length > i) roleThumbnails[i].Show(roles[i]);
             }
             if(roleThumbnails.Length > roles.Length) roleThumbnails[roles.Length].Show();
         }
