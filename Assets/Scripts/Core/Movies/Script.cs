@@ -20,6 +20,7 @@ namespace Core.Movies {
             Roles.Add(role);
             onRolesUpdated?.Invoke();
         }
+        
     }
     
 }
