@@ -10,13 +10,18 @@ namespace SameOldStory.UI.Windows {
         public abstract void Submit();
         
         protected virtual void OnOpen() {}
-
+        protected virtual void OnClose() {}
+        
         private void Awake() {
             windowActivationNode = GetComponentsInChildren<WindowActivationNode>(true).FirstOrDefault();
             SetUp();
         }
 
-        public void Close() => windowActivationNode?.Deactivate();
+        public void Close() {
+            OnClose();
+            windowActivationNode?.Deactivate();
+        }
+
         protected virtual void SetUp() {}
         
         protected void Open() {
