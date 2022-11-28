@@ -6,6 +6,8 @@ namespace Core.Movies {
     public class Script : Product {
 
         public static event Action onRequestCreateNewScript;
+
+        public event Action onRolesUpdated;
         
         public static Script CurrentlyCreating { get; private set; }
 
@@ -14,8 +16,10 @@ namespace Core.Movies {
             onRequestCreateNewScript?.Invoke();
         }
 
-        public void AddRole(Role role) => Roles.Add(role);
-
+        public void AddRole(Role role) {
+            Roles.Add(role);
+            onRolesUpdated?.Invoke();
+        }
     }
     
 }

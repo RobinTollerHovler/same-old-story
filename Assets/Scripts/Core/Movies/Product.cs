@@ -8,7 +8,7 @@ namespace Core.Movies {
 
         public string Title { get; protected set; }
         public Genre Genre { get; protected set; }
-        public List<Role> Roles { get; protected set; }
+        public List<Role> Roles { get; protected set; } = new();
 
     }
     

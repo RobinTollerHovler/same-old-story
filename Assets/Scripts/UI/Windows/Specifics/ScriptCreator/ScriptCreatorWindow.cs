@@ -1,16 +1,18 @@
+using System;
 using System.Linq;
 using Core.Movies;
+using Core.Roles;
 using SameOldStory.Core.Movies;
 using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
     public class ScriptCreatorWindow : Window {
-
+        
+        private RoleThumbnail[] roleThumbnails;
         private ProductTitleInputField productTitleInputField;
         private ProductGenreDropdown productGenreDropdown;
 
-        private RoleThumbnail[] roleThumbnails;
 
         public override void Submit() {
             Movie newMovie = new Movie(
@@ -28,13 +30,26 @@ namespace SameOldStory.UI.Windows.Specifics {
         }
 
         protected override void OnOpen() {
-            roleThumbnails = GetComponentsInChildren<RoleThumbnail>();
-            foreach(RoleThumbnail roleThumbnail in roleThumbnails) roleThumbnail.Hide();
-            if(roleThumbnails.Length > 0) roleThumbnails[0].Show();
+            Script.CurrentlyCreating.onRolesUpdated += UpdateRoles;
+            UpdateRoles();
         }
-        
+
+        protected override void OnClose() {
+            Script.CurrentlyCreating.onRolesUpdated -= UpdateRoles;
+        }
+
         private void OnEnable() => Script.onRequestCreateNewScript += Open;
         private void OnDisable() => Script.onRequestCreateNewScript -= Open;
+
+        private void UpdateRoles() {
+            roleThumbnails = GetComponentsInChildren<RoleThumbnail>();
+            foreach(RoleThumbnail roleThumbnail in roleThumbnails) roleThumbnail.Hide();
+            Role[] roles = Script.CurrentlyCreating.Roles.ToArray();
+            for (int i = 0; i < roles.Length; i++) {
+                if(roleThumbnails.Length > i) roleThumbnails[i].Show();
+            }
+            if(roleThumbnails.Length > roles.Length) roleThumbnails[roles.Length].Show();
+        }
         
     }
     

@@ -1,4 +1,4 @@
-using SameOldStory.UI.Buttons;
+using Core.Roles;
 using UnityEngine;
 
 namespace SameOldStory.UI.Windows.Specifics {
@@ -7,9 +7,14 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         private AddRoleButtonNode node;
 
-        public void Hide() => node?.gameObject.SetActive(false);
-        public void Show() => node?.gameObject.SetActive(true);
+        private void Awake() => node = GetComponentInChildren<AddRoleButtonNode>();
 
+        public void Hide() => node?.gameObject.SetActive(false);
+        
+        public void Show(Role attachedRole = null) {
+            node?.gameObject.SetActive(true);
+        }
+        
     }
     
 }
