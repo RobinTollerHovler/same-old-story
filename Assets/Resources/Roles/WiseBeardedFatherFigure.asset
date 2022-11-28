@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7dc665cbcb64e14a17c3bd6f94be6ea, type: 3}
-  m_Name: WiseMaster
+  m_Name: WiseBeardedFatherFigure
   m_EditorClassIdentifier: 
   startAvailable: 1
-  roleTitle: Wise Master
+  roleTitle: Wise Bearded Father Figure
   fittingGenres:
   - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}
   - {fileID: 11400000, guid: cee084ec02d662645b655922005fb48c, type: 2}
