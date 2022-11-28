@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dc665cbcb64e14a17c3bd6f94be6ea, type: 3}
   m_Name: GiantInsect
   m_EditorClassIdentifier: 
-  startAvailable: 0
-  roleTitle: 
+  startAvailable: 1
+  roleTitle: Giant Insect
   fittingGenres:
   - {fileID: 11400000, guid: e49e13d670a8c4332bf09c7c2fe2d9aa, type: 2}
   - {fileID: 11400000, guid: 71970706e3b7f4945b20bcdbf7289e45, type: 2}
