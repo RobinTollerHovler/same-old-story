@@ -9,7 +9,6 @@ namespace SameOldStory.UI.Buttons {
         
         protected override void Click() {
             base.Click();
-            Debug.Log("ASD");
             roleMenu.Open();
         }
         
