@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Movies;
 using Core.People;
 using Core.Roles;
 using Core.Wallets;
@@ -38,6 +39,7 @@ namespace SameOldStory.Core.Studios {
         public Wallet Wallet { get; private set; }
         public BuffManager BuffManager { get; private set; }
         public Roster Roster { get; private set; }
+        public MovieLibrary MovieLibrary { get; private set; }
 
         public static void InitializeNewStudio() {
             Current = new Studio {
@@ -47,7 +49,8 @@ namespace SameOldStory.Core.Studios {
                 roles = Resources.LoadAll("Roles", typeof(Role)).Cast<Role>().ToArray(),
                 BuffManager = new BuffManager(),
                 Wallet = new Wallet(100),
-                Roster = new Roster(3)
+                Roster = new Roster(3),
+                MovieLibrary = new MovieLibrary()
             };
         }
 
