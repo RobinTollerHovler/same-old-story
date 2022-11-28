@@ -1,8 +1,7 @@
+using Core.Movies;
 using Core.Roles;
-using SameOldStory.Core.Movies;
 using SameOldStory.Core.Studios;
 using SameOldStory.UI.Buttons;
-using SameOldStory.UI.Windows;
 using UI.Menus;
 using UnityEngine;
 
@@ -14,6 +13,7 @@ namespace UI.Windows.Specifics.MovieMaker.Roles {
 
         protected override void Click() {
             base.Click();
+            Script.CurrentlyCreating.AddRole(role);
             GetComponentInParent<RoleMenu>()?.Close();
             //GetComponentInChildren<ActorForRoleMenu>()?.Open();
         }
