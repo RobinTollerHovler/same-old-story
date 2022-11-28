@@ -1,13 +1,17 @@
+using SameOldStory.UI.Buttons;
 using UnityEngine;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class RoleButton : MonoBehaviour {
+    public class RoleButton : Button {
 
         private RoleButtonNode node;
 
-        private void Awake() => node = GetComponentInChildren<RoleButtonNode>();
+        protected override void Click() {
+            base.Click();
+        }
         
+
         public void Hide() => node?.gameObject.SetActive(false);
         public void Show() => node?.gameObject.SetActive(true);
 
