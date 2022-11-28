@@ -11,7 +11,7 @@ namespace UI.Windows.Specifics.MovieMaker.Roles {
 
         protected override void Click() {
             base.Click();
-            GetComponentInChildren<ActorMenu>()?.Open();
+            GetComponentInChildren<ActorForRoleMenu>()?.Open();
         }
         
         private void OnEnable() {
