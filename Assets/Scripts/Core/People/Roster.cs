@@ -5,9 +5,9 @@ namespace Core.People {
     
     public class Roster {
 
-        public event Action<Person> onAddedPersonToRoster;
+        public event Action<Actor> onAddedPersonToRoster;
         
-        private HashSet<Person> persons = new();
+        private HashSet<Actor> persons = new();
 
         public Roster(int initialNumberOfPeople) {
             for (int n = 0; n < initialNumberOfPeople; n++) {
@@ -15,10 +15,10 @@ namespace Core.People {
             }
         }
 
-        public HashSet<Person> People => persons;
+        public HashSet<Actor> People => persons;
         
         public void AddPersonToRoster() {
-            Person p = new Person();
+            Actor p = new Actor();
             persons.Add(p);
             onAddedPersonToRoster?.Invoke(p);
         }

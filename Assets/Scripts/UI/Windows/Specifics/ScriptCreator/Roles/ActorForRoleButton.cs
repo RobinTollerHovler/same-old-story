@@ -10,8 +10,8 @@ namespace UI.Windows.Specifics.ScriptCreator.Roles {
         [SerializeField] private TextMeshProUGUI actorNameText;
         [SerializeField] private TextMeshProUGUI actorWageText;
 
-        public void AssignActor(Person person) {
-            actorNameText.text = person.Name;
+        public void AssignActor(Actor actor) {
+            actorNameText.text = actor.Name;
             actorWageText.text = $"$0 /m";
         }
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Core.People {
     
-    public class Person {
+    public class Actor {
 
         private static MaleFirstNameSet[] cachedMaleFirstNames;
         private static FemaleFirstNameSet[] cachedFemaleFirstNames;
         private static SurnameSet[] cachedSurnames;
 
-        public Person() {
+        public Actor() {
             if(!NameSetsLoaded) LoadNameSets();
             Gender = Random.Range(0f, 1f) switch {
                 < .5f => Gender.Male,

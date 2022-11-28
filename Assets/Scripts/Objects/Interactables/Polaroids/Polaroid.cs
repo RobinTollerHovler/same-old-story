@@ -14,7 +14,7 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         private void Start() => DisplayPerson();
         
         private void DisplayPerson() {
-            Person p = new Person();
+            Actor p = new Actor();
             Tooltip = p.Name;
             face.sprite = p.Face.FaceType;
             eyes.sprite = p.Face.Eyes;

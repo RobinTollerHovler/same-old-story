@@ -14,12 +14,12 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
             InitializePolaroidsForCurrentStudio();
         }
 
-        private void AddPolaroid(Person p) {
+        private void AddPolaroid(Actor p) {
         }
 
         private void InitializePolaroidsForCurrentStudio() {
             Roster roster = Studio.Current.Roster;
-            foreach (Person p in roster.People) {
+            foreach (Actor p in roster.People) {
                 AddPolaroid(p);
             }
         }
