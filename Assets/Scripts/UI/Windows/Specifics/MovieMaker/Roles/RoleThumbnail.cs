@@ -3,14 +3,9 @@ using UnityEngine;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class RoleButton : Button {
+    public class RoleThumbnail : MonoBehaviour {
 
-        private RoleButtonNode node;
-
-        protected override void Click() {
-            base.Click();
-        }
-        
+        private AddRoleButtonNode node;
 
         public void Hide() => node?.gameObject.SetActive(false);
         public void Show() => node?.gameObject.SetActive(true);

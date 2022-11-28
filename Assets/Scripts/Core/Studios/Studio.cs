@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.People;
+using Core.Roles;
 using Core.Wallets;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Buffs;
@@ -27,10 +28,13 @@ namespace SameOldStory.Core.Studios {
         private Genre[] genres;
         private Tone[] colors;
         private Font[] fonts;
+        private Role[] roles;
 
         public IEnumerable<Genre> AvailableGenres => genres.Where(g => g.StartAvailable).ToArray();
         public IEnumerable<Tone> AvailableColors => colors;
         public IEnumerable<Font> AvailableFonts => fonts;
+        public Role[] AvailableRoles => roles;
+
         public Wallet Wallet { get; private set; }
         public BuffManager BuffManager { get; private set; }
         public Roster Roster { get; private set; }
@@ -40,6 +44,7 @@ namespace SameOldStory.Core.Studios {
                 genres = Resources.LoadAll("Genres", typeof(Genre)).Cast<Genre>().ToArray(),
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
                 fonts = Resources.LoadAll("Fonts", typeof(Font)).Cast<Font>().ToArray(),
+                roles = Resources.LoadAll("Roles", typeof(Role)).Cast<Role>().ToArray(),
                 BuffManager = new BuffManager(),
                 Wallet = new Wallet(100),
                 Roster = new Roster(3)

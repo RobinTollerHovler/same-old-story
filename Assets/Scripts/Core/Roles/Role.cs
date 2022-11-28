@@ -10,6 +10,10 @@ namespace Core.Roles {
         [SerializeField] private Genre[] fittingGenres;
         [SerializeField] private Genre[] unfittingGenres;
 
+        public string RoleTitle => roleTitle;
+        public Genre[] FittingGenres => fittingGenres;
+        public Genre[] UnfittingGenres => unfittingGenres;
+
     }
     
 }

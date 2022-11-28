@@ -7,7 +7,7 @@ namespace SameOldStory.UI.Windows.Specifics {
     public class MovieGenreDropdown : DropdownComponent {
 
         private void OnEnable() {
-            SetOptions(Studio.Current.AvailableGenres.Select(g => g.Name).ToArray());            
+            SetOptions(Studio.Current.AvailableGenres.Select(g => g.Name).ToArray());
         }
 
     }
