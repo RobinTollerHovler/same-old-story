@@ -1,4 +1,5 @@
 using Core.Roles;
+using SameOldStory.UI.Menus;
 using UnityEngine;
 
 namespace SameOldStory.UI.Windows.Specifics {
@@ -9,8 +10,11 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         private void Awake() => node = GetComponentInChildren<AddRoleButtonNode>();
 
-        public void Hide() => node?.gameObject.SetActive(false);
-        
+        public void Hide() {
+            foreach(IMenu menu in GetComponentsInChildren<IMenu>()) menu.Close();
+            node?.gameObject.SetActive(false);
+        }
+
         public void Show(Role attachedRole = null) {
             node?.gameObject.SetActive(true);
         }
