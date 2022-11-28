@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7dc665cbcb64e14a17c3bd6f94be6ea, type: 3}
-  m_Name: JerkWithAHeartOfGold
+  m_Name: Hero's2DimensionalLoveInterest
   m_EditorClassIdentifier: 
   startAvailable: 1
-  roleTitle: Jerk With A Heart Of Gold
+  roleTitle: Hero's 2Dimensional Love Interest
   fittingGenres: []
   unfittingGenres: []

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MutatedMonster
   m_EditorClassIdentifier: 
   startAvailable: 1
-  roleTitle: 
+  roleTitle: Mutated Monster
   fittingGenres: []
   unfittingGenres: []
