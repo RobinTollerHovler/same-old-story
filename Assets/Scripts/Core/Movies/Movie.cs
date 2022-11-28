@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Movies;
+using Core.Roles;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Reviews;
@@ -19,6 +21,7 @@ namespace SameOldStory.Core.Movies {
         private readonly float timeLive;
         private float timeInvested;
         private float productionCost = 10;
+        private List<Role> roles = new();
 
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
