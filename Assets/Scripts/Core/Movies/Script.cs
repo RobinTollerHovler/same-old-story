@@ -7,17 +7,12 @@ namespace Core.Movies {
         public static event Action onRequestCreateNewScript;
         
         public static Script CurrentlyCreating { get; private set; }
-        
-        public Script() {
-            
-        }
-        
+
         public static void Create() {
             CurrentlyCreating = new Script();
             onRequestCreateNewScript?.Invoke();
         }
-        
-        
+
     }
     
 }
