@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SameOldStory.UI.Buttons {
     
-    public class OpenRollButton : Button {
+    public class OpenRoleButton : Button {
 
         [SerializeField] private RoleMenu roleMenu;
         
