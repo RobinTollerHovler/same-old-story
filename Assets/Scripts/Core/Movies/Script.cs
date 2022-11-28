@@ -1,4 +1,5 @@
 using System;
+using Core.Roles;
 
 namespace Core.Movies {
     
@@ -12,6 +13,8 @@ namespace Core.Movies {
             CurrentlyCreating = new Script();
             onRequestCreateNewScript?.Invoke();
         }
+
+        public void AddRole(Role role) => Roles.Add(role);
 
     }
     
