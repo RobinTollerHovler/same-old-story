@@ -5,26 +5,26 @@ using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class MovieMakerWindow : Window {
+    public class ScriptCreatorWindow : Window {
 
-        private MovieNameInputField movieNameInputField;
-        private MovieGenreDropdown movieGenreDropdown;
+        private ProductTitleInputField productTitleInputField;
+        private ProductGenreDropdown productGenreDropdown;
 
         private RoleThumbnail[] roleThumbnails;
 
         public override void Submit() {
             Movie newMovie = new Movie(
-                movieNameInputField?.Text,
-                Studio.Current.GetGenreWithName(movieGenreDropdown.Selected())
+                productTitleInputField?.Text,
+                Studio.Current.GetGenreWithName(productGenreDropdown.Selected())
             );
             newMovie.Activate();
-            movieNameInputField?.Clear();
+            productTitleInputField?.Clear();
             Close();
         }
         
         protected override void SetUp() {
-            movieNameInputField = GetComponentsInChildren<MovieNameInputField>(true).FirstOrDefault();
-            movieGenreDropdown = GetComponentsInChildren<MovieGenreDropdown>(true).FirstOrDefault();
+            productTitleInputField = GetComponentsInChildren<ProductTitleInputField>(true).FirstOrDefault();
+            productGenreDropdown = GetComponentsInChildren<ProductGenreDropdown>(true).FirstOrDefault();
         }
 
         protected override void OnOpen() {
