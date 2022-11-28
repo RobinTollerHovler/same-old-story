@@ -28,8 +28,6 @@ namespace SameOldStory.Core.Movies {
         public static event Action<Movie> onMovieReviewsCollected;
         
         public event Action onDiscarding;
-        public event Action onDiscarded;
-        public event Action onProducing;
         public event Action onUpdated;
         public event Action onReleased;
         public event Action onCanceled;
@@ -78,14 +76,12 @@ namespace SameOldStory.Core.Movies {
         
         public void Discard() {
             onDiscarding?.Invoke();
-            onDiscarded?.Invoke();
             onActiveMovieChanged?.Invoke(null);
         }
 
         public void StartProduction() {
             Poster.Generate(this);
             Stage = MovieStage.Producing;
-            onProducing?.Invoke();
             onActiveMovieChanged?.Invoke(null);
         }
 
