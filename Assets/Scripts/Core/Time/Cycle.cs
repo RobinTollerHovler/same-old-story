@@ -5,7 +5,7 @@ namespace SameOldStory.Core.Time {
     
     public class Cycle : MonoBehaviour {
 
-        public const float MONTH = 8;
+        public const float MONTH = 1;
         
         public static event Action<float> onTick;
 

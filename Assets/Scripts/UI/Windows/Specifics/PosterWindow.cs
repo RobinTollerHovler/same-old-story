@@ -1,20 +1,24 @@
+using Core.Movies;
 using SameOldStory.Core.Movies;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
     public class PosterWindow : Window {
+
+        private Script script;
         
         public override void Submit() {
-            Movie.Active.StartProduction();
+            Movie.StartProduction(script);
             Close();
         }
 
-        private void OpenWindowForMovie(Movie movie) {
+        private void OpenWindowForScript(Script script) {
+            this.script = script;
             Open();
         }
         
-        private void OnEnable() => Movie.onRequestCreateMoviePoster += OpenWindowForMovie;
-        private void OnDisable() => Movie.onRequestCreateMoviePoster -= OpenWindowForMovie;
+        private void OnEnable() => Script.onRequestCreateMoviePoster += OpenWindowForScript;
+        private void OnDisable() => Script.onRequestCreateMoviePoster -= OpenWindowForScript;
         
     }
     

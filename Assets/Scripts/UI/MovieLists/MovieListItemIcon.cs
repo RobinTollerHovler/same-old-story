@@ -1,5 +1,4 @@
 using SameOldStory.Core;
-using SameOldStory.Core.Movies;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,6 @@ namespace UI.MovieLists {
     
     public class MovieListItemIcon : MonoBehaviour {
 
-        [SerializeField] private Sprite writingIcon;
         [SerializeField] private Sprite producingIcon;
         [SerializeField] private Sprite liveIcon;
         
@@ -18,17 +16,12 @@ namespace UI.MovieLists {
         
         private void Start() {
             representMovie = GetComponentInParent<IRepresentMovie>();
-            if (representMovie != null) representMovie.Movie.onUpdated += SetNewIcon;
+            if (representMovie != null) representMovie.Movie.onTick += SetNewIcon;
         }
 
         private void SetNewIcon() {
             if (image == null) return;
-            image.sprite = representMovie.Movie.Stage switch {
-                MovieStage.Writing => writingIcon,
-                MovieStage.Producing => producingIcon,
-                MovieStage.Released  => liveIcon,
-                _ => writingIcon
-            };
+            image.sprite = representMovie.Movie.IsLive ? liveIcon : producingIcon;
         }
         
     }

@@ -1,3 +1,4 @@
+using Core.Movies;
 using SameOldStory.Core.Movies;
 using SameOldStory.Objects.Interactables.Posters.Components;
 
@@ -5,15 +6,15 @@ namespace SameOldStory.Objects.Interactables.Posters {
     
     public abstract class Poster : InteractableObject {
 
-        protected Movie movie;
+        protected Product product;
         private PosterMovieTitleText posterMovieTitleText;
 
         protected PosterNode PosterNode { get; private set; }
         
-        public void AssignMovie(Movie movie) {
-            if (movie == null) return;
-            this.movie = movie;
-            posterMovieTitleText?.Set(movie.Title);
+        public void AssignProduct(Product product) {
+            if (product == null) return;
+            this.product = product;
+            posterMovieTitleText?.Set(product.Title);
         }
 
         protected virtual void Awake() {

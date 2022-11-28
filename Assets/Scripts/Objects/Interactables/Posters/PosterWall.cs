@@ -32,7 +32,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
             GameObject newPoster = Instantiate(hangablePosterTemplate, Vector3.zero, Quaternion.identity, transform);
             HangablePoster hp = newPoster.GetComponent<HangablePoster>();
             hp.Sort(NumberOfPosters);
-            hp.AssignMovie(movie);
+            hp.AssignProduct(movie);
         }
 
     }

@@ -6,8 +6,8 @@ namespace Core.Movies {
     
     public abstract class Product {
 
-        public string Title { get; protected set; }
-        public Genre Genre { get; protected set; }
+        public string Title { get; set; }
+        public Genre Genre { get; set; }
         public List<Role> Roles { get; protected set; } = new();
 
     }

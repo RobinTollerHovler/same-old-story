@@ -1,8 +1,6 @@
-using System;
 using System.Linq;
 using Core.Movies;
 using Core.Roles;
-using SameOldStory.Core.Movies;
 using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.Windows.Specifics {
@@ -15,11 +13,9 @@ namespace SameOldStory.UI.Windows.Specifics {
 
 
         public override void Submit() {
-            Movie newMovie = new Movie(
-                productTitleInputField?.Text,
-                Studio.Current.GetGenreWithName(productGenreDropdown.Selected())
-            );
-            newMovie.Activate();
+            Script.CurrentlyCreating.Title = productTitleInputField?.Text;
+            Script.CurrentlyCreating.Genre = Studio.Current.GetGenreWithName(productGenreDropdown.Selected());
+            Script.CurrentlyCreating.Create();
             productTitleInputField?.Clear();
             Close();
         }
@@ -38,8 +34,8 @@ namespace SameOldStory.UI.Windows.Specifics {
             Script.CurrentlyCreating.onRolesUpdated -= UpdateRoles;
         }
 
-        private void OnEnable() => Script.onRequestCreateNewScript += Open;
-        private void OnDisable() => Script.onRequestCreateNewScript -= Open;
+        private void OnEnable() => Script.onRequestInitializeNewScript += Open;
+        private void OnDisable() => Script.onRequestInitializeNewScript -= Open;
 
         private void UpdateRoles() {
             roleThumbnails = GetComponentsInChildren<RoleThumbnail>();

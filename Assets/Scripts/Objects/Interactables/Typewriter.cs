@@ -1,4 +1,5 @@
 using System.Collections;
+using Core.Movies;
 using SameOldStory.Core.Movies;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace SameOldStory.Objects.Interactables {
         [SerializeField] private TypewriterPage remainingTypewriterPage;
         [SerializeField] private TypewriterPage completedTypewriterPage;
 
-        private Movie movie;
+        private Script script;
         
         private void Awake() {
             remainingTypewriterPage?.Deactivate();
@@ -20,17 +21,17 @@ namespace SameOldStory.Objects.Interactables {
         }
 
         private void OnEnable() {
-            Movie.onActiveMovieChanged += WorkOnMovie;
+            Script.onCurrentlyWritingScriptChanged += WorkOnScript;
         }
 
         private void OnDisable() {
-            Movie.onActiveMovieChanged -= WorkOnMovie;
+            Script.onCurrentlyWritingScriptChanged -= WorkOnScript;
         }
 
-        private void WorkOnMovie(Movie workOnMovie) {
+        private void WorkOnScript(Script workOScript) {
             StopAllCoroutines();
-            movie = workOnMovie;
-            if (movie != null) {
+            script = workOScript;
+            if (script != null) {
                 remainingTypewriterPage.Activate();
                 completedTypewriterPage.Activate();
                 StartCoroutine(nameof(WriteScript));
@@ -42,13 +43,13 @@ namespace SameOldStory.Objects.Interactables {
         }
 
         private void SetPageLocations() {
-            completedTypewriterPage?.SetAtFactor(1 - movie.WriteProgress);
-            remainingTypewriterPage?.SetAtFactor(movie.WriteProgress);
+            completedTypewriterPage?.SetAtFactor(1 - Script.CurrentlyWritingScript.WriteProgress);
+            remainingTypewriterPage?.SetAtFactor(Script.CurrentlyWritingScript.WriteProgress);
         }
         
         private IEnumerator WriteScript() {
             while (true) {
-                movie.Write(Time.deltaTime);
+                Script.CurrentlyCreating?.Write(Time.deltaTime);
                 yield return null;
             }
         }
