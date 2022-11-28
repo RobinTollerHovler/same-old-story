@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace SameOldStory.Core.Movies {
     
-    public class Movie {
+    public class Movie : Product {
 
         private static Movie active;
         private MovieStage stage;

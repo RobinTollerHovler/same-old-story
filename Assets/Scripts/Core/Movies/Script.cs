@@ -2,12 +2,22 @@ using System;
 
 namespace Core.Movies {
     
-    public class Script {
+    public class Script : Product {
 
         public static event Action onRequestCreateNewScript;
         
-        public static void Create() => onRequestCreateNewScript?.Invoke();
-
+        public static Script CurrentlyCreating { get; private set; }
+        
+        public Script() {
+            
+        }
+        
+        public static void Create() {
+            CurrentlyCreating = new Script();
+            onRequestCreateNewScript?.Invoke();
+        }
+        
+        
     }
     
 }
