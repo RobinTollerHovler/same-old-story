@@ -13,7 +13,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
         public void AssignMovie(Movie movie) {
             if (movie == null) return;
             this.movie = movie;
-            posterMovieTitleText?.Set(movie.Name);
+            posterMovieTitleText?.Set(movie.Title);
         }
 
         protected virtual void Awake() {

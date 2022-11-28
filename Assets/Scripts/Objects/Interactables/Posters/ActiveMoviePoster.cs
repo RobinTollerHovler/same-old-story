@@ -27,10 +27,10 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void UpdatePoster() {
             switch (movie.Stage) {
                 case MovieStage.Writing:
-                    Tooltip = $"Writing: {movie.Name}";
+                    Tooltip = $"Writing: {movie.Title}";
                     break;
                 case MovieStage.ProductionReady:
-                    Tooltip = $"Start production: {movie.Name}";
+                    Tooltip = $"Start production: {movie.Title}";
                     ClickAction = new RequestCreatePosterForActiveMovieClickAction();
                     break;
             }

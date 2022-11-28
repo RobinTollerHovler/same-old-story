@@ -6,7 +6,7 @@ namespace SameOldStory.UI.TextDisplays {
         
         private void Start() {
             IRepresentMovie representMovie = GetComponentInParent<IRepresentMovie>();
-            if(representMovie != null) SetText(representMovie.Movie.Name);
+            if(representMovie != null) SetText(representMovie.Movie.Title);
         }
         
     }

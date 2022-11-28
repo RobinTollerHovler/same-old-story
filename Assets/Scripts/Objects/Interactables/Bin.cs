@@ -14,7 +14,7 @@ namespace SameOldStory.Objects.Interactables {
                 Tooltip = "";
             } else {
                 ClickAction = new DiscardMovieClickAction(movie);
-                Tooltip = $"Discard: {movie.Name}";
+                Tooltip = $"Discard: {movie.Title}";
             }
         }
 
