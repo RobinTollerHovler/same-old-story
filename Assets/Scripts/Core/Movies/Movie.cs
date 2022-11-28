@@ -34,8 +34,8 @@ namespace SameOldStory.Core.Movies {
         public event Action onReleased;
         public event Action onCanceled;
 
-        public Movie(string name, Genre genre) {
-            Title = name;
+        public Movie(string title, Genre genre) {
+            Title = title;
             Genre = genre;
             timeToWrite = 2 + genre.LeastMonthsOfWorkRequired;
             timeToProduce = timeToWrite + 2 + genre.LeastMonthsOfWorkRequired;
@@ -67,7 +67,6 @@ namespace SameOldStory.Core.Movies {
             }
         }
         
-        public Genre Genre { get; }
         public GenreReview GenreReview { get; private set; }
 
         public static void CreatePoster() => onRequestCreateMoviePoster?.Invoke(Active);
