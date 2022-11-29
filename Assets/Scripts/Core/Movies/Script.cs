@@ -30,8 +30,8 @@ namespace Core.Movies {
                 onCurrentlyWritingScriptChanged?.Invoke(value);
             }
         }
-        
-        public float TimeToWrite { get; private set; }
+
+        private float TimeToWrite => Cycle.MonthsRequiredForWorkBase + Cycle.MonthsRequiredForWorkPerRole * Roles.Count;
 
         private float WrittenTime {
             get => writtenTime;
@@ -55,7 +55,6 @@ namespace Core.Movies {
         public static void Initialize() {
             CurrentlyCreating = new Script();
             onRequestInitializeNewScript?.Invoke();
-            CurrentlyCreating.TimeToWrite = Cycle.Month;
         }
 
         public static void CreatePoster() {

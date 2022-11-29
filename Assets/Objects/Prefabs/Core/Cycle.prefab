@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monthDuration: 1
+  monthsMoviesStayLive: 12
+  monthsRequiredForWorkBase: 2
+  monthsRequiredForWorkPerRole: 2

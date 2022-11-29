@@ -69,6 +69,7 @@ namespace SameOldStory.Core.Reviews {
         }
         
         public float Score { get; protected set; }
+
         
 
     }

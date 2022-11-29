@@ -30,8 +30,8 @@ namespace SameOldStory.Core.Movies {
             Genre = product.Genre;
             Roles = product.Roles;
             PosterSettings = product.PosterSettings;
-            timeToProduce = Cycle.Month * 6;
-            timeLive = Cycle.Month * 12;
+            timeToProduce = Cycle.MonthsRequiredForWorkBase + Cycle.MonthsRequiredForWorkPerRole * Roles.Count;
+            timeLive = Cycle.MonthsMoviesStayLive;
             onNewMovie?.Invoke(this);
             Cycle.onTick += Tick;
             foreach(Actor actor in Roles.Keys) actor.StartWorking();
