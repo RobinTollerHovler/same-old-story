@@ -1261,3 +1261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286be2b80a9345d39f5e26226afc0d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  face: {fileID: 1035632452344126010}
+  eyes: {fileID: 1223124432822935433}
+  nose: {fileID: 1678595868024346826}
+  mouth: {fileID: 1267736797944302827}
+  hair: {fileID: 8826775303641747}
+  actorName: {fileID: 4004618270606155679}
+  actorWage: {fileID: 6798922450891463869}
+  actorGoodGenres: {fileID: 4731923516426762192}
+  actorBadGenres: {fileID: 6894218431838108136}
