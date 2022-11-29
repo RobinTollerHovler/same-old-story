@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   label: Dark Blue
-  color: {r: 0.083481655, g: 0.123267524, b: 0.6603774, a: 1}
+  color: {r: 0.21616231, g: 0.6304967, b: 0.8679245, a: 1}

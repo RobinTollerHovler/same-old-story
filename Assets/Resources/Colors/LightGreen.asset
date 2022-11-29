@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   label: Light Green
-  color: {r: 0.08826979, g: 0.8207547, b: 0.09027359, a: 1}
+  color: {r: 0.5254902, g: 0.9019608, b: 0.54509807, a: 1}

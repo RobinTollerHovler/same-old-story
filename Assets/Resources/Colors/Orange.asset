@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   label: Orange
-  color: {r: 1, g: 0.4895962, b: 0, a: 1}
+  color: {r: 1, g: 0.7372549, b: 0.39215687, a: 1}
