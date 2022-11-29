@@ -37,4 +37,25 @@ MonoBehaviour:
   - Wendy
   - Yvonne
   - "Zo\xEB"
+  - Ann
+  - Barbara
+  - Cheryl
+  - Daphne
+  - Esther
+  - Fiona
+  - Guinevere
+  - Hilda
+  - Isabella
+  - Joanne
+  - Karol
+  - Lisa
+  - Mindy
+  - Nadia
+  - Ophelia
+  - Penelope
+  - Ramona
+  - Stacy
+  - Tiffany
+  - Valkyrie
+  - Wilma
   linkedSurnameSet: {fileID: 11400000, guid: 83c4fc005f668644f903e5392ebab0ef, type: 2}
