@@ -13,7 +13,9 @@ namespace SameOldStory.Objects.Interactables.Posters {
         private void OnDisable() => Script.onCurrentlyWritingScriptChanged -= SwapToScript;
 
         private void SwapToScript(Script script) {
-            if (writingScript != null) writingScript.onProgressMade -= UpdatePoster;
+            if (writingScript != null) {
+                writingScript.onProgressMade -= UpdatePoster;
+            }
             AssignProduct(script);
             TogglePoster(script != null);
             if (script == null) {
