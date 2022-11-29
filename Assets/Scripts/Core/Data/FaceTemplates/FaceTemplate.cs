@@ -17,14 +17,6 @@ namespace SameOldStory.Core.Data.People {
         [SerializeField] private Color[] skinTones;
         [SerializeField] private Color[] lipColors;
 
-        public Sprite[] HairStyles => hairStyles;
-        public Sprite[] Faces => faces;
-        public Sprite[] Eyes => eyes;
-        public Sprite[] Noses => noses;
-        public Sprite[] Mouths => mouths;
-        public Color[] HairColors => hairColors;
-        public Color[] SkinTones => skinTones;
-
         public Sprite RandomHairStyle => hairStyles.Length == 0 ? null : hairStyles[Random.Range(0, hairStyles.Length)];
         public Sprite RandomFace => faces.Length == 0 ? null : faces[Random.Range(0, faces.Length)];
         public Sprite RandomEyes => eyes.Length == 0 ? null : eyes[Random.Range(0, eyes.Length)];
@@ -33,7 +25,6 @@ namespace SameOldStory.Core.Data.People {
         public Color RandomHairColor => hairColors.Length == 0 ? Color.blue : hairColors[Random.Range(0, hairColors.Length)];
         public Color RandomSkinTone => skinTones.Length == 0 ? Color.blue : skinTones[Random.Range(0, skinTones.Length)];
         public Color RandomLipColor => lipColors.Length == 0 ? Color.blue : lipColors[Random.Range(0, lipColors.Length)];
-        
 
     }
     
