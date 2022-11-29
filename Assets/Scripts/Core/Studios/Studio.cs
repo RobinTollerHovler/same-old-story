@@ -49,7 +49,7 @@ namespace SameOldStory.Core.Studios {
                 roles = Resources.LoadAll("Roles", typeof(Role)).Cast<Role>().ToArray(),
                 BuffManager = new BuffManager(),
                 Wallet = new Wallet(100),
-                Roster = new Roster(3),
+                Roster = new Roster(0),
                 MovieLibrary = new MovieLibrary()
             };
         }
