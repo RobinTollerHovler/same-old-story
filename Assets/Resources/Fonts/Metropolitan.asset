@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Metropolitan
   m_EditorClassIdentifier: 
   startAvailable: 1
-  fontName: Metropolitan
+  fontName: Ominous
   tmpFontAsset: {fileID: 11400000, guid: 32a00aa325d5da840b4e54aa7a7c923d, type: 2}

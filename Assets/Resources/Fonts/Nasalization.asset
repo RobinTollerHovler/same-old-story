@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nasalization
   m_EditorClassIdentifier: 
   startAvailable: 1
-  fontName: Nasalization
+  fontName: Futuristic
   tmpFontAsset: {fileID: 11400000, guid: 5e535386d8c837f4facae04e2dabd5bd, type: 2}
