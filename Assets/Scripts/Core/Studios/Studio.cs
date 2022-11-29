@@ -32,7 +32,7 @@ namespace SameOldStory.Core.Studios {
         private Role[] roles;
 
         public IEnumerable<Genre> AvailableGenres => genres.Where(g => g.StartAvailable).ToArray();
-        public IEnumerable<Tone> AvailableColors => colors;
+        public Tone[] AvailableColors => colors;
         public IEnumerable<Font> AvailableFonts => fonts;
         public Role[] AvailableRoles => roles;
 

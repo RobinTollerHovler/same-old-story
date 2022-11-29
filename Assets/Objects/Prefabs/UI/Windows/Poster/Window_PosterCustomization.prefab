@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7556087240491523176, guid: 3deff28bd90624f8abdc44512dad1a51, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7968787808599027798, guid: 3deff28bd90624f8abdc44512dad1a51, type: 3}
       propertyPath: m_Name
       value: ContentSet_Poster

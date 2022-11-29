@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using UnityEngine;
@@ -7,9 +6,9 @@ namespace UI.ColorPalettes {
     
     public class ColorPalette : MonoBehaviour {
 
-        [SerializeField] private int columns;
-        [SerializeField] private float margin;
         [SerializeField] private GameObject swatchTemplate;
+        
+        private float margin = 30;
 
         private ColorPaletteNode colorPaletteNode;
 
@@ -17,25 +16,22 @@ namespace UI.ColorPalettes {
         
         private void Start() {
             
-            IEnumerable<Tone> tones = Studio.Current.AvailableColors;
-            int currentColumn = 0;
-            int currentRow = 0;
-            foreach (Tone tone in tones) {
-                if (currentColumn < columns) {
-                    currentColumn = 0;
-                    currentRow++;
-                }
+            Tone[] tones = Studio.Current.AvailableColors;
+            int column = 0;
+            int row = 0;
+            foreach (var t in tones) {
                 GameObject newSwatch = Instantiate(swatchTemplate, colorPaletteNode.transform);
-                newSwatch.name = tone.Label;
+                newSwatch.name = t.Label;
                 Swatch swatch = newSwatch.GetComponent<Swatch>();
-                if (swatch != null) swatch.Tone = tone;
+                if (swatch != null) swatch.Tone = t;
                 RectTransform rectTransform = newSwatch.GetComponent<RectTransform>();
-                if (rectTransform != null) {
-                    rectTransform.anchoredPosition = new Vector2(currentColumn * margin, currentRow * margin);
-                }
-                currentColumn++;
+                if (rectTransform != null) rectTransform.anchoredPosition = new Vector2(column * margin, -(row * margin));
+                column++;
+                if (column <= 3) continue;
+                column = 0;
+                row++;
             }
-            
+
         }
         
     }
