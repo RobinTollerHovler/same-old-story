@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BebasNueue
   m_EditorClassIdentifier: 
   startAvailable: 1
-  fontName: Bebas Nueue
+  fontName: Narrow
   tmpFontAsset: {fileID: 11400000, guid: dc72a26c290cd42a39b30fb09f74e8b7, type: 2}
