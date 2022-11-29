@@ -1,17 +1,24 @@
 using SameOldStory.Core;
+using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.TextDisplays.Reviews {
     
-    public abstract class ReviewTextDisplay : TextDisplay {
+    public class ReviewTextDisplay : TextDisplay {
 
-        protected IRepresentMovie representMovie;
-        
         protected virtual void OnEnable() {
-            representMovie = GetComponentInParent<IRepresentMovie>();
+            IRepresentMovie representMovie = GetComponentInParent<IRepresentMovie>();
+            if (representMovie != null) {
+                SetText(
+                    GeneratedReview(representMovie) +
+                    GeneratedReview(representMovie) +
+                    GeneratedReview(representMovie) +
+                    GeneratedReview(representMovie)
+                );
+            }
         }
-        
-        protected void SetReview(string review, string reviewer) {
-            SetText($"\"{review}\" - {reviewer}");
+
+        private string GeneratedReview(IRepresentMovie representMovie) {
+            return $"\"{representMovie.Movie.Review.RandomReview}\" - {Studio.Current.RandomReviewer}\n\n";
         }
         
     }

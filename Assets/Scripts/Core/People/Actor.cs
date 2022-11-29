@@ -8,8 +8,6 @@ using Random = UnityEngine.Random;
 namespace Core.People {
     
     public class Actor {
-
-        private int fame = 0;
         
         private static MaleFirstNameSet[] cachedMaleFirstNames;
         private static FemaleFirstNameSet[] cachedFemaleFirstNames;
@@ -36,7 +34,8 @@ namespace Core.People {
         public Gender Gender { get; }
         public bool IsWorking { get; private set; }
 
-        public int Wage => fame * Studio.Current.ActorWagePerFameLevel;
+        public int Fame { get; private set; }
+        public int Wage => Fame * Studio.Current.ActorWagePerFameLevel;
 
         public void StartWorking() {
             IsWorking = true;
@@ -48,7 +47,7 @@ namespace Core.People {
             onFinishedWorking?.Invoke();
         }
 
-        public void IncreaseFame(int amount) => fame += amount;
+        public void IncreaseFame(int amount) => Fame += amount;
         
         private static bool NameSetsLoaded => cachedMaleFirstNames != null && cachedFemaleFirstNames != null && cachedSurnames != null;
 

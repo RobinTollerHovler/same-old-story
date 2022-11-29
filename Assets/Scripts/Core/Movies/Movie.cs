@@ -46,7 +46,7 @@ namespace SameOldStory.Core.Movies {
         
         public Rating Rating { get; private set; }
         public bool IsLive { get; private set; }
-        public GenreReview GenreReview { get; private set; }
+        public Review Review { get; private set; }
         
         public void Discard() {
             onDiscarding?.Invoke();
@@ -77,8 +77,8 @@ namespace SameOldStory.Core.Movies {
             }
             IsLive = true;
             timeInvested = 0;
-            GenreReview = new GenreReview(this);
-            Rating = new Rating(GenreReview);
+            Review = new Review(this);
+            Rating = new Rating(Review);
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
