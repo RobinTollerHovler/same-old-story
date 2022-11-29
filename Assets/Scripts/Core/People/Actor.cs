@@ -35,7 +35,7 @@ namespace Core.People {
         public bool IsWorking { get; private set; }
 
         public int Fame { get; private set; }
-        public int Wage => Fame * Studio.Current.ActorWagePerFameLevel;
+        public int Wage => (Fame * Studio.Current.ActorWagePerFameLevel) < 0 ? 0 : Fame * Studio.Current.ActorWagePerFameLevel;
 
         public void StartWorking() {
             IsWorking = true;

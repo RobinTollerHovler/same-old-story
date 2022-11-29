@@ -71,14 +71,14 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
-            foreach (Actor actor in Roles.Keys) {
-                actor.IncreaseFame(1);
-                actor.FinishWorking();
-            }
             IsLive = true;
             timeInvested = 0;
             Review = new Review(this);
             Rating = new Rating(Review);
+            foreach (Actor actor in Roles.Keys) {
+                actor.IncreaseFame((int)(Review.Score / 2));
+                actor.FinishWorking();
+            }
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));

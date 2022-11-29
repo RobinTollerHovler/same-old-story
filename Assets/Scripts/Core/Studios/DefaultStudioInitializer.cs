@@ -6,10 +6,12 @@ namespace SameOldStory.Core.Studios {
 
         [SerializeField] private int actorWagePerFameLevel = 0;
         [SerializeField] private int payoutPerScore;
+        [SerializeField] private int actorHiringCost;
         
         private void Awake() => Studio.InitializeNewStudio(
             actorWagePerFameLevel, 
-            payoutPerScore
+            payoutPerScore,
+            actorHiringCost
         );
         
     }
