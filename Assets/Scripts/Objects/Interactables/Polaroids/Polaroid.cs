@@ -13,6 +13,7 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         [SerializeField] private SpriteRenderer mouth;
         [SerializeField] private SpriteRenderer hair;
         [SerializeField] private SpriteRenderer plusSprite;
+        [SerializeField] private GameObject sackButton;
 
         private PolaroidNode polaroidNode;
 
@@ -30,7 +31,8 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         private void AssignActor(Actor actor) {
             Actor = actor;
             Tooltip = actor != null ? actor.Name : $"Hire new actor ${Studio.Current.Roster.NextActorHiringCost}";
-            ClickAction = new HireNewActorClickAction();
+            sackButton.SetActive(actor != null);
+            ClickAction = actor != null ? new NoClickAction() : new HireNewActorClickAction();
             plusSprite.enabled = actor == null;
             face.sprite = actor?.Face.FaceType;
             eyes.sprite = actor?.Face.Eyes;

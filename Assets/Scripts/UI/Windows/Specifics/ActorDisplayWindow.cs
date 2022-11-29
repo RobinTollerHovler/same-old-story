@@ -1,4 +1,3 @@
-using System;
 using Core.People;
 using SameOldStory.Input.Mouse;
 using TMPro;
