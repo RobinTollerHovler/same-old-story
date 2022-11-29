@@ -1,5 +1,6 @@
 using SameOldStory.Core;
 using SameOldStory.Core.Studios;
+using UnityEngine;
 
 namespace SameOldStory.UI.TextDisplays.Reviews {
     
@@ -12,7 +13,7 @@ namespace SameOldStory.UI.TextDisplays.Reviews {
                     GeneratedReview(representMovie) +
                     GeneratedReview(representMovie) +
                     GeneratedReview(representMovie) +
-                    GeneratedReview(representMovie)
+                    GeneratedReview(representMovie) + (Application.isEditor ? $" --- SCORE {representMovie.Movie.Review.Score}" : "")
                 );
             }
         }

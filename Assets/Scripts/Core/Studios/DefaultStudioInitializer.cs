@@ -5,8 +5,12 @@ namespace SameOldStory.Core.Studios {
     public class DefaultStudioInitializer : MonoBehaviour {
 
         [SerializeField] private int actorWagePerFameLevel = 0;
+        [SerializeField] private int payoutPerScore;
         
-        private void Awake() => Studio.InitializeNewStudio(actorWagePerFameLevel);
+        private void Awake() => Studio.InitializeNewStudio(
+            actorWagePerFameLevel, 
+            payoutPerScore
+        );
         
     }
     
