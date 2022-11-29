@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Core.People {
     
@@ -9,15 +10,16 @@ namespace Core.People {
         
         private HashSet<Actor> actors = new();
 
-        public Roster(int initialNumberOfPeople) {
-            for (int n = 0; n < initialNumberOfPeople; n++) {
-                AddActorToRoster();
+        public Roster(int initialNumberOfActors) {
+            for (int n = 0; n < initialNumberOfActors; n++) {
+                HireActor();
             }
         }
 
         public HashSet<Actor> Actors => actors;
-        
-        public void AddActorToRoster() {
+        public int NextActorHiringCost => 500 * Actors.Count;
+
+        public void HireActor() {
             Actor a = new Actor();
             actors.Add(a);
             onRosterUpdated?.Invoke();
