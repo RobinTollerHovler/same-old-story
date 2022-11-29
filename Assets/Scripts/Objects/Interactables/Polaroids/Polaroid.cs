@@ -10,20 +10,30 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         [SerializeField] private SpriteRenderer nose;
         [SerializeField] private SpriteRenderer mouth;
         [SerializeField] private SpriteRenderer hair;
+        [SerializeField] private SpriteRenderer plusSprite;
 
-        private void Start() => DisplayPerson();
+        private PolaroidNode polaroidNode;
+
+        private void Awake() => polaroidNode = GetComponentInChildren<PolaroidNode>();
+
+        public void Show(Actor actor = null) {
+            AssignActor(actor);
+            polaroidNode?.Show();
+        }
+
+        public void Hide() => polaroidNode?.Hide();
         
-        private void DisplayPerson() {
-            Actor p = new Actor();
-            Tooltip = p.Name;
-            face.sprite = p.Face.FaceType;
-            eyes.sprite = p.Face.Eyes;
-            nose.sprite = p.Face.Nose;
-            mouth.sprite = p.Face.Mouth;
-            hair.sprite = p.Face.HairStyle;
-            hair.color = p.Face.HairColor;
-            nose.color = p.Face.HairColor;
-            face.color = p.Face.SkinTone;
+        private void AssignActor(Actor actor) {
+            Tooltip = actor != null ? actor.Name : "Hire new actor";
+            plusSprite.enabled = actor == null;
+            face.sprite = actor?.Face.FaceType;
+            eyes.sprite = actor?.Face.Eyes;
+            nose.sprite = actor?.Face.Nose;
+            mouth.sprite = actor?.Face.Mouth;
+            hair.sprite = actor?.Face.HairStyle;
+            hair.color = actor?.Face.HairColor ?? Color.white;
+            nose.color = actor?.Face.HairColor ?? Color.white;
+            face.color = actor?.Face.SkinTone ?? Color.white;
         }
 
     }
