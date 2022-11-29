@@ -32,7 +32,7 @@ namespace SameOldStory.Core.Data.People {
         public Sprite RandomMouth => mouths.Length == 0 ? null : mouths[Random.Range(0, mouths.Length)];
         public Color RandomHairColor => hairColors.Length == 0 ? Color.blue : hairColors[Random.Range(0, hairColors.Length)];
         public Color RandomSkinTone => skinTones.Length == 0 ? Color.blue : skinTones[Random.Range(0, skinTones.Length)];
-        
+        public Color RandomLipColor => lipColors.Length == 0 ? Color.blue : lipColors[Random.Range(0, lipColors.Length)];
         
 
     }

@@ -16,6 +16,7 @@ namespace Core.People {
         public Sprite Mouth { get; }
         public Color HairColor { get; }
         public Color SkinTone { get; }
+        public Color LipColor { get; }
 
         public Face(Gender gender) {
             if (!FaceTemplatesLoaded) LoadFaceTemplates();
@@ -30,6 +31,7 @@ namespace Core.People {
             Mouth = faceTemplate.RandomMouth;
             HairColor = faceTemplate.RandomHairColor;
             SkinTone = faceTemplate.RandomSkinTone;
+            LipColor = faceTemplate.RandomLipColor;
         }
         
         private static void LoadFaceTemplates() {
