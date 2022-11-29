@@ -56,10 +56,8 @@ namespace SameOldStory.Core.Movies {
         private void Tick(float deltaTime) {
             if (!IsLive) {
                 if (timeInvested >= timeToProduce) Release();
-                if (Studio.Current.Wallet.CanAfford(ProductionCost() * deltaTime)) {
-                    Studio.Current.Wallet.Pay(ProductionCost() * deltaTime);
-                    timeInvested += deltaTime;
-                }
+                Studio.Current.Wallet.Pay(ProductionCost() * deltaTime);
+                timeInvested += deltaTime;
             } else {
                 if (timeInvested >= timeLive) Cancel();
                 Studio.Current.Wallet.Earn(10 * deltaTime);
