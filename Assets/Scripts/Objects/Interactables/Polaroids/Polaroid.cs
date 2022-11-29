@@ -41,6 +41,7 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
             eyes.sprite = actor?.Face.Eyes;
             nose.sprite = actor?.Face.Nose;
             mouth.sprite = actor?.Face.Mouth;
+            mouth.color = actor?.Face.LipColor ?? Color.white;
             hair.sprite = actor?.Face.HairStyle;
             hair.color = actor?.Face.HairColor ?? Color.white;
             nose.color = actor?.Face.HairColor ?? Color.white;

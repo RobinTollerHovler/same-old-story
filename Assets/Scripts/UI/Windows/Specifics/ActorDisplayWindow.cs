@@ -45,6 +45,7 @@ namespace SameOldStory.UI.Windows.Specifics {
             eyes.sprite = actor.Actor.Face.Eyes;
             nose.sprite = actor.Actor.Face.Nose;
             mouth.sprite = actor.Actor.Face.Mouth;
+            mouth.color = actor.Actor.Face.LipColor;
             hair.sprite = actor.Actor.Face.HairStyle;
             hair.color = actor.Actor?.Face.HairColor ?? Color.white;
             nose.color = actor.Actor?.Face.HairColor ?? Color.white;
