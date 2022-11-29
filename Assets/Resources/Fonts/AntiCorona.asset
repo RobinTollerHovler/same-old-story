@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71ed9815f9f54746961a789a155c7046, type: 3}
-  m_Name: Metropolitan
+  m_Name: AntiCorona
   m_EditorClassIdentifier: 
-  startAvailable: 1
-  fontName: Metropolitan
-  tmpFontAsset: {fileID: 11400000, guid: 32a00aa325d5da840b4e54aa7a7c923d, type: 2}
+  startAvailable: 0
+  fontName: 
+  tmpFontAsset: {fileID: 11400000, guid: b4a9f1dc0e5707047ab5974c1c416ecd, type: 2}
