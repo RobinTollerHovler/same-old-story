@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf7b078c49a4bfab752c9623996f0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actorWagePerFameLevel: 10
 --- !u!1 &3676933082512362660
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ using Font = SameOldStory.Core.Data.Font;
 namespace SameOldStory.Core.Studios {
     
     public class Studio {
-
+        
         private static Studio current;
         
         public static event Action onStudioChanged;
@@ -40,8 +40,9 @@ namespace SameOldStory.Core.Studios {
         public BuffManager BuffManager { get; private set; }
         public Roster Roster { get; private set; }
         public MovieLibrary MovieLibrary { get; private set; }
-
-        public static void InitializeNewStudio() {
+        public int ActorWagePerFameLevel { get; private set; }
+        
+        public static void InitializeNewStudio(int actorWagePerFameLevel) {
             Current = new Studio {
                 genres = Resources.LoadAll("Genres", typeof(Genre)).Cast<Genre>().ToArray(),
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
@@ -50,7 +51,8 @@ namespace SameOldStory.Core.Studios {
                 BuffManager = new BuffManager(),
                 Wallet = new Wallet(100),
                 Roster = new Roster(0),
-                MovieLibrary = new MovieLibrary()
+                MovieLibrary = new MovieLibrary(),
+                ActorWagePerFameLevel = actorWagePerFameLevel
             };
         }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Core.Movies;
 using Core.People;
 using SameOldStory.Core.Buffs;
@@ -53,7 +54,7 @@ namespace SameOldStory.Core.Movies {
         }
 
         private float ProductionCost() {
-            return 5;
+            return Roles.Keys.Sum(actor => actor.Wage);
         }
         
         private void Tick(float deltaTime) {
@@ -70,7 +71,10 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
-            foreach(Actor actor in Roles.Keys) actor.FinishWorking();
+            foreach (Actor actor in Roles.Keys) {
+                actor.IncreaseFame(1);
+                actor.FinishWorking();
+            }
             IsLive = true;
             timeInvested = 0;
             GenreReview = new GenreReview(this);

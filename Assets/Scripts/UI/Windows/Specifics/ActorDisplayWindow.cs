@@ -41,6 +41,7 @@ namespace SameOldStory.UI.Windows.Specifics {
             if (actor.Actor == null) return;
             windowActivationNode.Activate();
             actorName.text = actor.Actor.Name;
+            actorWage.text = actor.Actor.Wage == 0 ? $"Will work for fun" :  $"${actor.Actor.Wage}/m";
             face.sprite = actor.Actor.Face.FaceType;
             eyes.sprite = actor.Actor.Face.Eyes;
             nose.sprite = actor.Actor.Face.Nose;

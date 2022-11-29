@@ -4,8 +4,10 @@ namespace SameOldStory.Core.Studios {
     
     public class DefaultStudioInitializer : MonoBehaviour {
 
-        private void Awake() => Studio.InitializeNewStudio();
-
+        [SerializeField] private int actorWagePerFameLevel = 0;
+        
+        private void Awake() => Studio.InitializeNewStudio(actorWagePerFameLevel);
+        
     }
     
 }
