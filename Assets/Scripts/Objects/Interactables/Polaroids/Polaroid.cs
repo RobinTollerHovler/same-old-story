@@ -26,7 +26,10 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
             polaroidNode?.Show();
         }
 
-        public void Hide() => polaroidNode?.Hide();
+        public void Hide() {
+            sackButton.SetActive(false);
+            polaroidNode?.Hide();
+        }
 
         private void AssignActor(Actor actor) {
             Actor = actor;

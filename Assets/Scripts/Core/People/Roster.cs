@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Core.People {
-    
+
     public class Roster {
 
         public event Action onRosterUpdated;
-        
+
         private HashSet<Actor> actors = new();
 
         public Roster(int initialNumberOfActors) {
@@ -20,8 +20,12 @@ namespace Core.People {
         public int NextActorHiringCost => 500 * Actors.Count;
 
         public void HireActor() {
-            Actor a = new Actor();
-            actors.Add(a);
+            actors.Add(new Actor());
+            onRosterUpdated?.Invoke();
+        }
+
+        public void SackActor(Actor actor) {
+            if (Actors.Contains(actor)) Actors.Remove(actor);
             onRosterUpdated?.Invoke();
         }
 
