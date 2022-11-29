@@ -3,7 +3,7 @@ using SameOldStory.Core.Movies;
 
 namespace SameOldStory.UI.Windows.Specifics {
     
-    public class PosterWindow : Window {
+    public class PosterCustomizationWindow : Window {
 
         private Script script;
         

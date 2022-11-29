@@ -114,7 +114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 841951061803146305, guid: b35ca96b77709458c8ca26106fcf1145, type: 3}
       propertyPath: m_Name
-      value: Window_Poster
+      value: Window_PosterCustomization
       objectReference: {fileID: 0}
     - target: {fileID: 841951061803146305, guid: b35ca96b77709458c8ca26106fcf1145, type: 3}
       propertyPath: m_IsActive
