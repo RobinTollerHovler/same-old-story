@@ -35,20 +35,21 @@ namespace SameOldStory.UI.Windows.Specifics {
         private void DisplayActorInfo() {
             GameObject obj = Mouse.ObjectUnderCursor;
             IRepresentActor actor = obj.GetComponentInParent<IRepresentActor>();
-            if (actor == null) return;
-            if (actor.Actor != null) {
-                windowActivationNode.Activate();
-                actorName.text = actor.Actor.Name;
-                face.sprite = actor.Actor.Face.FaceType;
-                eyes.sprite = actor.Actor.Face.Eyes;
-                nose.sprite = actor.Actor.Face.Nose;
-                mouth.sprite = actor.Actor.Face.Mouth;
-                hair.sprite = actor.Actor.Face.HairStyle;
-                hair.color = actor.Actor?.Face.HairColor ?? Color.white;
-                nose.color = actor.Actor?.Face.HairColor ?? Color.white;
-                face.color = actor.Actor?.Face.SkinTone ?? Color.white;
+            if (actor == null) {
+                windowActivationNode.Deactivate();
+                return;
             }
-            else windowActivationNode.Deactivate();
+            if (actor.Actor == null) return;
+            windowActivationNode.Activate();
+            actorName.text = actor.Actor.Name;
+            face.sprite = actor.Actor.Face.FaceType;
+            eyes.sprite = actor.Actor.Face.Eyes;
+            nose.sprite = actor.Actor.Face.Nose;
+            mouth.sprite = actor.Actor.Face.Mouth;
+            hair.sprite = actor.Actor.Face.HairStyle;
+            hair.color = actor.Actor?.Face.HairColor ?? Color.white;
+            nose.color = actor.Actor?.Face.HairColor ?? Color.white;
+            face.color = actor.Actor?.Face.SkinTone ?? Color.white;
         }
         
     }
