@@ -47,6 +47,9 @@ TagManager:
   - name: Window
     uniqueID: 770515275
     locked: 0
+  - name: Polaroid
+    uniqueID: 2002049207
+    locked: 0
   - name: Manus
     uniqueID: 1189933915
     locked: 0
@@ -58,7 +61,4 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2747840513
-    locked: 0
-  - name: Polaroid
-    uniqueID: 2002049207
     locked: 0
