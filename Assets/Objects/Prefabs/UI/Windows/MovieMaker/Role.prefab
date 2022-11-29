@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6300093934301390423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -486,6 +486,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89322c9136a34d1ab7e24a7ee62965db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  face: {fileID: 5564330842388156253}
+  eyes: {fileID: 8918510618826277088}
+  nose: {fileID: 4648693941714999884}
+  mouth: {fileID: 8642376128030597110}
+  hair: {fileID: 4440849192528536033}
+  plusSymbol: {fileID: 6265940124591089259}
 --- !u!1 &3693670044553286525
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
 using Core.Movies;
+using Core.People;
 using Core.Roles;
 using SameOldStory.Core.Studios;
 
@@ -39,11 +41,13 @@ namespace SameOldStory.UI.Windows.Specifics {
         private void UpdateRoles() {
             roleThumbnails = GetComponentsInChildren<RoleThumbnail>();
             foreach(RoleThumbnail roleThumbnail in roleThumbnails) roleThumbnail.Hide();
-            Role[] roles = Script.CurrentlyCreating.Roles.Values.ToArray();
-            for (int i = 0; i < roles.Length; i++) {
-                if(roleThumbnails.Length > i) roleThumbnails[i].Show(roles[i]);
+            Dictionary<Actor, Role> roles = Script.CurrentlyCreating.Roles;
+            int i = 0;
+            foreach (var set in roles) {
+                if(roleThumbnails.Length > i) roleThumbnails[i].Show(set.Key, set.Value);
+                i++;
             }
-            if(roleThumbnails.Length > roles.Length) roleThumbnails[roles.Length].Show();
+            if(roleThumbnails.Length > roles.Count) roleThumbnails[roles.Count].Show();
         }
         
     }
