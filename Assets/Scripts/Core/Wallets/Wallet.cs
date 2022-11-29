@@ -26,6 +26,7 @@ namespace Core.Wallets {
         public bool CanAfford(float amount) => Balance >= amount;
         
         public void Pay(float amount) => temporaryBalance -= amount;
+        public void Buy(float amount) => Balance -= amount;
         public void Earn(float amount) => temporaryBalance += amount;
 
         private void Payday() {
