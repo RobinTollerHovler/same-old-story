@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   label: Purple
-  color: {r: 0.754717, g: 0.1381274, b: 0.69558746, a: 1}
+  color: {r: 0.7372549, g: 0.5058824, b: 0.8156863, a: 1}

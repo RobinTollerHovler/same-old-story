@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Livingstone
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1633663408
   material: {fileID: 1850061176240454361}
-  materialHashCode: 0
+  materialHashCode: -1407471216
   m_Version: 1.1.0
   m_SourceFontFileGUID: f0fb1a6be85990e4683337f0f98c0ca5
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f0fb1a6be85990e4683337f0f98c0ca5, type: 3}
@@ -2666,9 +2666,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

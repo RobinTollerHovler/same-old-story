@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ed9815f9f54746961a789a155c7046, type: 3}
   m_Name: AntiCorona
   m_EditorClassIdentifier: 
-  startAvailable: 0
-  fontName: 
+  startAvailable: 1
+  fontName: Anti Corona
   tmpFontAsset: {fileID: 11400000, guid: b4a9f1dc0e5707047ab5974c1c416ecd, type: 2}

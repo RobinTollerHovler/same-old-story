@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   label: Cyan
-  color: {r: 0.060590927, g: 0.837459, b: 0.8679245, a: 1}
+  color: {r: 0.5788893, g: 0.9401234, b: 0.9528302, a: 1}
