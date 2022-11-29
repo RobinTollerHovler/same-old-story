@@ -1,4 +1,6 @@
 using Core.People;
+using SameOldStory.Core.Studios;
+using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.PeopleFrames {
@@ -24,7 +26,8 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
         public void Hide() => polaroidNode?.Hide();
         
         private void AssignActor(Actor actor) {
-            Tooltip = actor != null ? actor.Name : "Hire new actor";
+            Tooltip = actor != null ? actor.Name : $"Hire new actor ${Studio.Current.Roster.NextActorHiringCost}";
+            ClickAction = new HireNewActorClickAction();
             plusSprite.enabled = actor == null;
             face.sprite = actor?.Face.FaceType;
             eyes.sprite = actor?.Face.Eyes;
