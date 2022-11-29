@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Absent Parent
-  fittingGenres: []
+  fittingGenres:
+  - {fileID: 11400000, guid: 41ff8b5f3de134042869494a6524dbe1, type: 2}
+  - {fileID: 11400000, guid: 71970706e3b7f4945b20bcdbf7289e45, type: 2}
+  - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}
   unfittingGenres: []
