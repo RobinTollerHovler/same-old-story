@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.PeopleFrames {
 
-    public class Polaroid : InteractableObject {
+    public class Polaroid : InteractableObject, IRepresentActor {
 
         [SerializeField] private SpriteRenderer face;
         [SerializeField] private SpriteRenderer eyes;
@@ -18,14 +18,17 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
 
         private void Awake() => polaroidNode = GetComponentInChildren<PolaroidNode>();
 
+        public Actor Actor { get; private set; }
+
         public void Show(Actor actor = null) {
             AssignActor(actor);
             polaroidNode?.Show();
         }
 
         public void Hide() => polaroidNode?.Hide();
-        
+
         private void AssignActor(Actor actor) {
+            Actor = actor;
             Tooltip = actor != null ? actor.Name : $"Hire new actor ${Studio.Current.Roster.NextActorHiringCost}";
             ClickAction = new HireNewActorClickAction();
             plusSprite.enabled = actor == null;
