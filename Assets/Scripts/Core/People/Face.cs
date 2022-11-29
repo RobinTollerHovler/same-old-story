@@ -41,7 +41,6 @@ namespace Core.People {
         
         private static bool FaceTemplatesLoaded => cachedMaleFaceTemplates != null || cachedFemaleFaceTemplates != null;
 
-        
     }
     
 }
