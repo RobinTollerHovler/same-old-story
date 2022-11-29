@@ -17,10 +17,6 @@ namespace UI.ColorPalettes {
             }
         }
 
-        protected override void Click() {
-            base.Click();
-        }
-        
     }
     
 }

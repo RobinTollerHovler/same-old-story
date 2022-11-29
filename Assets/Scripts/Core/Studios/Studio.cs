@@ -55,7 +55,11 @@ namespace SameOldStory.Core.Studios {
         }
 
         public Genre GetGenreWithName(string genreName) {
-            return genres.FirstOrDefault(g => g.name == genreName);
+            return genres.FirstOrDefault(g => g.Name == genreName);
+        }
+        
+        public Font GetFontWithName(string fontName) {
+            return fonts.FirstOrDefault(f => f.Name == fontName);
         }
 
         public void ApplyBuff(Buff buff) => BuffManager.ApplyBuff(buff);

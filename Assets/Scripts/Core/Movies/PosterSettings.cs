@@ -1,18 +1,25 @@
 using System;
 using SameOldStory.Core.Data;
+using SameOldStory.Core.Movies;
 using TMPro;
+using UnityEngine;
 
 namespace Core.Movies {
     
     public class PosterSettings {
         
-        private Tone posterBackgroundColor;
-        private Tone posterTextColor;
+        private Color posterBackgroundColor;
+        private Color posterTextColor;
         private TMP_FontAsset tmpFontAsset;
         
         public event Action onPosterInformationChanged;
+
+        public PosterSettings() {
+            PosterBackgroundColor = Color.white;
+            PosterTextColor = Color.black;
+        }
         
-        public Tone PosterBackgroundColor {
+        public Color PosterBackgroundColor {
             get => posterBackgroundColor;
             set {
                 posterBackgroundColor = value;
@@ -20,7 +27,7 @@ namespace Core.Movies {
             }
         }
 
-        public Tone PosterTextColor {
+        public Color PosterTextColor {
             get => posterTextColor;
             set {
                 posterTextColor = value;

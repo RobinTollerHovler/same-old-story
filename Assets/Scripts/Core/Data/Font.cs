@@ -11,6 +11,7 @@ namespace SameOldStory.Core.Data {
         [SerializeField] private TMP_FontAsset tmpFontAsset;
 
         public string Name => fontName;
+        public TMP_FontAsset FontAsset => tmpFontAsset;
 
     }
     

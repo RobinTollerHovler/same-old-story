@@ -1,12 +1,14 @@
 using Core.Movies;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
+using TMPro;
+using UnityEngine;
 
 namespace SameOldStory.Objects.Interactables.Posters {
     
     public class CurrentlyWritingScriptPoster : Poster {
-
-        private Script writingScript;
         
+        private Script writingScript;
+
         private void Start() => SwapToScript(null);
 
         private void OnEnable() => Script.onCurrentlyWritingScriptChanged += SwapToScript;

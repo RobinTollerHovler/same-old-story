@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264778873056878605, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5264778873056878605, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
       propertyPath: m_SortingOrder
@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812073490120673668, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5812073490120673668, guid: ee3ba95a1e7e84701ada6449e326271e, type: 3}
       propertyPath: m_SortingLayerID
@@ -104,4 +104,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Poster
-  posterWindow: {fileID: 0}
+  defaultFont: {fileID: 11400000, guid: acfda8ac1ae7844d2a8ef163ce17a086, type: 2}

@@ -7,7 +7,12 @@ namespace SameOldStory.UI.Components {
 
         private TMP_Dropdown dropdown;
 
-        private void Awake() => dropdown = GetComponent<TMP_Dropdown>();
+        protected virtual void OnValueChanged(int i) {}
+        
+        private void Awake() {
+            dropdown = GetComponent<TMP_Dropdown>();
+            dropdown.onValueChanged.AddListener(OnValueChanged);
+        }
 
         public string Selected() {
             if (dropdown == null) return "";

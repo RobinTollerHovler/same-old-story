@@ -26,6 +26,7 @@ namespace SameOldStory.Core.Movies {
         private Movie(Product product) {
             Title = product.Title;
             Genre = product.Genre;
+            PosterSettings = product.PosterSettings;
             timeToProduce = Cycle.MONTH * 6;
             timeLive = Cycle.MONTH * 12;
             onNewMovie?.Invoke(this);

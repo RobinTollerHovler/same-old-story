@@ -9,7 +9,7 @@ namespace Core.Movies {
         public string Title { get; set; }
         public Genre Genre { get; set; }
         public List<Role> Roles { get; protected set; } = new();
-        public PosterSettings PosterSettings { get; } = new();
+        public PosterSettings PosterSettings { get; protected set; } = new();
 
     }
     

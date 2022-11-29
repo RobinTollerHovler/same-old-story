@@ -8,17 +8,16 @@ namespace UI.ColorPalettes {
 
         [SerializeField] private GameObject swatchTemplate;
         
-        private float margin = 30;
+        private float margin = 35;
 
         private ColorPaletteNode colorPaletteNode;
 
         private void Awake() => colorPaletteNode = GetComponentInChildren<ColorPaletteNode>();
         
         private void Start() {
-            
             Tone[] tones = Studio.Current.AvailableColors;
             int column = 0;
-            int row = 0;
+            int row = 1;
             foreach (var t in tones) {
                 GameObject newSwatch = Instantiate(swatchTemplate, colorPaletteNode.transform);
                 newSwatch.name = t.Label;
@@ -27,7 +26,7 @@ namespace UI.ColorPalettes {
                 RectTransform rectTransform = newSwatch.GetComponent<RectTransform>();
                 if (rectTransform != null) rectTransform.anchoredPosition = new Vector2(column * margin, -(row * margin));
                 column++;
-                if (column <= 3) continue;
+                if (column <= 10) continue;
                 column = 0;
                 row++;
             }
