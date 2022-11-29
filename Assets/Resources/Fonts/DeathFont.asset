@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ed9815f9f54746961a789a155c7046, type: 3}
   m_Name: DeathFont
   m_EditorClassIdentifier: 
-  startAvailable: 0
+  startAvailable: 1
   fontName: Death Font
   tmpFontAsset: {fileID: 11400000, guid: 911c55fc4aabbd5449aa9e06e6488bb2, type: 2}
