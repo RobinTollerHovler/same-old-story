@@ -537,6 +537,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6518729709174410737, guid: e00cd4ddc869d4ecca50adcb81980a4c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518729709174410737, guid: e00cd4ddc869d4ecca50adcb81980a4c, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7572899976577540829, guid: e00cd4ddc869d4ecca50adcb81980a4c, type: 3}
       propertyPath: m_Name
       value: Desk
