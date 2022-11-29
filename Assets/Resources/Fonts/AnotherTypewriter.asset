@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AnotherTypewriter
   m_EditorClassIdentifier: 
   startAvailable: 1
-  fontName: Another Typewriter
+  fontName: Typewriter
   tmpFontAsset: {fileID: 11400000, guid: acfda8ac1ae7844d2a8ef163ce17a086, type: 2}

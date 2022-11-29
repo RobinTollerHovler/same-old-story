@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OctinCollege
   m_EditorClassIdentifier: 
   startAvailable: 1
-  fontName: Octin College
+  fontName: Frank
   tmpFontAsset: {fileID: 11400000, guid: 30291791166812241bdeef5c0b8ad0b1, type: 2}
