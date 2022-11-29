@@ -1,6 +1,7 @@
 using System;
 using Core.Roles;
 using SameOldStory.Core.Time;
+using UnityEngine;
 
 namespace Core.Movies {
     
@@ -36,7 +37,7 @@ namespace Core.Movies {
             }
         }
         
-        public float WriteProgress => WrittenTime / TimeToWrite;
+        public float WriteProgress => Mathf.Clamp(WrittenTime / TimeToWrite, 0, 1);
 
         public static void ClearScript() => CurrentlyWritingScript = null;
         

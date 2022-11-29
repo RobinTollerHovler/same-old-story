@@ -5,22 +5,22 @@ namespace Core.People {
     
     public class Roster {
 
-        public event Action<Actor> onAddedPersonToRoster;
+        public event Action onRosterUpdated;
         
-        private HashSet<Actor> persons = new();
+        private HashSet<Actor> actors = new();
 
         public Roster(int initialNumberOfPeople) {
             for (int n = 0; n < initialNumberOfPeople; n++) {
-                AddPersonToRoster();
+                AddActorToRoster();
             }
         }
 
-        public HashSet<Actor> People => persons;
+        public HashSet<Actor> Actors => actors;
         
-        public void AddPersonToRoster() {
-            Actor p = new Actor();
-            persons.Add(p);
-            onAddedPersonToRoster?.Invoke(p);
+        public void AddActorToRoster() {
+            Actor a = new Actor();
+            actors.Add(a);
+            onRosterUpdated?.Invoke();
         }
 
     }
