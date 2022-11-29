@@ -11,7 +11,6 @@ namespace SameOldStory.UI.Windows.Specifics {
         private ProductTitleInputField productTitleInputField;
         private ProductGenreDropdown productGenreDropdown;
 
-
         public override void Submit() {
             Script.CurrentlyCreating.Title = productTitleInputField?.Text;
             Script.CurrentlyCreating.Genre = Studio.Current.GetGenreWithName(productGenreDropdown.Selected());
@@ -40,7 +39,7 @@ namespace SameOldStory.UI.Windows.Specifics {
         private void UpdateRoles() {
             roleThumbnails = GetComponentsInChildren<RoleThumbnail>();
             foreach(RoleThumbnail roleThumbnail in roleThumbnails) roleThumbnail.Hide();
-            Role[] roles = Script.CurrentlyCreating.Roles.ToArray();
+            Role[] roles = Script.CurrentlyCreating.Roles.Values.ToArray();
             for (int i = 0; i < roles.Length; i++) {
                 if(roleThumbnails.Length > i) roleThumbnails[i].Show(roles[i]);
             }

@@ -1,5 +1,6 @@
 using System;
 using Core.Movies;
+using Core.People;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Reviews;
 using SameOldStory.Core.Studios;
@@ -26,11 +27,13 @@ namespace SameOldStory.Core.Movies {
         private Movie(Product product) {
             Title = product.Title;
             Genre = product.Genre;
+            Roles = product.Roles;
             PosterSettings = product.PosterSettings;
-            timeToProduce = Cycle.MONTH * 6;
-            timeLive = Cycle.MONTH * 12;
+            timeToProduce = Cycle.Month * 6;
+            timeLive = Cycle.Month * 12;
             onNewMovie?.Invoke(this);
             Cycle.onTick += Tick;
+            foreach(Actor actor in Roles.Keys) actor.StartWorking();
         }
 
         public static void StartProduction(Script script) {
@@ -67,6 +70,7 @@ namespace SameOldStory.Core.Movies {
         }
 
         private void Release() {
+            foreach(Actor actor in Roles.Keys) actor.FinishWorking();
             IsLive = true;
             timeInvested = 0;
             GenreReview = new GenreReview(this);

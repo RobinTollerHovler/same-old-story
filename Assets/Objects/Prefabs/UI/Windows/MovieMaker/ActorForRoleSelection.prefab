@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 4535059327991240568}
   - component: {fileID: 8034891189995800220}
   - component: {fileID: 2446928895561670724}
+  - component: {fileID: 7152099531227661381}
   m_Layer: 5
   m_Name: ActorForRoleSelection
   m_TagString: Untagged
@@ -715,6 +716,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorNameText: {fileID: 3950184758924557404}
   actorWageText: {fileID: 8263713917136856048}
+--- !u!223 &7152099531227661381
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188885279515663823}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -1547126783
+  m_SortingOrder: 5
+  m_TargetDisplay: 0
 --- !u!1 &7960420619927172563
 GameObject:
   m_ObjectHideFlags: 0

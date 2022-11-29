@@ -1,4 +1,5 @@
 using System;
+using Core.People;
 using Core.Roles;
 using SameOldStory.Core.Time;
 using UnityEngine;
@@ -9,11 +10,14 @@ namespace Core.Movies {
 
         private static Script currentlyWritingScriptScript;
         private float writtenTime;
-        
+        private Role nonCastedRole;
+
         public static event Action onRequestInitializeNewScript;
         public static event Action<Script> onCurrentlyWritingScriptChanged;
         public static event Action<Script> onRequestCreateMoviePoster;
-
+        public static event Action onRequestSelectActorForRole;
+        public static event Action onRoleFilled;
+        
         public event Action onRolesUpdated;
         public event Action onProgressMade;
         
@@ -39,12 +43,19 @@ namespace Core.Movies {
         
         public float WriteProgress => Mathf.Clamp(WrittenTime / TimeToWrite, 0, 1);
 
-        public static void ClearScript() => CurrentlyWritingScript = null;
-        
+        public static void ClearScript() {
+            if (CurrentlyCreating != null) {
+                foreach (Actor actor in CurrentlyCreating.Roles.Keys) {
+                    actor.FinishWorking();
+                }
+            }
+            CurrentlyWritingScript = null;
+        }
+
         public static void Initialize() {
             CurrentlyCreating = new Script();
             onRequestInitializeNewScript?.Invoke();
-            CurrentlyCreating.TimeToWrite = Cycle.MONTH;
+            CurrentlyCreating.TimeToWrite = Cycle.Month;
         }
 
         public static void CreatePoster() {
@@ -56,8 +67,18 @@ namespace Core.Movies {
         }
 
         public void AddRole(Role role) {
-            Roles.Add(role);
-            TimeToWrite += Cycle.MONTH * 2;
+            nonCastedRole = role;
+            onRequestSelectActorForRole?.Invoke();
+        }
+
+        public void AddActorToUncastedRole(Actor actor) {
+            if (Roles.ContainsKey(actor)) return;
+            if (nonCastedRole != null) {
+                Roles.Add(actor, nonCastedRole);
+                actor.StartWorking();
+                nonCastedRole = null;
+                onRoleFilled?.Invoke();
+            }
             onRolesUpdated?.Invoke();
         }
 

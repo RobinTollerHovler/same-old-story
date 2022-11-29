@@ -16,6 +16,7 @@ namespace SameOldStory.Objects.Interactables.PeopleFrames {
             IRepresentActor actor = GetComponentInParent<IRepresentActor>();
             if (actor != null) Studio.Current.Roster.SackActor(actor.Actor);
         }
+        
     }
     
 }

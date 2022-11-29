@@ -1,6 +1,8 @@
+using System;
 using System.Linq;
 using Core.People.Names;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Core.People {
     
@@ -10,6 +12,9 @@ namespace Core.People {
         private static FemaleFirstNameSet[] cachedFemaleFirstNames;
         private static SurnameSet[] cachedSurnames;
 
+        public event Action onStartedWorking;
+        public event Action onFinishedWorking;
+        
         public Actor() {
             if(!NameSetsLoaded) LoadNameSets();
             Gender = Random.Range(0f, 1f) switch {
@@ -26,7 +31,18 @@ namespace Core.People {
         public Face Face { get; }
         public string Name { get; }
         public Gender Gender { get; }
-        
+        public bool IsWorking { get; private set; }
+
+        public void StartWorking() {
+            IsWorking = true;
+            onStartedWorking?.Invoke();
+        }
+
+        public void FinishWorking() {
+            IsWorking = false;
+            onFinishedWorking?.Invoke();
+        }
+
         private static bool NameSetsLoaded => cachedMaleFirstNames != null && cachedFemaleFirstNames != null && cachedSurnames != null;
 
         private static void LoadNameSets() {
