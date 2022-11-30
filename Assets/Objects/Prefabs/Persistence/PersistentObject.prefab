@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorWagePerFameLevel: 10
-  payoutPerScore: 20
+  movieProfitBase: 10
+  actorHiringCost: 0
 --- !u!1 &3676933082512362660
 GameObject:
   m_ObjectHideFlags: 0

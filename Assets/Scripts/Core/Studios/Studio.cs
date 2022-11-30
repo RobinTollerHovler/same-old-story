@@ -44,10 +44,10 @@ namespace SameOldStory.Core.Studios {
         public Roster Roster { get; private set; }
         public MovieLibrary MovieLibrary { get; private set; }
         public int ActorWagePerFameLevel { get; private set; }
-        public int PayoutPerScorePoint { get; private set; }
+        public int MovieProfitBase { get; private set; }
         public int ActorHiringCost { get; private set; }
 
-        public static void InitializeNewStudio(int actorWagePerFameLevel, int payoutPerScorePoint, int actorHiringCost) {
+        public static void InitializeNewStudio(int actorWagePerFameLevel, int movieProfitBase, int actorHiringCost) {
             Current = new Studio {
                 genres = Resources.LoadAll("Genres", typeof(Genre)).Cast<Genre>().ToArray(),
                 colors = Resources.LoadAll("Colors", typeof(Tone)).Cast<Tone>().ToArray(),
@@ -60,7 +60,7 @@ namespace SameOldStory.Core.Studios {
                 MovieLibrary = new MovieLibrary(),
                 ActorWagePerFameLevel = actorWagePerFameLevel,
                 ActorHiringCost = actorHiringCost,
-                PayoutPerScorePoint = payoutPerScorePoint
+                MovieProfitBase = movieProfitBase
             };
         }
 

@@ -16,8 +16,7 @@ namespace SameOldStory.Core.Movies {
         private float timeInvested;
         private float earnings;
         private float profit;
-        private float profitBase = 10;
-        
+
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
         public static event Action<Movie> onMovieReviewsCollected;
@@ -93,7 +92,7 @@ namespace SameOldStory.Core.Movies {
                 actor.IncreaseFame((int)(Review.Score / 2));
                 actor.FinishWorking();
             }
-            profit = profitBase * Roles.Keys.Sum(actor => actor.Fame) + profitBase * Review.Score * 1 + Rating.Stars();
+            profit = Studio.Current.MovieProfitBase * Roles.Keys.Sum(actor => actor.Fame) + Studio.Current.MovieProfitBase * Review.Score * 1 + Rating.Stars();
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
