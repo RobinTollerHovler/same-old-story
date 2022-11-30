@@ -22,3 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 63b0806ff85f5834fa1dc620d68a10f3, type: 2}
   unfittingGenres:
   - {fileID: 11400000, guid: e51fc89587dbc4ae2bbfb7642df176e1, type: 2}
+  - {fileID: 11400000, guid: baddad4646b8f4eacb66ac3709d42ef0, type: 2}
+  - {fileID: 11400000, guid: 71970706e3b7f4945b20bcdbf7289e45, type: 2}
