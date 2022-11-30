@@ -1,20 +1,20 @@
-using SameOldStory.Core.Movies;
+using Core.Movies;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
 
 namespace SameOldStory.Objects.Interactables {
     
     public class Bin : InteractableObject {
         
-        private void OnEnable() => Movie.onActiveMovieChanged += AssignMovieToBin;
-        private void OnDisable() => Movie.onActiveMovieChanged -= AssignMovieToBin;
+        private void OnEnable() => Script.onCurrentlyWritingScriptChanged += AssignScriptToBin;
+        private void OnDisable() => Script.onCurrentlyWritingScriptChanged -= AssignScriptToBin;
 
-        private void AssignMovieToBin(Movie movie) {
-            if (movie == null) {
+        private void AssignScriptToBin(Script script) {
+            if (script == null) {
                 ClickAction = new NoClickAction();
-                Tooltip = "";
+                Tooltip = "Bin";
             } else {
-                ClickAction = new DiscardMovieClickAction(movie);
-                Tooltip = $"Discard: {movie.Title}";
+                ClickAction = new DiscardScriptClickAction();
+                Tooltip = $"Discard: {script.Title}";
             }
         }
 
