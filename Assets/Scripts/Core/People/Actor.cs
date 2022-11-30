@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Core.People.Names;
+using SameOldStory.Core.Data;
 using SameOldStory.Core.Studios;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -33,6 +34,8 @@ namespace Core.People {
         public string Name { get; }
         public Gender Gender { get; }
         public bool IsWorking { get; private set; }
+        public Genre[] GoodGenres { get; }
+        public Genre[] BadGenres { get; }
 
         public int Fame { get; private set; }
         public int Wage => (Fame * Studio.Current.ActorWagePerFameLevel) < 0 ? 0 : Fame * Studio.Current.ActorWagePerFameLevel;
