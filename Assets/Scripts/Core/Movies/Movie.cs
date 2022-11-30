@@ -14,6 +14,7 @@ namespace SameOldStory.Core.Movies {
         private readonly float timeToProduce;
         private readonly float timeLive;
         private float timeInvested;
+        private float earnings;
         
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
@@ -24,13 +25,14 @@ namespace SameOldStory.Core.Movies {
         public event Action onCanceled;
         public event Action onReleased;
         public event Action onTick;
+        public event Action onEarningsChanged;
 
         private Movie(Product product) {
             Title = product.Title;
             Genre = product.Genre;
             Roles = product.Roles;
             PosterSettings = product.PosterSettings;
-            timeToProduce = Cycle.MonthsRequiredForWorkBase + Cycle.MonthsRequiredForWorkPerRole * Roles.Count;
+            timeToProduce = (Cycle.MonthsRequiredForWorkBase + Cycle.MonthsRequiredForWorkPerRole * Roles.Count) * 2;
             timeLive = Cycle.MonthsMoviesStayLive;
             onNewMovie?.Invoke(this);
             Cycle.onTick += Tick;
@@ -47,6 +49,14 @@ namespace SameOldStory.Core.Movies {
         public Rating Rating { get; private set; }
         public bool IsLive { get; private set; }
         public Review Review { get; private set; }
+
+        public float Earnings {
+            get => earnings;
+            private set {
+                earnings = value;
+                onEarningsChanged?.Invoke();
+            }
+        }
         
         public void Discard() {
             onDiscarding?.Invoke();
@@ -54,17 +64,19 @@ namespace SameOldStory.Core.Movies {
         }
 
         private float ProductionCost() {
-            return Roles.Keys.Sum(actor => actor.Wage);
+            return 10 + Roles.Keys.Sum(actor => actor.Wage);
         }
         
         private void Tick(float deltaTime) {
             if (!IsLive) {
                 if (timeInvested >= timeToProduce) Release();
                 Studio.Current.Wallet.Pay(ProductionCost() * deltaTime);
+                Earnings -= ProductionCost() * deltaTime;
                 timeInvested += deltaTime;
             } else {
                 if (timeInvested >= timeLive) Cancel();
                 Studio.Current.Wallet.Earn(10 * deltaTime);
+                Earnings += 10 * deltaTime;
                 timeInvested += deltaTime;
             }
             onTick?.Invoke();
