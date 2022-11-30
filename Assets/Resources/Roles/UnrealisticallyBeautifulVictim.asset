@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Unrealistically Beautiful Victim
+  plural: Unrealistically Beautiful Victims
+  roleIndefiniteArticle: an
   fittingGenres:
   - {fileID: 11400000, guid: e49e13d670a8c4332bf09c7c2fe2d9aa, type: 2}
   - {fileID: 11400000, guid: e51fc89587dbc4ae2bbfb7642df176e1, type: 2}

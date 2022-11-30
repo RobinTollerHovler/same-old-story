@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Righteous Whistleblower
+  plural: Righteous Whistleblowers
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: e49e13d670a8c4332bf09c7c2fe2d9aa, type: 2}
   - {fileID: 11400000, guid: 63b0806ff85f5834fa1dc620d68a10f3, type: 2}

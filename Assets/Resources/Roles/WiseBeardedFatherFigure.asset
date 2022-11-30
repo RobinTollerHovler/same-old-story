@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Wise Bearded Father Figure
+  plural: Wise Bearded Father Figures
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}
   - {fileID: 11400000, guid: cee084ec02d662645b655922005fb48c, type: 2}
