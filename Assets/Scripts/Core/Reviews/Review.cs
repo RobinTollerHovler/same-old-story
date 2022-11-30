@@ -5,14 +5,11 @@ using Core.Roles;
 using SameOldStory.Core.Movies;
 using UnityEngine;
 
-namespace SameOldStory.Core.Reviews
-{
+namespace SameOldStory.Core.Reviews {
 
-    public class Review
-    {
+    public class Review {
 
-        private string[] badGeneralReviews()
-        {
+        private string[] badGeneralReviews() {
             return new[] {
                 "This sucks",
                 "I coud've made this movie",
@@ -24,8 +21,7 @@ namespace SameOldStory.Core.Reviews
             };
         }
 
-        private string[] mediocreGeneralReviews()
-        {
+        private string[] mediocreGeneralReviews() {
             return new[] {
                 "Aside from slow pacing, a decent flick",
                 "A lack-luster execution of a great concept",
@@ -37,8 +33,7 @@ namespace SameOldStory.Core.Reviews
             };
         }
 
-        private string[] goodGeneralReviews()
-        {
+        private string[] goodGeneralReviews() {
             return new[] {
                 "Incredible, a must-watch!",
                 "Hold on to your pants, because cinema is saved!",
@@ -50,8 +45,7 @@ namespace SameOldStory.Core.Reviews
             };
         }
 
-        private string[] goodRoleMatchReviews(Role role)
-        {
+        private string[] goodRoleMatchReviews(Role role) {
             return new[] {
                 $"{role.RoleTitle} is good in {movie.Genre.Plural}",
                 $"Any good {movie.Genre.Noun} should contain {role.IndefiniteArticle} {role.RoleTitle}",
@@ -63,24 +57,21 @@ namespace SameOldStory.Core.Reviews
             };
         }
 
-        private string[] badRoleMatchReviews(Role role)
-        {
+        private string[] badRoleMatchReviews(Role role) {
             return new[] {
                 $"{movie.Genre.Plural} should never contain {role.Plural}",
                 $"BAD ROLE MATCH"
             };
         }
 
-        private string[] goodActorMatchReviews(Actor actor)
-        {
+        private string[] goodActorMatchReviews(Actor actor) {
             return new[] {
                 $"{actor.Name} is great in {movie.Genre.Plural}",
                 $"GOOD ACTOR MATCH"
             };
         }
 
-        private string[] badActorMatchReviews(Actor actor)
-        {
+        private string[] badActorMatchReviews(Actor actor) {
             return new[] {
                 $"{actor.Name} is horrible in {movie.Genre.Plural}",
                 $"BAD ACTOR MATCH"
@@ -92,8 +83,7 @@ namespace SameOldStory.Core.Reviews
 
         public string RandomReview => possibleReviews.Count > 0 ? possibleReviews[Random.Range(0, possibleReviews.Count)] : "I have nothing to say";
 
-        public Review(Movie movie)
-        {
+        public Review(Movie movie) {
             this.movie = movie;
             Score = 1 + RoleMatchScore() + ActorFameScore() + ActorMatchScore();
             possibleReviews.AddRange(Score switch
@@ -104,8 +94,7 @@ namespace SameOldStory.Core.Reviews
             });
         }
 
-        private int RoleMatchScore()
-        {
+        private int RoleMatchScore() {
             int roleScore = 0;
             foreach (var role in movie.Roles.Values.Where(role => role.FittingGenres.Contains(movie.Genre)))
             {
@@ -120,8 +109,7 @@ namespace SameOldStory.Core.Reviews
             return roleScore;
         }
 
-        private int ActorMatchScore()
-        {
+        private int ActorMatchScore() {
             return 0;
             int actorScore = 0;
             foreach (var actor in movie.Roles.Keys.Where(a => a.GoodGenres.Contains(movie.Genre)))
@@ -137,8 +125,7 @@ namespace SameOldStory.Core.Reviews
             return actorScore;
         }
 
-        private int ActorFameScore()
-        {
+        private int ActorFameScore() {
             return movie.Roles.Keys.Sum(actor => actor.Fame / 4);
         }
 
