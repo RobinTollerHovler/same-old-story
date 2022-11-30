@@ -15,6 +15,8 @@ namespace SameOldStory.Core.Movies {
         private readonly float timeLive;
         private float timeInvested;
         private float earnings;
+        private float profit;
+        private float profitBase = 10;
         
         public static event Action<Movie> onNewMovie;
         public static event Action<Movie> onActiveMovieChanged;
@@ -64,20 +66,20 @@ namespace SameOldStory.Core.Movies {
         }
 
         private float ProductionCost() {
-            return 10 + Roles.Keys.Sum(actor => actor.Wage);
+            return 10 + (Roles.Keys.Sum(actor => actor.Wage) / Cycle.Month);
         }
-        
+
         private void Tick(float deltaTime) {
             if (!IsLive) {
                 if (timeInvested >= timeToProduce) Release();
                 Studio.Current.Wallet.Pay(ProductionCost() * deltaTime);
-                Earnings -= ProductionCost() * deltaTime;
-                timeInvested += deltaTime;
+                Earnings -= ProductionCost() * deltaTime / Cycle.Month;
+                timeInvested += deltaTime / Cycle.Month;
             } else {
                 if (timeInvested >= timeLive) Cancel();
-                Studio.Current.Wallet.Earn(10 * deltaTime);
-                Earnings += 10 * deltaTime;
-                timeInvested += deltaTime;
+                Studio.Current.Wallet.Earn(profit * deltaTime / Cycle.Month);
+                Earnings += profit * deltaTime / Cycle.Month;
+                timeInvested += deltaTime / Cycle.Month;
             }
             onTick?.Invoke();
         }
@@ -91,6 +93,7 @@ namespace SameOldStory.Core.Movies {
                 actor.IncreaseFame((int)(Review.Score / 2));
                 actor.FinishWorking();
             }
+            profit = profitBase * Roles.Keys.Sum(actor => actor.Fame) + profitBase * Review.Score * 1 + Rating.Stars();
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
