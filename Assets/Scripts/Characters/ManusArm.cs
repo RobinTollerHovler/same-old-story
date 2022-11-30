@@ -21,11 +21,13 @@ namespace Characters {
         private IEnumerator Type() {
             while (true) {
                 while (animator == null) yield return null;
-                string trigger = Random.Range(0, 3) switch {
+                string trigger = Random.Range(0, 5) switch {
                     0 => "Low",
-                    1 => "Medium",
-                    2 => "High",
-                    _ => "Low",
+                    1 => "MediumLow",
+                    2 => "Medium",
+                    3 => "MediumHigh",
+                    4 => "High",
+                    _ => "Low"
                 };
                 animator.SetTrigger(trigger);
                 yield return new WaitForSeconds(Random.Range(0.1f, 0.3f));
