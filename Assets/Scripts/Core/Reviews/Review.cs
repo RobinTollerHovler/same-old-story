@@ -47,7 +47,7 @@ namespace SameOldStory.Core.Reviews {
 
         private string[] goodRoleMatchReviews(Role role) {
             return new[] {
-                $"{role.RoleTitle} is good in {movie.Genre.Plural}",
+                $"It's good to have a {role.RoleTitle} in a {movie.Genre.Noun}",
                 $"Any good {movie.Genre.Noun} should contain {role.IndefiniteArticle} {role.RoleTitle}",
                 $"{movie.Genre.Plural} should contain {role.Plural}",
                 $"What would {movie.Genre.Plural} be without {role.Plural}?",
@@ -60,21 +60,25 @@ namespace SameOldStory.Core.Reviews {
         private string[] badRoleMatchReviews(Role role) {
             return new[] {
                 $"{movie.Genre.Plural} should never contain {role.Plural}",
-                $"BAD ROLE MATCH"
+                $"What's {role.IndefiniteArticle} {role.RoleTitle} doing in a {movie.Genre.Noun}?",
+                $"{movie.Genre.Plural} with {role.Plural}? Really?",
+                $"I never thought I'd see a {role.IndefiniteArticle} {role.RoleTitle} in a {movie.Genre.Noun}",
             };
         }
 
         private string[] goodActorMatchReviews(Actor actor) {
             return new[] {
                 $"{actor.Name} is great in {movie.Genre.Plural}",
-                $"GOOD ACTOR MATCH"
+                $"{actor.Name} is a revelation! Put them in more {movie.Genre.Plural}!",
+                $"Whoever decided to put {actor.Name} in a {movie.Genre.Noun} needs a raise",
             };
         }
 
         private string[] badActorMatchReviews(Actor actor) {
             return new[] {
                 $"{actor.Name} is horrible in {movie.Genre.Plural}",
-                $"BAD ACTOR MATCH"
+                $"Fire whoever decided to put {actor.Name} in a {movie.Genre.Noun}",
+                $"Let's just say {actor.Name} should never work in {movie.Genre.Plural} ever again",
             };
         }
 
