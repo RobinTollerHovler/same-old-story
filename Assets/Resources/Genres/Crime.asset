@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7dc665cbcb64e14a17c3bd6f94be6ea, type: 3}
-  m_Name: ReclusiveWriter
+  m_Script: {fileID: 11500000, guid: 09ac7f65ba854638828f8b6dd5461459, type: 3}
+  m_Name: Crime
   m_EditorClassIdentifier: 
   startAvailable: 1
-  roleTitle: 
-  fittingGenres: []
-  unfittingGenres: []
+  genreName: Crime
+  indefiniteArticle: a
+  noun: crime movie
+  plural: crime movies
+  attractiveness: 0
+  leastMonthsOfWorkRequired: 0

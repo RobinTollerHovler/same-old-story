@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Cop That Dies One Day Before Retirement
+  plural: Cops That Dies One Day Before Retirement
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: e51fc89587dbc4ae2bbfb7642df176e1, type: 2}
   - {fileID: 11400000, guid: baddad4646b8f4eacb66ac3709d42ef0, type: 2}

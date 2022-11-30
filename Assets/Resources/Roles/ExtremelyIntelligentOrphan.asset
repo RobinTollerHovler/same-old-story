@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Extremely Intelligent Orphan
+  plural: Extremely Intelligent Orphans
+  roleIndefiniteArticle: an
   fittingGenres:
   - {fileID: 11400000, guid: 41ff8b5f3de134042869494a6524dbe1, type: 2}
   - {fileID: 11400000, guid: e49e13d670a8c4332bf09c7c2fe2d9aa, type: 2}

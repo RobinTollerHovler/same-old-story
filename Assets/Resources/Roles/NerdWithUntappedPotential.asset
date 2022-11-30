@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Nerd With Untapped Potential
+  plural: Nerds With Untapped Potential
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: baddad4646b8f4eacb66ac3709d42ef0, type: 2}
   - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}

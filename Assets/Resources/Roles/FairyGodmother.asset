@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Fairy Godmother
+  plural: Fairy Godmothers
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: cee084ec02d662645b655922005fb48c, type: 2}
   - {fileID: 11400000, guid: 41ff8b5f3de134042869494a6524dbe1, type: 2}

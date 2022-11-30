@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAvailable: 1
   roleTitle: Mutated Monster
+  plural: Mutated Monsters
+  roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: 63b0806ff85f5834fa1dc620d68a10f3, type: 2}
   - {fileID: 11400000, guid: 71970706e3b7f4945b20bcdbf7289e45, type: 2}
