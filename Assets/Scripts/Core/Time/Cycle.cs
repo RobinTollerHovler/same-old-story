@@ -17,12 +17,15 @@ namespace SameOldStory.Core.Time {
         [SerializeField] private int monthsRequiredForWorkPerRole;
 
         private float monthProgress;
+
         public static event Action<float> onTick;
         public static event Action onNewMonthTriggered;
+        public static event Action onTwentyYearsPast;
 
         public static void Pause() => paused = true;
         public static void Resume() => paused = false;
-
+        public static void TwentyYearsPast() => onTwentyYearsPast?.Invoke();
+        
         public void Awake() {
             Month = monthDuration;
             MonthsMoviesStayLive = monthsMoviesStayLive;

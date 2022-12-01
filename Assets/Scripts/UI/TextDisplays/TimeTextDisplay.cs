@@ -7,7 +7,11 @@ namespace SameOldStory.UI.TextDisplays {
         private int year = 1;
         private int month = 1;
         
-        private void OnEnable() => Cycle.onNewMonthTriggered += AddMonth;
+        private void OnEnable() {
+            SetText($"Jan Year: 1");
+            Cycle.onNewMonthTriggered += AddMonth;
+        }
+
         private void OnDisable() => Cycle.onNewMonthTriggered -= AddMonth;
 
         private void AddMonth() {
@@ -15,6 +19,7 @@ namespace SameOldStory.UI.TextDisplays {
             if (month > 12) {
                 month = 1;
                 year++;
+                if(year == 20) Cycle.TwentyYearsPast();
             }
             string monthName = month switch {
                 1 => "Jan",
@@ -31,7 +36,7 @@ namespace SameOldStory.UI.TextDisplays {
                 12 => "Dec",
                 _ => ""
             };
-            SetText($"{monthName} Year:{year}");
+            SetText($"{monthName} Year: {year}");
         }
     }
     
