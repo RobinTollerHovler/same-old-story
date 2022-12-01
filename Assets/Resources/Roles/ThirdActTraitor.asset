@@ -18,7 +18,6 @@ MonoBehaviour:
   roleIndefiniteArticle: a
   fittingGenres:
   - {fileID: 11400000, guid: e51fc89587dbc4ae2bbfb7642df176e1, type: 2}
-  - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}
   - {fileID: 11400000, guid: cee084ec02d662645b655922005fb48c, type: 2}
   - {fileID: 11400000, guid: 63b0806ff85f5834fa1dc620d68a10f3, type: 2}
   unfittingGenres:
