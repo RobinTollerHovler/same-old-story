@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SameOldStory.Core.Studios;
 
 namespace Core.People {
@@ -18,7 +17,7 @@ namespace Core.People {
         }
 
         public HashSet<Actor> Actors => actors;
-        public int NextActorHiringCost => Studio.Current.ActorHiringCost * Actors.Count;
+        public int NextActorHiringCost => (int)(Studio.Current.ActorHiringCost * (Actors.Count * 1.5f));
 
         public void HireActor() {
             actors.Add(new Actor());
