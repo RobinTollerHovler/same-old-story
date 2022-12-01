@@ -31,6 +31,7 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         public void Show(Actor attachedActor = null, Role attachedRole = null) {
             roleInformationTextComponent?.SetText(attachedRole?.RoleTitle ?? "Add role");
+            if(attachedActor != null) roleInformationTextComponent?.SetText($"{attachedActor.Name} as:\n{attachedRole?.RoleTitle}");
             plusSymbol.SetActive(!attachedRole);
             face.sprite = attachedActor?.Face.FaceType;
             eyes.sprite = attachedActor?.Face.Eyes;
