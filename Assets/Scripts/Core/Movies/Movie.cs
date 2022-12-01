@@ -66,7 +66,7 @@ namespace SameOldStory.Core.Movies {
         }
 
         private float ProductionCost() {
-            return 10 + (Roles.Keys.Sum(actor => actor.Wage) / Cycle.Month);
+            return 10 + Roles.Keys.Sum(actor => actor.Wage);
         }
 
         private void Tick(float deltaTime) {
