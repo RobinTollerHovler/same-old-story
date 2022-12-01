@@ -13,7 +13,7 @@ namespace Characters {
 
         public void PlayStroke() {
             audioSource.clip = audioClip;
-            audioSource.pitch = 1 + Random.Range(-.2f, 2f);
+            audioSource.pitch = 1 + Random.Range(-.07f, .07f);
             audioSource.Play();
         }
 
