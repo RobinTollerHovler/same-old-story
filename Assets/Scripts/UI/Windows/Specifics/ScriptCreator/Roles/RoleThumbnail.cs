@@ -1,6 +1,7 @@
 using Core.People;
 using Core.Roles;
 using SameOldStory.UI.Menus;
+using TMPro;
 using UI.Windows.Specifics.ScriptCreator.Roles;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ namespace SameOldStory.UI.Windows.Specifics {
         [SerializeField] private Image mouth;
         [SerializeField] private Image hair;
         [SerializeField] private GameObject plusSymbol;
+        [SerializeField] private TextMeshProUGUI unavailable;
         
         private AddRoleButtonNode node;
         private RoleInformationTextComponent roleInformationTextComponent;
@@ -27,9 +29,11 @@ namespace SameOldStory.UI.Windows.Specifics {
         public void Hide() {
             foreach(IMenu menu in GetComponentsInChildren<IMenu>()) menu.Close();
             node?.gameObject.SetActive(false);
+            unavailable.gameObject.SetActive(false);
         }
 
         public void Show(Actor attachedActor = null, Role attachedRole = null) {
+            unavailable.gameObject.SetActive(false);
             roleInformationTextComponent?.SetText(attachedRole?.RoleTitle ?? "Add role");
             if(attachedActor != null) roleInformationTextComponent?.SetText($"{attachedActor.Name} as:\n{attachedRole?.RoleTitle}");
             plusSymbol.SetActive(!attachedRole);
@@ -44,6 +48,10 @@ namespace SameOldStory.UI.Windows.Specifics {
             nose.color = attachedActor?.Face.HairColor ?? Color.clear;
             face.color = attachedActor?.Face.SkinTone ?? Color.clear;
             node?.gameObject.SetActive(true);
+        }
+
+        public void ShowUnavailable() {
+            unavailable.gameObject.SetActive(true);
         }
         
     }

@@ -27,12 +27,14 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         protected override void OnOpen() {
             Script.CurrentlyCreating.onRolesUpdated += UpdateRoles;
+            Studio.Current.Roster.onRosterUpdated += UpdateRoles;
             productTitleInputField?.Clear();
             UpdateRoles();
         }
 
         protected override void OnClose() {
             Script.CurrentlyCreating.onRolesUpdated -= UpdateRoles;
+            Studio.Current.Roster.onRosterUpdated -= UpdateRoles;
         }
 
         private void OnEnable() => Script.onRequestInitializeNewScript += Open;
@@ -47,7 +49,11 @@ namespace SameOldStory.UI.Windows.Specifics {
                 if(roleThumbnails.Length > i) roleThumbnails[i].Show(set.Key, set.Value);
                 i++;
             }
-            if(roleThumbnails.Length > roles.Count) roleThumbnails[roles.Count].Show();
+            if (roleThumbnails.Length > roles.Count && Studio.Current.Roster.Actors.Count(actor => !actor.IsWorking) > 0) {
+                roleThumbnails[roles.Count].Show();
+            } else if (roleThumbnails.Length > roles.Count) {
+                roleThumbnails[roles.Count].ShowUnavailable();
+            }
         }
         
     }
