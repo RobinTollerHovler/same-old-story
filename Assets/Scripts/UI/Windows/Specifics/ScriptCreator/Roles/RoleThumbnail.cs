@@ -24,7 +24,6 @@ namespace SameOldStory.UI.Windows.Specifics {
         private void Awake() {
             node = GetComponentInChildren<AddRoleButtonNode>();
             roleInformationTextComponent = GetComponentInChildren<RoleInformationTextComponent>();
-            Debug.Log(roleInformationTextComponent);
         }
 
         public void Hide() {
