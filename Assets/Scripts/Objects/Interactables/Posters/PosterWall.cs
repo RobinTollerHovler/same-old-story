@@ -33,6 +33,7 @@ namespace SameOldStory.Objects.Interactables.Posters {
             HangablePoster hp = newPoster.GetComponent<HangablePoster>();
             hp.Sort(NumberOfPosters);
             hp.AssignProduct(movie);
+            hp.AssignMovie(movie);
         }
 
     }

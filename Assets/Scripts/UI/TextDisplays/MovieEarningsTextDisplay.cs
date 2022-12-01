@@ -1,3 +1,4 @@
+using System;
 using SameOldStory.Core;
 using UnityEngine;
 
@@ -21,11 +22,9 @@ namespace SameOldStory.UI.TextDisplays {
 
         private void UpdateEarnings() {
             int currentEarnings = (int)representMovie.Movie.Earnings;
-            SetColor(currentEarnings switch {
-                < 0 => negativeColor,
-                _ => positiveColor
-            });
-            SetText($"${currentEarnings:N0}");
+            SetColor(currentEarnings < 0 ? negativeColor : positiveColor);
+            string earnings = currentEarnings > 0 ? $"${currentEarnings:N0}" : $"-${Math.Abs(currentEarnings):N0}";
+            SetText($"{earnings}");
         }
         
     }

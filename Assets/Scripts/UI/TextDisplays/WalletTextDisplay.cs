@@ -1,3 +1,4 @@
+using System;
 using SameOldStory.Core.Studios;
 
 namespace SameOldStory.UI.TextDisplays {
@@ -21,7 +22,9 @@ namespace SameOldStory.UI.TextDisplays {
 
         private void UpdateDisplay() {
             if (Studio.Current == null) return;
-            SetText($"${(int)Studio.Current.Wallet.Balance:N0}");
+            int currentBalance = (int)Studio.Current.Wallet.Balance;
+            string balance = currentBalance > 0 ? $"${currentBalance:N0}" : $"-${Math.Abs(currentBalance):N0}";
+            SetText($"{balance}");
         }
         
     }
