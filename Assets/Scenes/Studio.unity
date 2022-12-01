@@ -891,6 +891,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.36515784
       objectReference: {fileID: 0}
+    - target: {fileID: 9106656970929132747, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106656970929132747, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106656970929132747, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1011654681
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74883fbf3f3ee4a77924f738639bcdaf, type: 3}
 --- !u!1001 &4523559307904985618
