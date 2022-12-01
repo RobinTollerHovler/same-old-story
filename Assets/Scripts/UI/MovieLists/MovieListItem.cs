@@ -1,7 +1,6 @@
 using System;
 using SameOldStory.Core;
 using SameOldStory.Core.Movies;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace UI.MovieLists {
