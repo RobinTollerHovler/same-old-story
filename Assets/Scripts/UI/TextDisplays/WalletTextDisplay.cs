@@ -21,7 +21,7 @@ namespace SameOldStory.UI.TextDisplays {
 
         private void UpdateDisplay() {
             if (Studio.Current == null) return;
-            SetText($"${(int)Studio.Current.Wallet.Balance}");
+            SetText($"${(int)Studio.Current.Wallet.Balance:N0}");
         }
         
     }

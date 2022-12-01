@@ -25,7 +25,7 @@ namespace SameOldStory.UI.TextDisplays {
                 < 0 => negativeColor,
                 _ => positiveColor
             });
-            SetText($"${currentEarnings}");
+            SetText($"${currentEarnings:N0}");
         }
         
     }
