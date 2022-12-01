@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.People.Names;
 using SameOldStory.Core.Data;
@@ -28,14 +29,22 @@ namespace Core.People {
                 Gender.Female => RandomFemaleName()
             };
             Face = new Face(Gender);
+            foreach (Genre genre in Studio.Current.AvailableGenres) {
+                if (Random.Range(0f, 1f) < .75) continue;
+                if (Random.Range(0f, 1f) > .5) {
+                    if(GoodGenres.Count < 5) GoodGenres.Add(genre);
+                } else {
+                    if(BadGenres.Count < 5) BadGenres.Add(genre);
+                }
+            }
         }
         
         public Face Face { get; }
         public string Name { get; }
         public Gender Gender { get; }
         public bool IsWorking { get; private set; }
-        public Genre[] GoodGenres { get; }
-        public Genre[] BadGenres { get; }
+        public List<Genre> GoodGenres { get; } = new();
+        public List<Genre> BadGenres { get; } = new();
 
         public int Fame { get; private set; }
         public int Wage => (Fame * Studio.Current.ActorWagePerFameLevel) < 0 ? 0 : Fame * Studio.Current.ActorWagePerFameLevel;

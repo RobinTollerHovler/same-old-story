@@ -1,4 +1,5 @@
 using Core.People;
+using SameOldStory.Core.Data;
 using SameOldStory.Input.Mouse;
 using TMPro;
 using UnityEngine;
@@ -51,6 +52,10 @@ namespace SameOldStory.UI.Windows.Specifics {
             hair.color = actor.Actor?.Face.HairColor ?? Color.white;
             nose.color = actor.Actor?.Face.HairColor ?? Color.white;
             face.color = actor.Actor?.Face.SkinTone ?? Color.white;
+            actorGoodGenres.text = "";
+            actorBadGenres.text = "";
+            foreach (Genre genre in actor.Actor.GoodGenres) actorGoodGenres.text += $"+{genre.Name}\n";
+            foreach (Genre genre in actor.Actor.BadGenres) actorBadGenres.text += $"-{genre.Name}\n";
         }
         
     }
