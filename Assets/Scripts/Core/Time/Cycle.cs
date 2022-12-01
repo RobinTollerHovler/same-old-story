@@ -9,6 +9,7 @@ namespace SameOldStory.Core.Time {
         public static int MonthsMoviesStayLive { get; private set; } = 1;
         public static int MonthsRequiredForWorkBase { get; private set; } = 1;
         public static int MonthsRequiredForWorkPerRole { get; private set; } = 1;
+        private static bool paused;
         
         [SerializeField] private int monthDuration;
         [SerializeField] private int monthsMoviesStayLive;
@@ -19,6 +20,9 @@ namespace SameOldStory.Core.Time {
         public static event Action<float> onTick;
         public static event Action onNewMonthTriggered;
 
+        public static void Pause() => paused = true;
+        public static void Resume() => paused = false;
+
         public void Awake() {
             Month = monthDuration;
             MonthsMoviesStayLive = monthsMoviesStayLive;
@@ -27,6 +31,7 @@ namespace SameOldStory.Core.Time {
         }
 
         private void Update() {
+            if (paused) return;
             onTick?.Invoke(UnityEngine.Time.deltaTime);
             monthProgress += UnityEngine.Time.deltaTime;
             if (monthProgress >= Month) {
@@ -34,7 +39,7 @@ namespace SameOldStory.Core.Time {
                 onNewMonthTriggered?.Invoke();
             }
         }
-        
+
     }
     
 }

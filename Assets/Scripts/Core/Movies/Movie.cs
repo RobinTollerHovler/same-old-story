@@ -100,6 +100,7 @@ namespace SameOldStory.Core.Movies {
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
+            Cycle.Pause();
         }
 
         private void Cancel() {

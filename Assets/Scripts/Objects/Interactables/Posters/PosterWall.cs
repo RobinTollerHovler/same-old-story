@@ -1,4 +1,5 @@
 using SameOldStory.Core.Movies;
+using SameOldStory.Core.Time;
 using SameOldStory.Objects.Interactables.ClickBehaviours;
 using UnityEngine;
 
@@ -25,9 +26,16 @@ namespace SameOldStory.Objects.Interactables.Posters {
             Core.Movies.Poster.onPlacePoster -= DeactivateWallColliderObject;
         }
 
-        private void ActivateWallColliderObject() => frameObject?.SetActive(true);
-        private void DeactivateWallColliderObject() => frameObject?.SetActive(false);
-        
+        private void ActivateWallColliderObject() {
+            frameObject?.SetActive(true);
+            Cycle.Pause();
+        }
+
+        private void DeactivateWallColliderObject() {
+            frameObject?.SetActive(false);
+            Cycle.Resume();
+        }
+
         private void MakePoster(Movie movie) {
             GameObject newPoster = Instantiate(hangablePosterTemplate, Vector3.zero, Quaternion.identity, transform);
             HangablePoster hp = newPoster.GetComponent<HangablePoster>();
