@@ -30,8 +30,7 @@ namespace SameOldStory.UI.TextDisplays {
         private void UpdateDisplay() {
             StopAllCoroutines();
             if (Studio.Current == null) return;
-            StartCoroutine(nameof(LerpToTargetBalance));
-
+            if(isActiveAndEnabled) StartCoroutine(nameof(LerpToTargetBalance));
         }
 
         private IEnumerator LerpToTargetBalance() {
