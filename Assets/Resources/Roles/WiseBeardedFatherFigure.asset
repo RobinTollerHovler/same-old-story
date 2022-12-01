@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41ff8b5f3de134042869494a6524dbe1, type: 2}
   unfittingGenres:
   - {fileID: 11400000, guid: baddad4646b8f4eacb66ac3709d42ef0, type: 2}
+  - {fileID: 11400000, guid: 71970706e3b7f4945b20bcdbf7289e45, type: 2}
