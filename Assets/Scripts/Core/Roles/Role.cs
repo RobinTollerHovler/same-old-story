@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using SameOldStory.Core.Data;
 using UnityEngine;
 
@@ -17,7 +18,12 @@ namespace Core.Roles {
         public string IndefiniteArticle => roleIndefiniteArticle;
         public Genre[] FittingGenres => fittingGenres;
         public Genre[] UnfittingGenres => unfittingGenres;
+        public List<Genre> TestedGenres { get; } = new();
 
+        public void TestGenre(Genre genre) {
+            if(!TestedGenres.Contains(genre)) TestedGenres.Add(genre);
+        }
+        
     }
     
 }

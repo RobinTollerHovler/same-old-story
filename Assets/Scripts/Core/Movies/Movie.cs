@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Core.Movies;
 using Core.People;
+using Core.Roles;
 using SameOldStory.Core.Buffs;
 using SameOldStory.Core.Reviews;
 using SameOldStory.Core.Studios;
@@ -93,6 +94,7 @@ namespace SameOldStory.Core.Movies {
                 actor.TestedGenre(Genre);
                 actor.FinishWorking();
             }
+            foreach(Role role in Roles.Values) role.TestGenre(Genre);
             profit = Studio.Current.MovieProfitBase * Roles.Keys.Sum(actor => actor.Fame) + Studio.Current.MovieProfitBase * Review.Score * 1 + Rating.Stars();
             profit = profit < 0 ? 0 : profit;
             onReleased?.Invoke();

@@ -6,9 +6,10 @@ namespace SameOldStory.UI.Buttons {
     public class Button : MonoBehaviour {
 
         private TextMeshProUGUI textMeshProUGUI;
+        private UnityEngine.UI.Button button;
         
         protected void Awake() {
-            UnityEngine.UI.Button button = GetComponentInChildren<UnityEngine.UI.Button>();
+            button = GetComponentInChildren<UnityEngine.UI.Button>();
             button.onClick.AddListener(Click);
             textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
             SetUp();
@@ -18,6 +19,10 @@ namespace SameOldStory.UI.Buttons {
         protected virtual void Click() {}
 
         protected void SetText(string text) => textMeshProUGUI.text = text;
+
+        protected void SetColor(Color color) {
+            button.image.color = color;
+        }
         
     }
     
