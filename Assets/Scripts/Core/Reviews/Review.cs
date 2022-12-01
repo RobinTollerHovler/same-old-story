@@ -97,8 +97,7 @@ namespace SameOldStory.Core.Reviews {
         public Review(Movie movie) {
             this.movie = movie;
             Score = 1 + RoleMatchScore() + ActorFameScore() + ActorMatchScore();
-            possibleReviews.AddRange(Score switch
-            {
+            possibleReviews.AddRange(Score switch {
                 < 4 => badGeneralReviews(),
                 < 8 => mediocreGeneralReviews(),
                 _ => goodGeneralReviews()
@@ -107,13 +106,11 @@ namespace SameOldStory.Core.Reviews {
 
         private int RoleMatchScore() {
             int roleScore = 0;
-            foreach (var role in movie.Roles.Values.Where(role => role.FittingGenres.Contains(movie.Genre)))
-            {
+            foreach (var role in movie.Roles.Values.Where(role => role.FittingGenres.Contains(movie.Genre))) {
                 roleScore += 2;
                 possibleReviews.AddRange(goodRoleMatchReviews(role));
             }
-            foreach (var role in movie.Roles.Values.Where(role => role.UnfittingGenres.Contains(movie.Genre)))
-            {
+            foreach (var role in movie.Roles.Values.Where(role => role.UnfittingGenres.Contains(movie.Genre))) {
                 roleScore -= 2;
                 possibleReviews.AddRange(badRoleMatchReviews(role));
             }
@@ -121,15 +118,12 @@ namespace SameOldStory.Core.Reviews {
         }
 
         private int ActorMatchScore() {
-            return 0;
             int actorScore = 0;
-            foreach (var actor in movie.Roles.Keys.Where(a => a.GoodGenres.Contains(movie.Genre)))
-            {
+            foreach (var actor in movie.Roles.Keys.Where(a => a.GoodGenres.Contains(movie.Genre))) {
                 actorScore += 2;
                 possibleReviews.AddRange(goodActorMatchReviews(actor));
             }
-            foreach (var actor in movie.Roles.Keys.Where(a => a.BadGenres.Contains(movie.Genre)))
-            {
+            foreach (var actor in movie.Roles.Keys.Where(a => a.BadGenres.Contains(movie.Genre))) {
                 actorScore -= 2;
                 possibleReviews.AddRange(badActorMatchReviews(actor));
             }
