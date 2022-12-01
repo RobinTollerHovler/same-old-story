@@ -93,6 +93,7 @@ namespace SameOldStory.Core.Movies {
                 actor.FinishWorking();
             }
             profit = Studio.Current.MovieProfitBase * Roles.Keys.Sum(actor => actor.Fame) + Studio.Current.MovieProfitBase * Review.Score * 1 + Rating.Stars();
+            profit = profit < 0 ? 0 : profit;
             onReleased?.Invoke();
             onMovieReviewsCollected?.Invoke(this);
             Studio.Current.ApplyBuff(new GenreDebuff(Genre));
