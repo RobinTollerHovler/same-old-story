@@ -15,6 +15,7 @@ namespace SameOldStory.UI.Windows.Specifics {
         }
 
         public override void Submit() {
+            Close();
             Cycle.Resume();
         }
         

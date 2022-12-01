@@ -17,6 +17,7 @@ namespace SameOldStory.UI.TextDisplays {
         }
 
         private void OnDisable() {
+            StopAllCoroutines();
             Studio.onStudioChanged -= TrackStudioWallet;
         }
         
