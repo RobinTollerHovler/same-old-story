@@ -90,6 +90,7 @@ namespace SameOldStory.Core.Movies {
             Rating = new Rating(Review);
             foreach (Actor actor in Roles.Keys) {
                 actor.IncreaseFame((int)(Review.Score / 2));
+                actor.TestedGenre(Genre);
                 actor.FinishWorking();
             }
             profit = Studio.Current.MovieProfitBase * Roles.Keys.Sum(actor => actor.Fame) + Studio.Current.MovieProfitBase * Review.Score * 1 + Rating.Stars();

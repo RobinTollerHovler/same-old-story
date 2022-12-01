@@ -45,6 +45,7 @@ namespace Core.People {
         public bool IsWorking { get; private set; }
         public List<Genre> GoodGenres { get; } = new();
         public List<Genre> BadGenres { get; } = new();
+        public List<Genre> TestedGenres { get; } = new();
 
         public int Fame { get; private set; }
         public int Wage => (Fame * Studio.Current.ActorWagePerFameLevel) < 0 ? 0 : Fame * Studio.Current.ActorWagePerFameLevel;
@@ -57,6 +58,10 @@ namespace Core.People {
         public void FinishWorking() {
             IsWorking = false;
             onFinishedWorking?.Invoke();
+        }
+
+        public void TestedGenre(Genre genre) {
+            if (!TestedGenres.Contains(genre)) TestedGenres.Add(genre);
         }
 
         public void IncreaseFame(int amount) => Fame += amount;
