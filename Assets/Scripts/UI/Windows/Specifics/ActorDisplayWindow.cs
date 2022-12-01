@@ -54,8 +54,8 @@ namespace SameOldStory.UI.Windows.Specifics {
             face.color = actor.Actor?.Face.SkinTone ?? Color.white;
             actorGoodGenres.text = "";
             actorBadGenres.text = "";
-            foreach (Genre genre in actor.Actor.GoodGenres) actorGoodGenres.text += !actor.Actor.TestedGenres.Contains(genre) ? $"+ ?\n" : $"+ {genre.Name}\n";
-            foreach (Genre genre in actor.Actor.BadGenres) actorBadGenres.text += !actor.Actor.TestedGenres.Contains(genre) ? $"- ?\n" : $"- {genre.Name}\n";
+            foreach (Genre genre in actor.Actor.GoodGenres) actorGoodGenres.text += !actor.Actor.TestedGenres.Contains(genre) ? $"" : $"+ {genre.Name}\n";
+            foreach (Genre genre in actor.Actor.BadGenres) actorBadGenres.text += !actor.Actor.TestedGenres.Contains(genre) ? $"" : $"- {genre.Name}\n";
         }
         
     }
