@@ -34,7 +34,7 @@ namespace SameOldStory.Core.Studios {
         private Reviewer[] reviewers;
 
         public IEnumerable<Genre> AvailableGenres => genres.Where(g => g.StartAvailable).ToArray();
-        public Tone[] AvailableColors => colors.OrderBy(t => t.Value.r * 3 + t.Value.g + t.Value.b).ToArray();
+        public Tone[] AvailableColors => colors.OrderBy(t => t.Hue).ThenBy(t => t.Value.r * 3 + t.Value.g + t.Value.b).ToArray();
         public IEnumerable<Font> AvailableFonts => fonts;
         public Role[] AvailableRoles => roles;
         public string RandomReviewer => reviewers.Length > 0 ? reviewers[Random.Range(0, reviewers.Length)].Name : "Unknown";

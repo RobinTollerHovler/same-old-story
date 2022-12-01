@@ -12,6 +12,13 @@ namespace SameOldStory.Core.Data {
         public Color Value => color;
         public string Label => label;
 
+        public float Hue {
+            get {
+                Color.RGBToHSV(Value, out float h, out float s, out float v);
+                return h;
+            }
+        }
+
     }
     
 }
