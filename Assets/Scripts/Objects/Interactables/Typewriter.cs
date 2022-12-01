@@ -36,9 +36,13 @@ namespace SameOldStory.Objects.Interactables {
                 completedTypewriterPage.Activate();
                 StartCoroutine(nameof(WriteScript));
                 StartCoroutine(nameof(UpdatePagePositions));
+                Tooltip = $"Already working on script";
+                ClickAction = new NoClickAction();
             } else {
                 remainingTypewriterPage.Deactivate();
                 completedTypewriterPage.Deactivate();
+                Tooltip = $"Write script";
+                ClickAction = new RequestCreateNewScriptClickAction();
             }
         }
 
