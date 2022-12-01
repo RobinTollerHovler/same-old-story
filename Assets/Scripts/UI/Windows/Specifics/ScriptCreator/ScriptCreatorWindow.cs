@@ -17,7 +17,6 @@ namespace SameOldStory.UI.Windows.Specifics {
             Script.CurrentlyCreating.Title = productTitleInputField?.Text;
             Script.CurrentlyCreating.Genre = Studio.Current.GetGenreWithName(productGenreDropdown.Selected());
             Script.CurrentlyCreating.Create();
-            productTitleInputField?.Clear();
             Close();
         }
         
@@ -28,6 +27,7 @@ namespace SameOldStory.UI.Windows.Specifics {
 
         protected override void OnOpen() {
             Script.CurrentlyCreating.onRolesUpdated += UpdateRoles;
+            productTitleInputField?.Clear();
             UpdateRoles();
         }
 

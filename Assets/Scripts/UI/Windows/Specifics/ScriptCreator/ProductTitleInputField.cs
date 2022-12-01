@@ -8,7 +8,7 @@ namespace SameOldStory.UI.Windows.Specifics {
         
         protected override void OnValueChanged(string value) {
             base.OnValueChanged(value);
-            Script.CurrentlyCreating.Title = value;
+            if(Script.CurrentlyCreating != null) Script.CurrentlyCreating.Title = value;
         }
         
     }
