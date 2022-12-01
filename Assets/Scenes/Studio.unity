@@ -232,6 +232,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5259810514893648619, guid: 8ebff8a7e68ff4553aa96ae1ea342055, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5387281057059883287, guid: 8ebff8a7e68ff4553aa96ae1ea342055, type: 3}
       propertyPath: m_Name
       value: UI
