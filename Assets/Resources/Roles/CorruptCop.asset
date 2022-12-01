@@ -23,3 +23,4 @@ MonoBehaviour:
   unfittingGenres:
   - {fileID: 11400000, guid: cee084ec02d662645b655922005fb48c, type: 2}
   - {fileID: 11400000, guid: 41ff8b5f3de134042869494a6524dbe1, type: 2}
+  - {fileID: 11400000, guid: 11ddd28283918c64ab84845f465799bb, type: 2}
