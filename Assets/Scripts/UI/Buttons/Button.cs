@@ -23,6 +23,10 @@ namespace SameOldStory.UI.Buttons {
         protected void SetColor(Color color) {
             button.image.color = color;
         }
+
+        protected void ToggleEnabled(bool value) {
+            button.interactable = value;
+        }
         
     }
     

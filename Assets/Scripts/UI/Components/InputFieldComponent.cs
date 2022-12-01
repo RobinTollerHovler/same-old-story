@@ -7,6 +7,8 @@ namespace SameOldStory.UI.Components {
 
         private TMP_InputField tmpInputField;
 
+        protected virtual void OnValueChanged(string value) {}
+        
         public string Text {
             get => tmpInputField == null ? "" : tmpInputField.text;
             private set {
@@ -14,7 +16,10 @@ namespace SameOldStory.UI.Components {
             }
         }
         
-        private void Awake() => tmpInputField = GetComponent<TMP_InputField>();
+        private void Awake() {
+            tmpInputField = GetComponent<TMP_InputField>();
+            tmpInputField.onValueChanged.AddListener(OnValueChanged);
+        }
 
         public void Clear() => Text = "";
 
