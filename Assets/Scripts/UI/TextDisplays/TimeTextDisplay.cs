@@ -24,7 +24,7 @@ namespace SameOldStory.UI.TextDisplays {
             string monthName = month switch {
                 1 => "Jan",
                 2 => "Feb",
-                3 => "Mars",
+                3 => "March",
                 4 => "April",
                 5 => "May",
                 6 => "June",
